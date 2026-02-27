@@ -1,0 +1,25 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ChatWidget from '../components/ChatWidget.astro';
+import { getLocaleFromUrl } from '../i18n/utils';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const locale = getLocaleFromUrl(Astro.url);
+const { title, description, ogImage } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+  <Header locale={locale} />
+  <main>
+    <slot />
+  </main>
+  <Footer locale={locale} />
+  <ChatWidget locale={locale} />
+</BaseLayout>

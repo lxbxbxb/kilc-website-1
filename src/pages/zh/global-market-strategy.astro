@@ -1,0 +1,86 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+
+const locale = 'zh';
+
+const sections = [
+  {
+    title: '风险评估',
+    description: '我们提供全面的风险评估咨询服务，帮助企业识别在国际扩张过程中可能面临的法律与监管挑战。我们的团队将审查目标市场的法律环境，并提供切实可行的洞察，协助企业充分了解其海外经营活动的潜在影响。通过重点指出关键的合规要求与不同司法辖区的风险，我们支持客户在进入或运营新市场时做出明智且具战略性的决策。',
+  },
+  {
+    title: '监管合规',
+    description: '我们提供持续性的合规咨询服务，协助客户了解并满足海外司法辖区的监管要求。我们的团队为企业提供切实可行的指导，帮助其保持良好的监管记录，并最大限度地降低潜在的合规风险。通过持续监测与顾问支持，我们协助客户确保其海外业务运营符合相关法律与监管标准，使其国际活动始终合法、稳健、合规。',
+  },
+  {
+    title: '法律咨询',
+    description: '我们提供量身定制的法律咨询与顾问服务，协助客户理解并应对国际法律及监管框架。我们的顾问可就贸易协定、市场准入要求以及当地合规事项等提供切实可行的指导。通过提供清晰且以商业为导向的专业见解，我们支持客户在多重司法辖区内作出明智决策，并自信、稳健地开展国际业务。',
+  },
+  {
+    title: '争议解决',
+    description: '我们提供争议解决咨询服务，协助客户通过谈判、调解或仲裁等方式高效管理并解决纠纷。我们的顾问将提供战略性指导，帮助客户了解可行方案并取得切实可行的结果；在必要情况下，我们也会协调具备资质的法律专业人士提供正式代理支持。我们的服务强调高效、公正，并在整个解决过程中全面保障客户的利益。',
+  },
+  {
+    title: '合同起草与审阅',
+    description: '我们提供合同起草与审阅咨询服务，协助客户确保合同条款清晰、商业合理，并与其业务目标保持一致。我们的顾问为合同条款、风险分配及合规事项提供切实可行的指导，帮助客户充分理解并有效协商各类协议。在必要情况下，我们亦可协调受监管的法律专业人士进行正式的法律审查或代理。',
+  },
+  {
+    title: '企业设立',
+    description: '我们提供企业设立咨询服务，协助客户在英国及其他国家设立并构建其业务架构。我们的服务包括企业结构建议、公司成立支持以及许可与监管指导。我们的顾问团队提供切实可行、以商业需求为导向的专业建议，并可在必要时与受监管的法律或税务专业人士协调合作。',
+  },
+];
+---
+
+<PageLayout
+  title="全球市场导航 - KILC"
+  description="KILC 通过专业咨询与协调支持，协助企业成功且合规地进入并拓展国际市场。"
+>
+  <Hero
+    title="全球市场导航"
+    subtitle="通过专业咨询与协调支持，协助企业成功且合规地进入并拓展国际市场。"
+    locale={locale}
+  />
+
+  <!-- Services Sections -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto mb-16 text-center">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          进入英国市场蕴含着巨大的商业机遇，同时也面临复杂的监管挑战。KILC 为您的国际拓展的每个阶段提供战略咨询，帮助您做出明智决策，自信运营。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+        {sections.map((section) => (
+          <div>
+            <h3 class="text-xl font-serif font-bold text-brand-dark mb-4">
+              {section.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {section.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        准备好进入英国市场了吗？
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        联系我们的团队，讨论您的拓展计划以及我们如何支持您进入英国市场。
+      </p>
+      <a
+        href="/zh/contact-us"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        联系我们
+      </a>
+    </div>
+  </section>
+</PageLayout>

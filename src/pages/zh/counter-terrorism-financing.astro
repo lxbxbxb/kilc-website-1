@@ -1,0 +1,136 @@
+---
+import PolicyLayout from '../../layouts/PolicyLayout.astro';
+
+const locale = 'zh';
+---
+
+<PolicyLayout
+  title="反恐怖融资政策"
+  description="KILC 反恐怖融资政策"
+  lastUpdated="05/11/2025"
+>
+  <h2>Counter-Terrorist Financing Policy</h2>
+  <p><strong>Effective Date:</strong> 05/11/2025 &middot; <strong>Last Updated:</strong> 05/11/2025 &middot; Version 1.1</p>
+
+  <h3>1. Policy Statement</h3>
+  <p>
+    Keane International Legal Consultancy LLP (KILC) has zero tolerance for money laundering, terrorist financing, proliferation financing, sanctions evasion or any predicate offence. KILC will proactively prevent, detect and disrupt the use of its services for illicit purposes, exceeding minimum UK legal requirements where proportionate.
+  </p>
+
+  <h3>2. Scope &amp; Application</h3>
+  <p>
+    This policy is mandatory for all directors, partners, officers, employees, contractors, agents, introducers, intermediaries and any entity acting on KILC's behalf, globally. It applies to all client relationships, transactions, referrals, advisory services, file openings, funds handling and data processing.
+  </p>
+  <p>Non-compliance is gross misconduct and may lead to termination, regulatory referral and/or criminal prosecution.</p>
+
+  <h3>3. Legal &amp; Regulatory Framework</h3>
+  <p>KILC complies with all applicable laws including but not limited to:</p>
+  <ul>
+    <li>Proceeds of Crime Act 2002 (POCA)</li>
+    <li>Terrorism Act 2000 (TACT)</li>
+    <li>Money Laundering, Terrorist Financing and Transfer of Funds (Information on the Payer) Regulations 2017 (MLRs)</li>
+    <li>Sanctions and Anti-Money Laundering Act 2018</li>
+    <li>UK, EU, UN, OFAC and HMT sanctions regimes</li>
+    <li>Bribery Act 2010, Criminal Finances Act 2017, Fraud Act 2006</li>
+  </ul>
+  <p>KILC will immediately adopt any stricter jurisdictional requirement (e.g. FATF standards, host-country law). Legal &amp; Compliance team monitors legislative change in real time via automated regulatory feeds; policy auto-updates within 48 hours of material change.</p>
+
+  <h3>4. Key Roles &amp; Responsibilities</h3>
+  <p><strong>Senior Management (Partners):</strong> Ultimate accountability; approve policy; allocate unrestricted budget; receive monthly MLRO dashboards; conduct annual policy sign-off.</p>
+  <p><strong>MLRO (Lisa Mao):</strong> Independent authority to block transactions, freeze funds, submit SARs without Partner approval, terminate clients. Reports directly to Partners; no business-line reporting.</p>
+  <p><strong>Deputy MLRO:</strong> Fully trained alternate; assumes all MLRO powers in absence.</p>
+  <p><strong>All Staff:</strong> Mandatory immediate reporting of suspicions; annual certification of compliance; personal liability for tipping-off.</p>
+
+  <h3>5. Enterprise-Wide Risk Assessment (EWRA)</h3>
+  <p>Annual mandatory EWRA + event-driven refresh (e.g. new service, jurisdiction). Quantitative scoring model (0-100) for:</p>
+  <ul>
+    <li>Client type (PEP, NPO, trust, crypto, cash-intensive)</li>
+    <li>Geography (FATF grey/black list, corruption index)</li>
+    <li>Product (complex structures, cross-border funds)</li>
+    <li>Channel (non-face-to-face, introducers)</li>
+  </ul>
+  <p>Automated risk engine flags score ≥65 → EDD mandatory. All EWRA scoring decisions and overrides shall be documented and retained for 7 years for audit and regulatory inspection.</p>
+
+  <h3>6. Customer Due Diligence (CDD)</h3>
+  <p><strong>All new clients:</strong> Electronic ID&amp;V (e.g. GBG, LexisNexis) + biometric liveness check + proof of address ≤3 months.</p>
+  <p><strong>Funds receipt:</strong> Source of Funds (SoF) documentary trail to original bank statement level.</p>
+  <p><strong>Ongoing relationship:</strong> 12-month refresh for low-risk; 6-month for medium; real-time for high.</p>
+  <p><strong>Prohibited:</strong> cash >£500, bearer instruments, third-party payments without pre-approval.</p>
+
+  <h3>7. Enhanced Due Diligence (EDD) – Mandatory Triggers</h3>
+  <ul>
+    <li>Risk score ≥65</li>
+    <li>PEP, RCA (relative/close associate), HNW trust, NPO, crypto, gambling</li>
+    <li>FATF high-risk jurisdiction (even transit)</li>
+    <li>Adverse media (Tier-1 sources only)</li>
+    <li>Complex/unusual ownership (≥3 layers)</li>
+    <li>Transaction ≥£100k or ≥10% deviation from profile</li>
+  </ul>
+  <p>EDD Actions (all cumulative): Senior Partner sign-off (cannot delegate); Independent SoF/SoW report by external forensic accountant; Transaction pre-approval workflow; Real-time transaction monitoring for 24 months.</p>
+
+  <h3>8. PEPs, RCAs &amp; State-Owned Entities</h3>
+  <p>Lifetime PEP status (no de-classification). Mandatory EDD + annual SoF refresh. Prohibited: acceptance without unanimous Partner vote recorded in board minutes.</p>
+
+  <h3>9. Sanctions, Proliferation &amp; Watchlist Screening</h3>
+  <p>Real-time screening (Dow Jones, Refinitiv World-Check) at onboarding, each payment instruction, and every 24 hrs for ongoing clients. Fuzzy logic + AI false-positive reduction; zero tolerance for matches → auto-freeze + MLRO review within 2 hrs. OFAC 50% rule applied to beneficial owners.</p>
+
+  <h3>10. Ongoing Monitoring &amp; Transaction Surveillance</h3>
+  <p>AI rules engine flags: velocity, layering, smurfing, round-sum, rapid movement, geographic mismatch, U-turn transactions. Daily exception queue → MLRO review within 4 hrs. Client re-risking on every flag.</p>
+
+  <h3>11. Suspicious Activity Reporting (SAR)</h3>
+  <p>Internal reporting deadline: same day (secure channel only). MLRO 24-hr investigation window; SAR submission ≤2 hrs post-decision. Tipping-off = instant dismissal + NCA referral. Defensive SARs encouraged for borderline cases. Record-keeping: 7 years post-relationship end in WORM storage.</p>
+
+  <h3>12. Training &amp; Competence</h3>
+  <p>Induction (Day 1) + annual 4-hr scenario-based training + quarterly phishing/AML tests. Pass mark 90%; failure → suspension until re-pass. MLRO delivers PEP/SoF masterclass bi-annually.</p>
+
+  <h3>13. Independent Assurance</h3>
+  <p>Annual external AML audit by Big-4 or equivalent. Penetration testing of CDD/monitoring systems. Partner-level remediation sign-off within 30 days.</p>
+
+  <h3>14. Third Parties, Introducers &amp; Outsourcing</h3>
+  <p>Written due diligence file (including their EWRA, MLRO interview). Contractual clawback for AML breach. Right to audit their client files on demand. Zero reliance – KILC always performs full CDD. Third-party introducers must certify that they are not subject to sanctions or regulatory investigations.</p>
+
+  <h3>15. Governance, Review &amp; Breach Protocol</h3>
+  <p>Quarterly AML Committee (minutes to Partners). Policy auto-review trigger: legislative change, material breach, new product.</p>
+  <p>Breach escalation matrix:</p>
+  <ul>
+    <li><strong>Minor:</strong> Retraining + note to file</li>
+    <li><strong>Serious:</strong> Suspension + external report</li>
+    <li><strong>Critical:</strong> Termination + SAR + regulatory self-report</li>
+  </ul>
+  <p>This policy shall be reviewed annually by external counsel to ensure continued compliance with UK law, FATF recommendations, and emerging international standards.</p>
+
+  <h3>16. Prohibited Activities (Red Lines)</h3>
+  <ul>
+    <li>Cash >£500</li>
+    <li>Bearer shares</li>
+    <li>Client anonymity tools (mixers, privacy coins without trace)</li>
+    <li>Shell banks</li>
+    <li>Relationships with entities in Iran, North Korea, Syria (unless UN licence)</li>
+  </ul>
+
+  <h3>17. Practical Checklists (Mandatory Use)</h3>
+  <p><strong>A. New Client Onboarding:</strong></p>
+  <ul>
+    <li>Electronic ID&amp;V + biometrics</li>
+    <li>Sanctions screen (real-time)</li>
+    <li>Risk score calculation</li>
+    <li>SoF trail to bank level</li>
+    <li>Partner approval (if EDD)</li>
+  </ul>
+  <p><strong>B. Payment Receipt:</strong></p>
+  <ul>
+    <li>Payer = client</li>
+    <li>Sanctions re-screen</li>
+    <li>Transaction monitoring flag check</li>
+  </ul>
+
+  <h3>18. Appendix – Definitions</h3>
+  <p>CDD/EDD/PEP/MLRO/SAR as per MLRs + KILC enhanced definitions above.</p>
+  <p><strong>SoF:</strong> documentary evidence to original wealth creator.</p>
+  <p><strong>SoW:</strong> corroborated explanation of economic activity.</p>
+
+  <h3>19. Contact &amp; Emergency Escalation</h3>
+  <p><strong>MLRO:</strong> Lisa Mao, +44 7412 121 232</p>
+  <p><strong>24/7 Hotline:</strong> +44 800 123 4567 (recorded, MLRO voicemail)</p>
+  <p><strong>NCA SAR:</strong> online portal (bookmark mandatory)</p>
+</PolicyLayout>

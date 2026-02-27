@@ -1,0 +1,110 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const locale = 'en';
+---
+
+<PageLayout
+  title="Immigration - KILC"
+  description="KILC supports individuals and businesses engaging with UK immigration systems, including ILR, Schengen visas, workforce mobility, and regulatory frameworks."
+>
+  <Hero
+    title="Immigration"
+    subtitle="Expert guidance through the UK immigration system for individuals and businesses."
+    locale={locale}
+  />
+
+  <!-- For Individuals -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Individuals -->
+        <div>
+          <h2 class="text-3xl font-serif font-bold text-brand-dark mb-6">
+            For Individuals
+          </h2>
+          <div class="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              KILC supports individuals engaging with UK immigration systems across a range of circumstances. Whether you are applying for Indefinite Leave to Remain (ILR), navigating Schengen visa requirements, or managing complex personal immigration matters, we provide clear and informed guidance throughout the process.
+            </p>
+            <p>
+              Our team understands the challenges that individuals face when dealing with immigration authorities. We help you prepare thorough applications, gather supporting documentation, and understand the procedural requirements and timelines that apply to your specific situation.
+            </p>
+            <p>
+              We work with individuals from all backgrounds — students, professionals, family members, and long-term residents — to ensure their immigration matters are handled with care, precision, and a thorough understanding of the relevant legal frameworks.
+            </p>
+          </div>
+          <ul class="mt-8 space-y-3">
+            {[
+              'Indefinite Leave to Remain (ILR) applications',
+              'Schengen visa guidance',
+              'Visa extensions and variations',
+              'Family and dependant visas',
+              'Appeals and administrative review',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <svg class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Businesses -->
+        <div>
+          <h2 class="text-3xl font-serif font-bold text-brand-dark mb-6">
+            For Businesses
+          </h2>
+          <div class="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              KILC works with organisations planning UK relocation, managing workforce mobility, and navigating the regulatory frameworks that govern sponsored employment and international transfers. We support businesses at every stage — from initial planning through to ongoing compliance.
+            </p>
+            <p>
+              For companies expanding to the UK, understanding the sponsor licence system, right-to-work obligations, and sector-specific immigration requirements is essential. We help you build compliant recruitment processes and maintain the documentation standards required by UK Visas and Immigration (UKVI).
+            </p>
+            <p>
+              Whether you are a multinational relocating key personnel or a growing business hiring international talent, our advisory services ensure your immigration processes are efficient, compliant, and aligned with your broader business objectives.
+            </p>
+          </div>
+          <ul class="mt-8 space-y-3">
+            {[
+              'Sponsor licence applications and management',
+              'Skilled Worker visa sponsorship',
+              'Global Business Mobility routes',
+              'Right-to-work compliance',
+              'Immigration audits and policy reviews',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <svg class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        Need immigration guidance?
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        Contact us to discuss your immigration requirements and how we can support your application.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</PageLayout>

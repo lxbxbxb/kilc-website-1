@@ -1,0 +1,86 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const locale = 'en';
+---
+
+<PageLayout
+  title="Our Services - KILC"
+  description="KILC works across international and UK-facing environments — immigration, criminal justice, education, property, legal consultancy, and company formation."
+>
+  <Hero
+    title="Our Services"
+    subtitle="KILC works across international and UK-facing environments — providing expert consultancy in immigration, criminal justice, education, property investment, legal advisory, and company formation."
+    locale={locale}
+  />
+
+  <!-- Services Grid -->
+  <section class="py-20 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-brand-dark mb-4">
+        Areas of Expertise
+      </h2>
+      <p class="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+        We provide specialist consultancy across six core practice areas, supporting individuals and organisations navigating the UK legal and regulatory landscape.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ServiceCard
+          title="Global Market Navigation"
+          description="Expert advisory and coordinated support to navigate international markets successfully and compliantly. We guide you through risk assessment, regulatory compliance, and business establishment."
+          href="/global-market-navigation"
+          icon="🌐"
+        />
+        <ServiceCard
+          title="Immigration & Mobility"
+          description="Comprehensive immigration support for individuals and businesses, including ILR applications, Schengen visas, workforce mobility, and UK relocation planning."
+          href="/immigration"
+          icon="✈️"
+        />
+        <ServiceCard
+          title="Criminal Justice Systems"
+          description="Specialist guidance through UK criminal justice processes, from understanding procedural pathways to rights frameworks and post-process support."
+          href="/criminal"
+          icon="⚖️"
+        />
+        <ServiceCard
+          title="Student Services"
+          description="Dedicated support for international students adjusting to UK life, covering academic challenges, school enforcement matters, and personal difficulties."
+          href="/student-services"
+          icon="🎓"
+        />
+        <ServiceCard
+          title="Estate & Investment Protection"
+          description="Protecting your UK property investments with guidance on real estate frameworks, acquisition processes, regulatory compliance, and cross-border considerations."
+          href="/estate-investment"
+          icon="🏠"
+        />
+        <ServiceCard
+          title="Company Formation"
+          description="End-to-end support for registering your company in the UK, from entity structuring and Companies House registration to bank account setup."
+          href="/company-formation"
+          icon="🏢"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        Not sure which service you need?
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        Get in touch and our team will help you identify the right support for your situation.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</PageLayout>

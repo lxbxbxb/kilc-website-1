@@ -1,0 +1,86 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const locale = 'en';
+
+const sections = [
+  {
+    title: 'Risk Assessment',
+    description: 'We help you identify and evaluate the legal, regulatory, and operational risks associated with entering the UK market. Our team analyses your business model, target sector, and corporate structure to provide a comprehensive risk profile — enabling informed decision-making before you commit resources.',
+  },
+  {
+    title: 'Regulatory Compliance',
+    description: 'Navigating the UK regulatory environment requires a clear understanding of sector-specific obligations. We guide you through compliance requirements — from data protection (UK GDPR) and anti-money laundering (AML) regulations to employment law and industry-specific licensing — ensuring your operations meet all applicable standards.',
+  },
+  {
+    title: 'Legal Advisory',
+    description: 'Our legal advisory services cover the full spectrum of commercial and corporate law issues relevant to international businesses. Whether you need guidance on entity structuring, intellectual property protection, or shareholder agreements, we provide clear, actionable advice tailored to your circumstances.',
+  },
+  {
+    title: 'Dispute Resolution',
+    description: 'When commercial disputes arise, timely and effective resolution is essential. We support you through negotiation, mediation, and litigation pathways — helping you understand your options, protect your interests, and reach outcomes that minimise disruption to your business.',
+  },
+  {
+    title: 'Contract Draft and Review',
+    description: 'Contracts are the foundation of every business relationship. We draft, review, and negotiate contracts that protect your interests under English law — including commercial agreements, service contracts, joint ventures, and cross-border arrangements with clear, enforceable terms.',
+  },
+  {
+    title: 'Business Establishment',
+    description: 'From company incorporation to opening a UK bank account, we provide end-to-end support for establishing your business presence in the UK. Our team coordinates with Companies House, HMRC, and relevant regulatory bodies to ensure a smooth and compliant setup process.',
+  },
+];
+---
+
+<PageLayout
+  title="Global Market Navigation - KILC"
+  description="Expert advisory and coordinated support to navigate international markets successfully and compliantly."
+>
+  <Hero
+    title="Global Market Navigation"
+    subtitle="Expert advisory and coordinated support to navigate international markets successfully and compliantly."
+    locale={locale}
+  />
+
+  <!-- Services Sections -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto mb-16 text-center">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Entering the UK market presents significant opportunities — and complex regulatory challenges. KILC provides strategic advisory across every stage of your international expansion, helping you make informed decisions and operate with confidence.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+        {sections.map((section) => (
+          <div>
+            <h3 class="text-xl font-serif font-bold text-brand-dark mb-4">
+              {section.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {section.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        Ready to navigate the UK market?
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        Speak with our team to discuss your expansion plans and how we can support your entry into the UK.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</PageLayout>

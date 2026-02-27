@@ -1,0 +1,95 @@
+backend:
+  name: github
+  repo: kilc-uk/kilc-website
+  branch: main
+
+# Editorial workflow — edits create PRs for review before publishing
+publish_mode: editorial_workflow
+
+# Media files stored in the repo
+media_folder: public/images
+public_folder: /images
+
+# Site URL for previews
+site_url: https://kilc.co.uk
+display_url: https://kilc.co.uk
+
+# Locale
+locale: en
+
+collections:
+  # ----- Service Pages (EN) -----
+  - name: services-en
+    label: "Services (English)"
+    folder: src/content/services/en
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string }
+      - { label: Icon, name: icon, widget: string, required: false }
+      - { label: Display Order, name: order, widget: number, required: false }
+      - { label: Hero Image, name: heroImage, widget: image, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  # ----- Service Pages (ZH) -----
+  - name: services-zh
+    label: "Services (Chinese)"
+    folder: src/content/services/zh
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string }
+      - { label: Icon, name: icon, widget: string, required: false }
+      - { label: Display Order, name: order, widget: number, required: false }
+      - { label: Hero Image, name: heroImage, widget: image, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  # ----- Team Members (EN) -----
+  - name: team-en
+    label: "Team (English)"
+    folder: src/content/team/en
+    create: true
+    extension: md
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Role, name: role, widget: string }
+      - { label: Bio, name: bio, widget: text, required: false }
+      - { label: Display Order, name: order, widget: number, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  # ----- Team Members (ZH) -----
+  - name: team-zh
+    label: "Team (Chinese)"
+    folder: src/content/team/zh
+    create: true
+    extension: md
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Role, name: role, widget: string }
+      - { label: Bio, name: bio, widget: text, required: false }
+      - { label: Display Order, name: order, widget: number, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  # ----- Policy Pages (EN) -----
+  - name: policies-en
+    label: "Policies (English)"
+    folder: src/content/policies/en
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Last Updated, name: lastUpdated, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  # ----- Policy Pages (ZH) -----
+  - name: policies-zh
+    label: "Policies (Chinese)"
+    folder: src/content/policies/zh
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Last Updated, name: lastUpdated, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }

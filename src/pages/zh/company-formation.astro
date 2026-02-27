@@ -1,0 +1,93 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+
+const locale = 'zh';
+
+const steps = [
+  {
+    title: '企业结构建议',
+    description: '就企业结构选择提供指导，综合考虑责任承担、税务安排及运营需求等因素，帮助客户选定最适合的架构形式。',
+  },
+  {
+    title: '公司成立支持',
+    description: '协助完成公司注册流程，并准备及提交至 Companies House 的相关文件，包括公司章程（Articles of Association）及股东协议等。',
+  },
+  {
+    title: '许可与监管指导',
+    description: '就企业在当地政府或监管机构下需获得的各类许可证、执照及批准提供建议，确保企业合法、合规地运营。',
+  },
+  {
+    title: '银行开户协助',
+    description: '协助在英国开设企业银行账户，指导准备所需文件及满足银行要求。',
+  },
+  {
+    title: '税务登记',
+    description: '协助在 HMRC 完成税务登记，包括公司税、增值税（VAT）及 PAYE 等注册事项。',
+  },
+  {
+    title: '持续合规支持',
+    description: '提供持续的公司秘书服务及合规建议，确保企业始终满足 Companies House 及 HMRC 的各项要求。',
+  },
+];
+---
+
+<PageLayout
+  title="公司注册 - KILC"
+  description="KILC 提供企业设立咨询服务，协助客户在英国设立并构建其业务架构。"
+>
+  <Hero
+    title="公司注册"
+    subtitle="为您在英国注册公司提供一站式支持。"
+    locale={locale}
+  />
+
+  <!-- Overview -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-lg text-gray-700 leading-relaxed">
+        我们提供企业设立咨询服务，协助客户在英国及其他国家设立并构建其业务架构。我们的顾问团队提供切实可行、以商业需求为导向的专业建议，并可在必要时与受监管的法律或税务专业人士协调合作，提供正式的法律或税务意见。
+      </p>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="py-20 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">服务内容</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {steps.map((step, index) => (
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white font-semibold text-sm mb-4">
+              {index + 1}
+            </div>
+            <h3 class="text-lg font-serif font-bold text-brand-dark mb-3">
+              {step.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              {step.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        准备好在英国注册公司了吗？
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        联系我们的团队，讨论您的企业设立需求。
+      </p>
+      <a
+        href="/zh/contact-us"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        联系我们
+      </a>
+    </div>
+  </section>
+</PageLayout>

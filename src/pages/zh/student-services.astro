@@ -1,0 +1,99 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+
+const locale = 'zh';
+
+const cards = [
+  {
+    title: '学术挑战',
+    icon: '📚',
+    description: '我们为在英国的国际学生提供专业支持，就学业方面的挑战提供量身定制的指导，包括处理学术表现问题及相关纠纷，帮助学生顺利应对学术压力。',
+  },
+  {
+    title: '学校纪律事务',
+    icon: '🏛️',
+    description: '当教育机构采取纪律行动时，在不熟悉的系统中可能会让人感到不知所措。我们帮助学生了解纪律程序、听证会流程及机构决定的后果，为您提供清晰的建议和支持。',
+  },
+  {
+    title: '生活困难支持',
+    icon: '🤝',
+    description: '我们为在英国面临生活困难的学生提供全面的法律协助，包括住宿问题、签证疑虑、经济压力等，帮助他们克服障碍，专注于学业与身心健康。',
+  },
+];
+---
+
+<PageLayout
+  title="留学服务 - KILC"
+  description="为在英国的国际学生提供专属支持 — 学术挑战、学校纪律事务及生活困难。"
+>
+  <Hero
+    title="留学服务"
+    subtitle="为在英国的国际学生提供专属支持。"
+    locale={locale}
+  />
+
+  <!-- Introduction -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          我们深知在一个新的国家生活与适应并不容易。KILC 为在英国的国际学生提供战略性咨询与协调支持，协助他们应对学术挑战、移民问题以及生活中意想不到的困难，确保其在海外获得顺利而成功的求学体验。
+        </p>
+      </div>
+
+      <!-- Service Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {cards.map((card) => (
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-6">
+              <span class="text-3xl">{card.icon}</span>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-brand-dark mb-4">
+              {card.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              {card.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Guardian Shield Banner -->
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-4">
+        KILC Guardian Shield
+      </h2>
+      <p class="text-gray-600 leading-relaxed mb-8">
+        如需全面保障，请了解我们的 Guardian Shield 护航计划 — 一项专为国际学生及其家庭量身打造的法律保障服务。
+      </p>
+      <a
+        href="/zh/programme"
+        class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
+      >
+        了解 Guardian Shield
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        作为国际学生需要帮助？
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        联系我们，讨论您的情况以及我们如何提供帮助。
+      </p>
+      <a
+        href="/zh/contact-us"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        联系我们
+      </a>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,96 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+import TeamMember from '../components/TeamMember.astro';
+
+const locale = 'en';
+
+const team = [
+  {
+    name: 'Dr. Xuebin Li',
+    role: 'Managing Partner',
+    bio: 'With nearly 30 years of experience in financial crime compliance, cross-border legal affairs, and judicial cooperation, Xuebin has served 15 years at the UK Ministry of Justice and five years as a senior overseas legal advisor to Sinopec. He holds a PhD in Criminology from the UK, with doctoral research focused on money laundering. Xuebin has taught law at BPP University Law School and the University of Cambridge, published multiple papers, and delivered keynote speeches at major global conferences on economic crime.',
+  },
+  {
+    name: 'Bo Xu',
+    role: 'Managing Director',
+    bio: 'Bo has nearly 30 years of professional experience across government, education, investment, and international consultancy. Previous roles include Operations Director at Sun UK Consulting (Dubai), Founder of Sun UK Education and SunUK Holdings, Co-Founder of New Oriental London, and Lecturer in Law at BPP University Law School. She holds postgraduate degrees in macroeconomics and financial regulation.',
+  },
+  {
+    name: 'Lisa Mao',
+    role: 'Senior Management Team Co-ordinator',
+    bio: 'Lisa has developed a broad range of experience across corporate, family, mental health, and compliance. Her background includes supporting cross-border transactions, assisting with high-profile compliance and asset recovery cases, and advising clients under the Mental Health Act. She contributes to contract review, legal operations, and the coordination of client matters across multiple jurisdictions.',
+  },
+  {
+    name: 'Marcelo Shao',
+    role: 'Legal Tech Associate & AI Programme Lead',
+    bio: 'Marcelo leads KILC\'s AI initiatives. He holds a Master\'s degree in Artificial Intelligence (Applied Machine Learning) from Imperial College London, complemented by prior studies at UCL. He supports the team with legal technology strategy, process optimisation, AI-driven tools, and cross-border insights.',
+  },
+  {
+    name: 'Yiran Xu',
+    role: 'Market Coordinator',
+    bio: 'Yiran holds an MEng in Engineering from UCL. She manages cross-border communication, client case follow-up, stakeholder progress updates, and community engagement. Her engineering expertise supports the technical aspects of the firm\'s legal practice, including AI integration.',
+  },
+];
+
+const advisors = [
+  { name: 'Mr Qihuai Zhang', role: 'Honorary Senior Legal Advisor', org: 'Founder and Managing Director, Lan Peng Law Firm, China' },
+  { name: 'Mr Chenyang Hu', role: 'Honorary Senior Legal Advisor', org: 'Managing Director, Jingshi Law Firm, Shanghai' },
+  { name: 'Mr Qingyun Zhang', role: 'Honorary Senior Legal Advisor', org: 'Managing Director, Taihetai Law Firm, Hangzhou' },
+  { name: 'Mr Xide Fan', role: 'Honorary Senior Legal Advisor', org: 'Managing Partner, Hanyao Law Firm, Shandong' },
+  { name: 'Mr Ning Gu', role: 'Honorary Chinese Compliance Specialist', org: 'Director of Compliance (Criminal Matters), Yingke Law Firm, Shenzhen' },
+];
+---
+
+<PageLayout
+  title="Our Team - KILC"
+  description="Meet the KILC team — experienced professionals in international law, compliance, and cross-border advisory."
+>
+  <Hero
+    title="Our Team"
+    subtitle="Experienced professionals dedicated to your success"
+    backgroundImage="/images/services/business-meeting.jpg"
+    locale={locale}
+  />
+
+  <!-- Core Team -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">Leadership Team</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {team.map((member) => (
+          <TeamMember name={member.name} role={member.role} bio={member.bio} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Honorary Advisors -->
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">Honorary Advisors</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {advisors.map((advisor) => (
+          <div class="bg-white rounded-lg p-5 shadow-sm border border-gray-100">
+            <h3 class="text-lg font-serif font-semibold text-brand-dark">{advisor.name}</h3>
+            <p class="text-brand-primary text-sm font-medium mb-2">{advisor.role}</p>
+            <p class="text-gray-500 text-sm">{advisor.org}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Join CTA -->
+  <section class="py-16 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-4">Join Our Team</h2>
+      <p class="text-lg text-white/90 mb-6">
+        We're always looking for talented individuals to join our growing international practice.
+      </p>
+      <a href="/careers" class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+        View Careers
+      </a>
+    </div>
+  </section>
+</PageLayout>

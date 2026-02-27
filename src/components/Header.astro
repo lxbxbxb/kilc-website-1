@@ -1,0 +1,157 @@
+---
+import LanguageToggle from './LanguageToggle.astro';
+import { t, getAlternateUrl } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: t(locale, 'nav.home'), href: locale === 'zh' ? '/zh' : '/' },
+  { label: t(locale, 'nav.about'), href: locale === 'zh' ? '/zh/about' : '/about' },
+  { label: t(locale, 'nav.people'), href: locale === 'zh' ? '/zh/people' : '/people' },
+  {
+    label: t(locale, 'nav.services'),
+    href: locale === 'zh' ? '/zh/services' : '/services',
+    children: [
+      { label: t(locale, 'nav.globalMarket'), href: locale === 'zh' ? '/zh/global-market-strategy' : '/global-market-navigation' },
+      { label: t(locale, 'nav.immigration'), href: locale === 'zh' ? '/zh/immigration-advisory' : '/immigration' },
+      { label: t(locale, 'nav.criminal'), href: locale === 'zh' ? '/zh/criminal-defence' : '/criminal' },
+      { label: t(locale, 'nav.studentServices'), href: locale === 'zh' ? '/zh/student-services' : '/student-services' },
+      { label: t(locale, 'nav.estateInvestment'), href: locale === 'zh' ? '/zh/real-estate-investment-protection' : '/estate-investment' },
+    ],
+  },
+  { label: t(locale, 'nav.programme'), href: locale === 'zh' ? '/zh/programme' : '/programme' },
+  { label: t(locale, 'nav.careers'), href: locale === 'zh' ? '/zh/careers' : '/careers' },
+  { label: t(locale, 'nav.contact'), href: locale === 'zh' ? '/zh/contact-us' : '/contact' },
+  { label: t(locale, 'nav.companyFormation'), href: locale === 'zh' ? '/zh/company-formation' : '/company-formation' },
+];
+
+const alternatePath = getAlternateUrl(currentPath, locale);
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href={locale === 'zh' ? '/zh' : '/'} class="flex items-center gap-2">
+        <img src="/images/general/kilc-logo.jpg" alt="KILC" class="h-10 w-auto" />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-1">
+        {navItems.map((item) => (
+          item.children ? (
+            <div class="relative group">
+              <a
+                href={item.href}
+                class:list={[
+                  'px-3 py-2 text-sm font-medium rounded-md transition-colors inline-flex items-center gap-1',
+                  currentPath === item.href
+                    ? 'text-brand-primary'
+                    : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50',
+                ]}
+              >
+                {item.label}
+                <svg class="w-3 h-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[220px]">
+                  {item.children.map((child) => (
+                    <a
+                      href={child.href}
+                      class:list={[
+                        'block px-4 py-2 text-sm transition-colors',
+                        currentPath === child.href
+                          ? 'text-brand-primary bg-brand-light'
+                          : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50',
+                      ]}
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a
+              href={item.href}
+              class:list={[
+                'px-3 py-2 text-sm font-medium rounded-md transition-colors',
+                currentPath === item.href || (item.href !== '/' && item.href !== '/zh' && currentPath.startsWith(item.href))
+                  ? 'text-brand-primary'
+                  : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50',
+              ]}
+            >
+              {item.label}
+            </a>
+          )
+        ))}
+        <LanguageToggle locale={locale} alternatePath={alternatePath} />
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <LanguageToggle locale={locale} alternatePath={alternatePath} />
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="p-2 rounded-md text-gray-700 hover:text-brand-primary hover:bg-gray-50"
+          aria-label="Open menu"
+        >
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+    <nav class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+      {navItems.map((item) => (
+        <>
+          <a
+            href={item.href}
+            class:list={[
+              'block px-3 py-2 text-base font-medium rounded-md transition-colors',
+              currentPath === item.href
+                ? 'text-brand-primary bg-brand-light'
+                : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50',
+            ]}
+          >
+            {item.label}
+          </a>
+          {item.children && item.children.map((child) => (
+            <a
+              href={child.href}
+              class:list={[
+                'block pl-6 pr-3 py-2 text-sm rounded-md transition-colors',
+                currentPath === child.href
+                  ? 'text-brand-primary bg-brand-light'
+                  : 'text-gray-600 hover:text-brand-primary hover:bg-gray-50',
+              ]}
+            >
+              {child.label}
+            </a>
+          ))}
+        </>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

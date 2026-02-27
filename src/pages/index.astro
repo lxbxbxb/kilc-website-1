@@ -1,0 +1,96 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+import { t } from '../i18n/utils';
+
+const locale = 'en';
+---
+
+<PageLayout
+  title={t(locale, 'site.title')}
+  description={t(locale, 'site.description')}
+>
+  <Hero
+    title="Keane International Legal Consultancy"
+    subtitle="Your trusted partner for UK business expansion"
+    cta={{ text: t(locale, 'hero.cta'), href: '/contact' }}
+    locale={locale}
+  />
+
+  <!-- Services Overview -->
+  <section class="py-20 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-brand-dark mb-12">
+        Our Services
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <a href="/global-market-navigation" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            Global Market Navigation
+          </h3>
+          <p class="text-gray-600">
+            Strategic guidance for entering and navigating the UK market.
+          </p>
+        </a>
+        <a href="/immigration" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            Immigration
+          </h3>
+          <p class="text-gray-600">
+            Expert visa and immigration advisory for individuals and businesses.
+          </p>
+        </a>
+        <a href="/criminal" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            Criminal Defence
+          </h3>
+          <p class="text-gray-600">
+            Experienced criminal defence representation.
+          </p>
+        </a>
+        <a href="/student-services" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            Student Services
+          </h3>
+          <p class="text-gray-600">
+            Comprehensive support for international students in the UK.
+          </p>
+        </a>
+        <a href="/estate-investment" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            Estate & Investment
+          </h3>
+          <p class="text-gray-600">
+            Protection for your real estate investments in the UK.
+          </p>
+        </a>
+        <a href="/company-formation" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            Company Formation
+          </h3>
+          <p class="text-gray-600">
+            End-to-end support for registering your company in the UK.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        Ready to expand your business to the UK?
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        Get in touch with our team of legal experts today.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</PageLayout>

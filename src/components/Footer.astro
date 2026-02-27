@@ -1,0 +1,99 @@
+---
+import { t } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const prefix = locale === 'zh' ? '/zh' : '';
+
+const policyLinks = [
+  { label: t(locale, 'footer.privacy'), href: `${prefix}/privacy-policy` },
+  { label: t(locale, 'footer.cookies'), href: `${prefix}/cookie-policy` },
+  { label: t(locale, 'footer.aml'), href: `${prefix}/aml-policy` },
+  { label: t(locale, 'footer.ctf'), href: `${prefix}/counter-terrorism-financing` },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-brand-dark text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Company Info -->
+      <div>
+        <img src="/images/general/kilc-logo.jpg" alt="KILC" class="h-12 w-auto mb-4 brightness-0 invert" />
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Keane International Legal Consultancy
+        </p>
+        <p class="text-gray-400 text-sm mt-2">
+          {t(locale, 'footer.address')}
+        </p>
+        <a href="mailto:info@kilc.co.uk" class="text-brand-primary hover:text-brand-accent text-sm mt-1 inline-block transition-colors">
+          {t(locale, 'footer.email')}
+        </a>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">
+          {locale === 'zh' ? '快速链接' : 'Quick Links'}
+        </h3>
+        <ul class="space-y-2">
+          <li><a href={`${prefix}/about`} class="text-gray-300 hover:text-white text-sm transition-colors">{t(locale, 'nav.about')}</a></li>
+          <li><a href={`${prefix}/services`} class="text-gray-300 hover:text-white text-sm transition-colors">{t(locale, 'nav.services')}</a></li>
+          <li><a href={`${prefix}/fees`} class="text-gray-300 hover:text-white text-sm transition-colors">{t(locale, 'nav.fees')}</a></li>
+          <li><a href={locale === 'zh' ? '/zh/contact-us' : '/contact'} class="text-gray-300 hover:text-white text-sm transition-colors">{t(locale, 'nav.contact')}</a></li>
+          <li>
+            <a href="https://platform.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white text-sm transition-colors">
+              {t(locale, 'nav.platform')} &rarr;
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Policies & WeChat -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">
+          {locale === 'zh' ? '法律信息' : 'Legal'}
+        </h3>
+        <ul class="space-y-2">
+          {policyLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-gray-300 hover:text-white text-sm transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <!-- WeChat QR -->
+        <div class="mt-6">
+          <p class="text-sm text-gray-400 mb-2">
+            {locale === 'zh' ? '微信联系' : 'WeChat'}
+          </p>
+          <img
+            src="/images/team/keane-wechat-code.jpg"
+            alt="WeChat QR Code"
+            class="w-24 h-24 rounded-lg"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Partner Logos & Copyright -->
+    <div class="mt-12 pt-8 border-t border-white/10">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <img src="/images/general/british-council-logo.png" alt="British Council" class="h-8 w-auto brightness-0 invert opacity-60" loading="lazy" />
+        </div>
+        <p class="text-gray-400 text-sm">
+          &copy; {year} KILC. {t(locale, 'footer.rights')}
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

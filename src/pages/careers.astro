@@ -1,0 +1,146 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const locale = 'en';
+---
+
+<PageLayout
+  title="Careers - KILC"
+  description="Join Keane International Legal Consultancy. Current openings for Student Brand Ambassadors and Newly Qualified Solicitors."
+>
+  <Hero
+    title="Careers"
+    subtitle="Join our team and make a difference in international legal consultancy."
+    locale={locale}
+  />
+
+  <!-- Introduction -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          At KILC, we are building a team of dedicated professionals who are passionate about helping international individuals and businesses navigate the UK legal landscape. We value diverse perspectives, cross-cultural understanding, and a commitment to delivering exceptional client service. If you share our mission, we would love to hear from you.
+        </p>
+      </div>
+
+      <!-- Job Listings -->
+      <div class="space-y-8 max-w-4xl mx-auto">
+        <!-- Student Brand Ambassadors -->
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <h3 class="text-2xl font-serif font-bold text-brand-dark">
+              Student Brand Ambassadors
+            </h3>
+            <span class="inline-block bg-brand-primary/10 text-brand-primary text-xs font-semibold px-3 py-1 rounded-full">
+              Part-time
+            </span>
+          </div>
+          <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-6">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              UK Universities
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Part-time / Flexible
+            </span>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            We are looking for enthusiastic and well-connected university students to represent KILC on campus. As a Student Brand Ambassador, you will help raise awareness of our services among the international student community, organise events, and serve as a bridge between KILC and students who may benefit from our support. This is an excellent opportunity to gain professional experience, develop your network, and contribute to a meaningful mission.
+          </p>
+          <h4 class="font-semibold text-brand-dark mb-3">Requirements:</h4>
+          <ul class="space-y-2 text-gray-600 text-sm mb-6">
+            {[
+              'Currently enrolled at a UK university',
+              'Strong communication and interpersonal skills',
+              'Active involvement in student communities',
+              'Interest in legal services, immigration, or international affairs',
+              'Fluency in English and Mandarin preferred',
+            ].map((req) => (
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-brand-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {req}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Newly Qualified Solicitors -->
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <h3 class="text-2xl font-serif font-bold text-brand-dark">
+              Newly Qualified Solicitors
+            </h3>
+            <span class="inline-block bg-brand-primary/10 text-brand-primary text-xs font-semibold px-3 py-1 rounded-full">
+              Full-time
+            </span>
+          </div>
+          <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-6">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              London / Hybrid
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Full-time
+            </span>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            We are seeking ambitious, newly qualified solicitors to join our growing team. You will work across a range of practice areas including immigration, corporate, and commercial law — supporting international clients with their UK legal needs. This role offers significant responsibility from day one and the opportunity to build expertise in cross-border legal matters.
+          </p>
+          <h4 class="font-semibold text-brand-dark mb-3">Requirements:</h4>
+          <ul class="space-y-2 text-gray-600 text-sm mb-6">
+            {[
+              'Qualified solicitor (SQE or LPC route)',
+              'Strong academic record',
+              'Genuine interest in international and cross-border legal work',
+              'Excellent written and verbal communication skills',
+              'Mandarin language skills desirable but not essential',
+            ].map((req) => (
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-brand-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {req}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Apply Section -->
+      <div class="max-w-4xl mx-auto mt-16 text-center">
+        <div class="bg-brand-light rounded-lg p-8">
+          <h2 class="text-2xl font-serif font-bold text-brand-dark mb-4">
+            How to Apply
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            To apply for any of the above positions, please send your CV and a brief covering letter to:
+          </p>
+          <a
+            href="mailto:careers@kilc.co.uk"
+            class="inline-block text-xl font-semibold text-brand-primary hover:text-brand-secondary transition-colors"
+          >
+            careers@kilc.co.uk
+          </a>
+          <p class="text-gray-500 text-sm mt-4">
+            We review all applications carefully and will respond to shortlisted candidates within two weeks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

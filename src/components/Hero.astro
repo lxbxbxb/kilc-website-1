@@ -1,0 +1,50 @@
+---
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  backgroundImage?: string;
+  cta?: { text: string; href: string };
+  locale: Locale;
+}
+
+const {
+  title,
+  subtitle,
+  backgroundImage = '/images/hero/aerial-view-london-skyline.jpg',
+  cta,
+  locale,
+} = Astro.props;
+---
+
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+  <!-- Background image -->
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={`background-image: url('${backgroundImage}');`}
+  >
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/80 to-brand-secondary/60"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center text-white">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6">
+      {title}
+    </h1>
+    {subtitle && (
+      <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-8">
+        {subtitle}
+      </p>
+    )}
+    {cta && (
+      <a
+        href={cta.href}
+        class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
+      >
+        {cta.text}
+      </a>
+    )}
+  </div>
+</section>

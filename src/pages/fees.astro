@@ -1,0 +1,118 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const locale = 'en';
+
+const feeStructures = [
+  {
+    title: 'Hourly Consulting Rates',
+    icon: '⏱️',
+    description: 'For matters that require flexible, ongoing engagement, we offer transparent hourly consulting rates. This structure is ideal for advisory work, research, and consultations where the scope may evolve. We provide clear estimates upfront and regular updates on time spent, so there are no surprises.',
+  },
+  {
+    title: 'Fixed Fee Services',
+    icon: '📋',
+    description: 'For well-defined matters with a clear scope — such as company formation, visa applications, or contract review — we offer fixed fee arrangements. You know exactly what you will pay before we begin, giving you certainty and control over your legal costs.',
+  },
+  {
+    title: 'Retainer Agreements',
+    icon: '🤝',
+    description: 'For businesses and individuals who require regular legal support, our retainer agreements provide ongoing access to our team at a predictable monthly cost. Retainers are tailored to your needs and ensure priority attention whenever you require guidance.',
+  },
+  {
+    title: 'Subscription-Based Fees',
+    icon: '📊',
+    description: 'Our subscription-based model provides continuous access to a defined set of legal services for a regular fee. This is particularly suitable for businesses that need ongoing compliance monitoring, regulatory updates, and access to document templates and advisory resources.',
+  },
+];
+---
+
+<PageLayout
+  title="Expert Consultancy Services & Fees - KILC"
+  description="Flexible fee structures for expert legal consultancy — hourly rates, fixed fees, retainer agreements, and subscription-based services."
+>
+  <Hero
+    title="Expert Consultancy Services"
+    subtitle="Transparent and flexible fee structures designed to match your needs."
+    locale={locale}
+  />
+
+  <!-- Introduction -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          At KILC, we believe that access to expert legal guidance should be straightforward and transparent. We offer flexible fee structures to suit different needs and circumstances — whether you require one-off advice, ongoing support, or a comprehensive service package. All fees are discussed and agreed before work begins.
+        </p>
+      </div>
+
+      <!-- Fee Structure Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {feeStructures.map((fee) => (
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-6">
+              <span class="text-3xl">{fee.icon}</span>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-brand-dark mb-4">
+              {fee.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {fee.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Information -->
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-serif font-bold text-brand-dark text-center mb-8">
+        What to Expect
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white font-semibold mx-auto mb-4">
+            1
+          </div>
+          <h3 class="font-serif font-bold text-brand-dark mb-2">Initial Consultation</h3>
+          <p class="text-gray-600 text-sm">We discuss your needs and assess how we can help, with no obligation.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white font-semibold mx-auto mb-4">
+            2
+          </div>
+          <h3 class="font-serif font-bold text-brand-dark mb-2">Clear Proposal</h3>
+          <p class="text-gray-600 text-sm">We provide a detailed scope of work and transparent fee arrangement before any work begins.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white font-semibold mx-auto mb-4">
+            3
+          </div>
+          <h3 class="font-serif font-bold text-brand-dark mb-2">Expert Delivery</h3>
+          <p class="text-gray-600 text-sm">We deliver the agreed services with regular updates and open communication throughout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        Ready to discuss your requirements?
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        Contact us for a no-obligation initial consultation to discuss your needs and the fee structure that works best for you.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</PageLayout>

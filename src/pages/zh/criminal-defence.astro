@@ -1,0 +1,97 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+
+const locale = 'zh';
+
+const sections = [
+  {
+    title: '案件分析',
+    description: '审阅指控、警方报告、证据及证人陈述，提供基于事实的案件评估。与客户会面，了解其对事件的描述，并讨论可能的法律选项。向客户解释相关法律程序、潜在刑罚及案件所涉及的关键步骤。',
+  },
+  {
+    title: '策略制定',
+    description: '根据案件事实、相关判例及适用法律，提供量身定制的辩护策略指导。就如何识别控方案件中的矛盾、错误或程序瑕疵提出建议。协助证人准备陈述，确保其证词有效支持整体辩护策略。',
+  },
+  {
+    title: '协商与认罪建议',
+    description: '指导客户与检方就认罪方案、可能的减轻指控或替代性处罚进行沟通。为客户分析接受认罪协议或选择出庭审判的风险与收益。',
+  },
+  {
+    title: '调研与协调',
+    description: '开展相关法律调研，包括查阅法规、判例及相关法律依据，以支持辩护论点。在必要时协调调查人员或专家，收集额外证据以强化客户立场。',
+  },
+  {
+    title: '维护客户权利',
+    description: '提供指导，帮助客户了解并维护其法律权利，包括防止非法搜查、自证其罪或受到胁迫。就确保程序正义、合理保释条件及适度量刑等方面提供建议，保障客户获得公平对待。',
+  },
+  {
+    title: '客户支持',
+    description: '在整个法律程序中为客户及其家属提供咨询支持与必要的安抚。对客户案件及相关信息严格保密，确保隐私与权益不受侵犯。',
+  },
+  {
+    title: '定罪后的指导',
+    description: '就上诉或对定罪及量刑进行复核的可能性提供战略性建议。在适用情况下，为客户提供关于清除犯罪记录选项的指导。协调对假释或缓刑听证会的支持，确保客户充分了解自身权利与可行选择。',
+  },
+];
+---
+
+<PageLayout
+  title="刑事辩护 - KILC"
+  description="KILC 在刑事相关事务中提供战略性指导与协调支持，协助客户了解并维护自身权利。"
+>
+  <Hero
+    title="刑事辩护"
+    subtitle="在英国刑事司法系统中提供专业指导。"
+    locale={locale}
+  />
+
+  <!-- Overview -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto mb-16 text-center">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          KILC 在刑事相关事务中提供战略性指导与协调支持，协助客户了解并维护自身权利，并在必要时与具备资质的法律专业人士合作，为客户提供全面保障。
+        </p>
+      </div>
+
+      <div class="space-y-12 max-w-4xl mx-auto">
+        {sections.map((section, index) => (
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white font-semibold text-sm">
+                {index + 1}
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-serif font-bold text-brand-dark mb-3">
+                {section.title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                {section.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        需要刑事事务方面的支持？
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        保密联系我们，讨论您的情况以及我们如何提供帮助。
+      </p>
+      <a
+        href="/zh/contact-us"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        联系我们
+      </a>
+    </div>
+  </section>
+</PageLayout>

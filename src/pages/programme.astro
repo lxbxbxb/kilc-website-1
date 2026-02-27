@@ -1,0 +1,109 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const locale = 'en';
+
+const coverageItems = [
+  { title: 'Visa & Immigration', description: 'Guidance on visa compliance, extensions, and immigration matters throughout your time in the UK.' },
+  { title: 'Fraud Protection', description: 'Support in identifying and responding to fraud, scams, and financial exploitation targeting international students.' },
+  { title: 'Cyber Safety', description: 'Advice on online safety, data protection, and responding to cyberbullying, harassment, or digital threats.' },
+  { title: 'Mental Health', description: 'Access to resources and guidance for mental health challenges, including signposting to appropriate professional support.' },
+  { title: 'Personal Protection', description: 'Assistance with personal safety concerns, harassment, discrimination, and safeguarding matters.' },
+  { title: 'Housing', description: 'Support with housing disputes, tenancy rights, deposit protection, and issues with landlords or accommodation providers.' },
+  { title: 'Academic Issues', description: 'Guidance on academic misconduct allegations, grade appeals, disciplinary proceedings, and institutional disputes.' },
+  { title: 'Employment Rights', description: 'Advice on part-time employment rights, workplace disputes, unpaid wages, and ensuring compliance with student visa work restrictions.' },
+  { title: 'Consumer Matters', description: 'Support with consumer disputes, contract issues, and understanding your rights as a consumer in the UK.' },
+  { title: 'Crisis Support', description: 'Immediate guidance and coordination during emergencies — including legal crises, safety concerns, and urgent situations requiring rapid response.' },
+];
+---
+
+<PageLayout
+  title="KILC Guardian Shield - Legal Protection for International Students"
+  description="Comprehensive legal protection package for international students in the UK — covering visa, fraud protection, cyber safety, mental health, housing, and more."
+>
+  <Hero
+    title="KILC Guardian Shield"
+    subtitle="Comprehensive legal protection designed for international students and their families."
+    locale={locale}
+  />
+
+  <!-- Introduction -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          The KILC Guardian Shield is a comprehensive legal protection package designed specifically for international students studying in the UK. It provides ongoing access to expert guidance and support across the full range of challenges that students may encounter — giving both students and their families peace of mind throughout their time in the UK.
+        </p>
+      </div>
+
+      <!-- For Parents / For Students -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+          <div class="w-14 h-14 rounded-lg bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-6">
+            <span class="text-3xl">👨‍👩‍👧</span>
+          </div>
+          <h2 class="text-2xl font-serif font-bold text-brand-dark mb-4">
+            For Parents
+          </h2>
+          <p class="text-gray-600 leading-relaxed">
+            Sending your child to study abroad is a significant decision. The Guardian Shield gives you confidence that your child has access to expert legal support whenever they need it. You receive regular updates and can rest assured that a dedicated team is available to help navigate any difficulties that arise — from everyday challenges to urgent situations.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+          <div class="w-14 h-14 rounded-lg bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-6">
+            <span class="text-3xl">🎓</span>
+          </div>
+          <h2 class="text-2xl font-serif font-bold text-brand-dark mb-4">
+            For Students
+          </h2>
+          <p class="text-gray-600 leading-relaxed">
+            Studying in a new country brings exciting opportunities and real challenges. The Guardian Shield ensures you always have somewhere to turn when things get difficult. Whether it is a visa question, a housing dispute, an academic issue, or a personal safety concern — our team is here to provide clear guidance and practical support so you can focus on your studies.
+          </p>
+        </div>
+      </div>
+
+      <!-- Service Coverage -->
+      <h2 class="text-3xl font-serif font-bold text-center text-brand-dark mb-12">
+        Service Coverage
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {coverageItems.map((item, index) => (
+          <div class="flex gap-4 p-4 bg-white rounded-lg border border-gray-100 hover:shadow-sm transition-shadow">
+            <div class="flex-shrink-0">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white text-sm font-semibold">
+                {index + 1}
+              </div>
+            </div>
+            <div>
+              <h3 class="font-serif font-bold text-brand-dark mb-1">
+                {item.title}
+              </h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        Protect your child's journey in the UK
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        Contact us to learn more about the Guardian Shield programme and how it can provide peace of mind for your family.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        Enquire Now
+      </a>
+    </div>
+  </section>
+</PageLayout>

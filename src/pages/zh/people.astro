@@ -1,0 +1,90 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import TeamMember from '../../components/TeamMember.astro';
+
+const locale = 'zh';
+
+const team = [
+  {
+    name: '李学斌',
+    role: '合伙人',
+    bio: '拥有近 30 年金融犯罪合规、跨境法律事务及司法合作领域的经验。曾在英国司法部任职 15 年，并担任中石化海外高级法律顾问 5 年，同时入选中石化法律专家库。拥有英国犯罪学博士学位，博士研究聚焦洗钱问题，对非法资产隐藏机制进行深入分析，培养了在犯罪收益追踪方面的独特专业能力。曾在 BPP 法学院和剑桥大学教授法律课程，在国际知名出版社发表多篇论文，并多次受邀组织全球重大经济犯罪会议并讲话。',
+  },
+  {
+    name: 'Alexander Morries',
+    role: '法律总监',
+    bio: 'Alexander Morries 是一位英国执业律师（Solicitor），拥有丰富的高复杂度、高价值交易经验。曾就职于全球最大的国际律师事务所，主导过数十亿美元的企业房地产收购、跨境房地产融资以及大型数据中心交易。他为私募股权基金、机构投资者、银行和跨国企业提供全链条房地产与融资法律服务，以卓越的专业能力和敏锐的商业洞察著称。',
+  },
+  {
+    name: '许波',
+    role: '运营总监',
+    bio: '拥有近 30 年政府、教育、投资及国际咨询领域的专业经验。曾任 Sun UK Education & SunUK Holdings 创始人兼首席执行官、Sun UK Consulting（迪拜）运营总监、新东方教育集团伦敦分公司联合创始人、英国司法部高级行政官、BPP 法学院金融法律与法规讲师。拥有宏观经济与金融监管方向的研究生学位，同时是注册审计师与认证网络工程师。',
+  },
+  {
+    name: 'Lisa Mao',
+    role: '高级管理团队协调员',
+    bio: 'Lisa 拥有横跨公司法、家庭法、心理健康及合规领域的多元经验。曾支持跨境交易、协助重大合规与资产追缴案件，并为《精神健康法》项下的客户提供咨询服务。她目前负责合同审阅、法律运营管理，以及协调多个司法辖区的客户事务。',
+  },
+];
+
+const advisors = [
+  { name: '张起淮', role: '荣誉高级法律顾问', org: '中国蓝鹏律师事务所创始人兼主任' },
+  { name: '胡晨阳', role: '荣誉高级法律顾问', org: '京师律师事务所上海管理主任' },
+  { name: '张青云', role: '荣誉高级法律顾问', org: '泰和泰律师事务所杭州管理主任' },
+  { name: '顾宁', role: '荣誉中国合规专家', org: '盈科律师事务所深圳刑事合规负责人、管理委员会委员' },
+];
+---
+
+<PageLayout
+  title="团队成员 - KILC"
+  description="认识 KILC 团队 — 在国际法律、合规及跨境咨询领域拥有丰富经验的专业人士。"
+>
+  <Hero
+    title="我们的团队"
+    subtitle="经验丰富的专业人士，致力于您的成功"
+    backgroundImage="/images/services/business-meeting.jpg"
+    locale={locale}
+  />
+
+  <!-- Core Team -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">高级团队</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {team.map((member) => (
+          <TeamMember name={member.name} role={member.role} bio={member.bio} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Honorary Advisors -->
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">荣誉顾问</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {advisors.map((advisor) => (
+          <div class="bg-white rounded-lg p-5 shadow-sm border border-gray-100">
+            <h3 class="text-lg font-serif font-semibold text-brand-dark">{advisor.name}</h3>
+            <p class="text-brand-primary text-sm font-medium mb-2">{advisor.role}</p>
+            <p class="text-gray-500 text-sm">{advisor.org}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Join CTA -->
+  <section class="py-16 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-4">加入我们的团队</h2>
+      <p class="text-lg text-white/90 mb-6">
+        我们始终欢迎有才华的人士加入我们不断壮大的国际团队。
+      </p>
+      <a href="/zh/careers" class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+        查看职位
+      </a>
+    </div>
+  </section>
+</PageLayout>

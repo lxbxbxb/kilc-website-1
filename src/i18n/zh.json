@@ -1,0 +1,54 @@
+{
+  "site": {
+    "title": "KILC - 基恩国际法律咨询",
+    "description": "总部位于英国的法律咨询公司，帮助中国企业拓展英国市场"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "people": "团队成员",
+    "services": "服务",
+    "globalMarket": "全球市场导航",
+    "immigration": "移民咨询",
+    "criminal": "刑事辩护",
+    "studentServices": "留学服务",
+    "estateInvestment": "房产与投资保护",
+    "fees": "费用",
+    "programme": "护航计划",
+    "careers": "职业机会",
+    "contact": "联系我们",
+    "companyFormation": "公司注册",
+    "platform": "客户平台"
+  },
+  "hero": {
+    "cta": "立即开始",
+    "learnMore": "了解更多"
+  },
+  "contact": {
+    "title": "联系我们",
+    "name": "姓名",
+    "email": "电子邮件",
+    "message": "留言",
+    "send": "发送消息",
+    "success": "您的消息已成功发送。",
+    "error": "发送消息时出错，请重试。"
+  },
+  "footer": {
+    "address": "128 City Road, London EC1V 2NX",
+    "email": "info@kilc.co.uk",
+    "rights": "版权所有。",
+    "privacy": "隐私政策",
+    "cookies": "Cookie政策",
+    "aml": "反洗钱政策",
+    "ctf": "反恐融资政策"
+  },
+  "chat": {
+    "title": "在线咨询",
+    "placeholder": "输入您的消息...",
+    "send": "发送"
+  },
+  "language": {
+    "en": "EN",
+    "zh": "中文"
+  }
+}

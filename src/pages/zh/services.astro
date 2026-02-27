@@ -1,0 +1,86 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+
+const locale = 'zh';
+---
+
+<PageLayout
+  title="我们的服务 - KILC"
+  description="KILC 提供全面的法律咨询服务，涵盖移民咨询、刑事辩护、学生支持、房产投资、法律顾问及公司注册等领域。"
+>
+  <Hero
+    title="我们的服务"
+    subtitle="KILC 提供战略性咨询与协调服务，涵盖移民、刑事事务、教育、房产投资、法律顾问及公司注册等领域。"
+    locale={locale}
+  />
+
+  <!-- Services Grid -->
+  <section class="py-20 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-brand-dark mb-4">
+        专业领域
+      </h2>
+      <p class="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+        我们在六大核心领域提供专业咨询服务，支持个人和组织应对英国法律与监管环境。
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ServiceCard
+          title="全球市场导航"
+          description="提供专业咨询与协调支持，协助企业成功且合规地进入并拓展国际市场。我们为您的风险评估、监管合规及企业设立提供全方位指导。"
+          href="/zh/global-market-strategy"
+          icon="🌐"
+        />
+        <ServiceCard
+          title="移民咨询"
+          description="为个人和企业提供全面的移民支持，涵盖永居申请、签证办理、劳动力流动及英国迁移规划。"
+          href="/zh/immigration-advisory"
+          icon="✈️"
+        />
+        <ServiceCard
+          title="刑事辩护"
+          description="在英国刑事司法程序中提供专业指导，从了解程序路径到权利框架及后续支持。"
+          href="/zh/criminal-defence"
+          icon="⚖️"
+        />
+        <ServiceCard
+          title="留学服务"
+          description="为在英国的国际学生提供专属支持，涵盖学术挑战、学校纪律事务及生活困难。"
+          href="/zh/student-services"
+          icon="🎓"
+        />
+        <ServiceCard
+          title="房产与投资保护"
+          description="为您的英国房地产投资提供全方位保障，涵盖尽职调查、合同审阅、监管合规及跨境协助。"
+          href="/zh/real-estate-investment-protection"
+          icon="🏠"
+        />
+        <ServiceCard
+          title="公司注册"
+          description="为您在英国注册公司提供一站式支持，从公司架构设计和 Companies House 注册到银行开户。"
+          href="/zh/company-formation"
+          icon="🏢"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        不确定您需要哪项服务？
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        联系我们，我们的团队将帮助您找到适合您情况的支持方案。
+      </p>
+      <a
+        href="/zh/contact-us"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        联系我们
+      </a>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,98 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+
+const locale = 'zh';
+---
+
+<PageLayout
+  title="移民咨询 - KILC"
+  description="KILC 为在英国移民过程中面临复杂选择的个人和企业提供战略性指导与协调支持。"
+>
+  <Hero
+    title="移民咨询"
+    subtitle="为个人和企业提供专业的英国移民指导。"
+    locale={locale}
+  />
+
+  <!-- For Individuals & Businesses -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Individuals -->
+        <div>
+          <h2 class="text-3xl font-serif font-bold text-brand-dark mb-6">
+            个人服务 – 移民咨询
+          </h2>
+          <div class="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              KILC 为在英国移民过程中面临复杂选择的个人提供战略性指导与协调支持。我们就签证类别、居留途径及入籍申请提供专业建议，协助客户准备并提交材料，指导与移民机关的沟通，并在必要时为上诉或复议程序提供支持。
+            </p>
+          </div>
+          <ul class="mt-8 space-y-3">
+            {[
+              '永久居留（ILR）申请',
+              '签证延期与变更',
+              '家庭与配偶签证',
+              '上诉与行政复议',
+              '入籍申请指导',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <svg class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Businesses -->
+        <div>
+          <h2 class="text-3xl font-serif font-bold text-brand-dark mb-6">
+            企业服务 – 移民咨询
+          </h2>
+          <div class="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              KILC 为聘用海外员工的企业提供专业的咨询与协调支持。我们为雇主提供工作签证相关指导，确保其在移民法规方面保持合规，并协助处理国际员工调动事宜，支持企业顺畅、合法地开展运营。
+            </p>
+          </div>
+          <ul class="mt-8 space-y-3">
+            {[
+              '担保人执照申请与管理',
+              '技术工人签证担保',
+              '全球商务流动路线',
+              '工作权合规',
+              '移民审计与政策审查',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <svg class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        需要移民咨询？
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        联系我们，讨论您的移民需求以及我们如何为您的申请提供支持。
+      </p>
+      <a
+        href="/zh/contact-us"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        联系我们
+      </a>
+    </div>
+  </section>
+</PageLayout>

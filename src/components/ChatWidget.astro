@@ -1,0 +1,123 @@
+---
+import { t } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<!-- Chat toggle button -->
+<button
+  id="chat-toggle"
+  class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center"
+  aria-label={t(locale, 'chat.title')}
+>
+  <svg id="chat-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+  </svg>
+  <svg id="chat-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+</button>
+
+<!-- Chat panel -->
+<div
+  id="chat-panel"
+  class="fixed bottom-24 right-6 z-50 w-[360px] max-h-[500px] bg-white rounded-xl shadow-2xl border border-gray-200 flex-col hidden"
+>
+  <!-- Header -->
+  <div class="px-4 py-3 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-t-xl">
+    <h3 class="text-white font-semibold text-sm">{t(locale, 'chat.title')}</h3>
+  </div>
+
+  <!-- Messages -->
+  <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-3 min-h-[280px] max-h-[350px]">
+    <div class="flex justify-start">
+      <div class="bg-gray-100 rounded-lg px-3 py-2 text-sm max-w-[85%]">
+        {locale === 'zh'
+          ? '您好！我是KILC智能助手，有什么可以帮您的吗？'
+          : 'Hello! I\'m the KILC assistant. How can I help you today?'}
+      </div>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="p-3 border-t border-gray-100">
+    <form id="chat-form" class="flex gap-2">
+      <input
+        type="text"
+        id="chat-input"
+        placeholder={t(locale, 'chat.placeholder')}
+        class="flex-1 px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary outline-none"
+        autocomplete="off"
+      />
+      <button
+        type="submit"
+        class="px-4 py-2 bg-brand-primary text-white text-sm font-medium rounded-lg hover:bg-brand-primary/90 transition-colors"
+      >
+        {t(locale, 'chat.send')}
+      </button>
+    </form>
+  </div>
+</div>
+
+<script define:vars={{ locale }}>
+  const toggle = document.getElementById('chat-toggle');
+  const panel = document.getElementById('chat-panel');
+  const iconOpen = document.getElementById('chat-icon-open');
+  const iconClose = document.getElementById('chat-icon-close');
+  const chatForm = document.getElementById('chat-form');
+  const chatInput = document.getElementById('chat-input');
+  const chatMessages = document.getElementById('chat-messages');
+
+  let isOpen = false;
+
+  toggle?.addEventListener('click', () => {
+    isOpen = !isOpen;
+    panel?.classList.toggle('hidden', !isOpen);
+    panel?.classList.toggle('flex', isOpen);
+    iconOpen?.classList.toggle('hidden', isOpen);
+    iconClose?.classList.toggle('hidden', !isOpen);
+    if (isOpen) chatInput?.focus();
+  });
+
+  function addMessage(text, isUser) {
+    const wrapper = document.createElement('div');
+    wrapper.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
+    const bubble = document.createElement('div');
+    bubble.className = `${isUser ? 'bg-brand-primary text-white' : 'bg-gray-100 text-gray-800'} rounded-lg px-3 py-2 text-sm max-w-[85%]`;
+    bubble.textContent = text;
+    wrapper.appendChild(bubble);
+    chatMessages?.appendChild(wrapper);
+    chatMessages?.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
+  }
+
+  chatForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const message = chatInput?.value?.trim();
+    if (!message) return;
+
+    addMessage(message, true);
+    chatInput.value = '';
+
+    try {
+      const res = await fetch('https://platform.kilc.co.uk/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message, locale }),
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        addMessage(data.reply || data.message || 'Sorry, I could not process that.', false);
+      } else {
+        addMessage(locale === 'zh' ? '抱歉，服务暂时不可用。' : 'Sorry, the service is temporarily unavailable.', false);
+      }
+    } catch {
+      addMessage(locale === 'zh' ? '网络错误，请稍后重试。' : 'Network error. Please try again later.', false);
+    }
+  });
+</script>

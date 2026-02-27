@@ -1,0 +1,99 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const locale = 'en';
+
+const cards = [
+  {
+    title: 'Academic Challenges',
+    icon: '📚',
+    description: 'University life in the UK can present unexpected academic difficulties — from navigating unfamiliar assessment systems and academic integrity requirements to managing disputes with institutions. We support students facing academic misconduct allegations, appeals against grades or decisions, and issues with academic progression. Our guidance helps you understand your rights and the processes available to you within your institution.',
+  },
+  {
+    title: 'School Enforcement',
+    icon: '🏛️',
+    description: 'When educational institutions take disciplinary action, it can feel overwhelming — especially in an unfamiliar system. We help students understand enforcement procedures, disciplinary hearings, and the consequences of institutional decisions. Whether you are facing suspension, exclusion, or other penalties, we provide clear advice on your options and support you through the formal processes.',
+  },
+  {
+    title: 'Life Difficulties',
+    icon: '🤝',
+    description: 'Adjusting to life in the UK involves far more than academic study. International students may encounter housing disputes, employment issues, financial difficulties, mental health challenges, or problems with visa compliance. We offer practical guidance and support across these areas — helping you address the real-life challenges that can affect your wellbeing and your ability to complete your studies successfully.',
+  },
+];
+---
+
+<PageLayout
+  title="Student Services - KILC"
+  description="Dedicated support for international students adjusting to UK life — academic challenges, school enforcement, and personal difficulties."
+>
+  <Hero
+    title="Student Services"
+    subtitle="Dedicated support for international students navigating life in the UK."
+    locale={locale}
+  />
+
+  <!-- Introduction -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Moving to the UK for education is an exciting step, but it also comes with significant challenges. Adjusting to a new academic system, a different cultural environment, and unfamiliar legal and administrative processes can be daunting. KILC provides specialist support to international students across a range of areas — helping you focus on your studies while we help manage the difficulties.
+        </p>
+      </div>
+
+      <!-- Service Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {cards.map((card) => (
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-6">
+              <span class="text-3xl">{card.icon}</span>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-brand-dark mb-4">
+              {card.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              {card.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Guardian Shield Banner -->
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-4">
+        KILC Guardian Shield
+      </h2>
+      <p class="text-gray-600 leading-relaxed mb-8">
+        For comprehensive protection, explore our Guardian Shield programme — a legal protection package designed specifically for international students and their families.
+      </p>
+      <a
+        href="/programme"
+        class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
+      >
+        Learn About Guardian Shield
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        Need support as an international student?
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        Get in touch to discuss your situation and how we can help.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</PageLayout>

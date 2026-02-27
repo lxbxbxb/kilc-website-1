@@ -1,0 +1,70 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const locale = 'zh';
+---
+
+<PageLayout
+  title="联系我们 - KILC"
+  description="联系基恩国际法律咨询，获取量身定制的法律解决方案，以专业指导助您自信应对全球市场。"
+>
+  <Hero
+    title="联系我们"
+    subtitle="为您提供量身定制的法律解决方案，并以专业指导助您自信应对全球市场。"
+    locale={locale}
+  />
+
+  <!-- Contact Form & Info -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Form -->
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-brand-dark mb-6">
+            提交您的咨询
+          </h2>
+          <ContactForm locale={locale} />
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-brand-dark mb-6">
+            全球布局
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-8">
+            KILC 提供全面的法律服务，涵盖专业的移民咨询、刑事辩护、学生支持以及商业合规指导，协助客户顺利应对国际法律事务、降低风险，并在全球业务中取得成功。
+          </p>
+
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-sm font-semibold text-brand-dark uppercase tracking-wider mb-2">地址</h3>
+              <p class="text-gray-600">128 City Road, London, EC1V 2NX</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-brand-dark uppercase tracking-wider mb-2">营业时间</h3>
+              <p class="text-gray-600">GMT: 9 AM - 5 PM</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-brand-dark uppercase tracking-wider mb-2">电子邮箱</h3>
+              <a href="mailto:info@kilc.co.uk" class="text-brand-primary hover:text-brand-accent transition-colors">
+                info@kilc.co.uk
+              </a>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-brand-dark uppercase tracking-wider mb-2">微信号</h3>
+              <p class="text-gray-600 mb-3">KILCL-UK</p>
+              <img
+                src="/images/team/keane-wechat-code.jpg"
+                alt="微信二维码"
+                class="w-32 h-32 rounded-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

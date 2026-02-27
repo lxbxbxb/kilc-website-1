@@ -1,0 +1,85 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+
+const locale = 'zh';
+
+const feeTypes = [
+  {
+    title: '按小时计费的咨询费率',
+    icon: '⏱️',
+    description: '根据专业水平提供具竞争力的小时费率，涵盖初级顾问、咨询顾问及高级专家。',
+  },
+  {
+    title: '固定收费服务',
+    icon: '📋',
+    description: '合同起草、公司设立、合规审查及商标注册等服务均提供透明的固定收费。',
+  },
+  {
+    title: '常年顾问协议',
+    icon: '🤝',
+    description: '按月或按年收取常年顾问费，为您的业务需求提供持续且量身定制的专业咨询服务。',
+  },
+  {
+    title: '订阅式收费',
+    icon: '🔄',
+    description: '客户可通过支付定期费用，获得特定法律服务或平台的持续使用权。',
+  },
+];
+---
+
+<PageLayout
+  title="服务费用 - KILC"
+  description="灵活的收费模式，可根据您的需求定制：按小时计费、固定收费、常年顾问费以及订阅式收费等多种选项。"
+>
+  <Hero
+    title="专业咨询服务"
+    subtitle="灵活的收费模式，可根据您的需求定制"
+    locale={locale}
+  />
+
+  <!-- Fee Types -->
+  <section class="py-20 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-brand-dark mb-4">
+        咨询服务费用
+      </h2>
+      <p class="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+        探索我们多样化的咨询服务，为您的业务需求与目标量身定制。
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {feeTypes.map((fee) => (
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-6">
+              <span class="text-3xl">{fee.icon}</span>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-brand-dark mb-4">
+              {fee.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {fee.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        联系我们了解详情
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        欢迎随时咨询我们的服务与收费信息。
+      </p>
+      <a
+        href="/zh/contact-us"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        联系我们
+      </a>
+    </div>
+  </section>
+</PageLayout>

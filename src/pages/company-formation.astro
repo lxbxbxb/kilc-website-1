@@ -1,0 +1,112 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const locale = 'en';
+---
+
+<PageLayout
+  title="Company Formation - KILC"
+  description="End-to-end support for UK company registration — entity structuring, Companies House filing, bank account setup, and ongoing compliance."
+>
+  <Hero
+    title="Company Formation"
+    subtitle="End-to-end support for registering and establishing your company in the UK."
+    locale={locale}
+  />
+
+  <!-- Introduction -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Establishing a company in the UK is a critical step for international businesses looking to access the UK market. KILC provides comprehensive support through every stage of the company formation process — from choosing the right entity structure and preparing the required documentation to filing with Companies House and setting up a UK business bank account.
+        </p>
+      </div>
+
+      <!-- Key Steps -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {[
+          {
+            title: 'Entity Structuring',
+            description: 'Advice on choosing the right company structure — limited company, LLP, branch, or subsidiary — based on your business model, tax considerations, and operational requirements.',
+            icon: '🏗️',
+          },
+          {
+            title: 'Companies House Registration',
+            description: 'Full support with preparing and filing your incorporation documents, including Memorandum and Articles of Association, appointment of directors, and registered office setup.',
+            icon: '📝',
+          },
+          {
+            title: 'Bank Account Setup',
+            description: 'Assistance with opening a UK business bank account — navigating the due diligence requirements that can be particularly challenging for international directors and shareholders.',
+            icon: '🏦',
+          },
+          {
+            title: 'HMRC Registration',
+            description: 'Registration for Corporation Tax, VAT (where applicable), and PAYE — ensuring your company meets its tax obligations from day one.',
+            icon: '📊',
+          },
+          {
+            title: 'Compliance Framework',
+            description: 'Setting up the compliance foundations your company needs — including data protection registration, AML policies, and sector-specific regulatory requirements.',
+            icon: '✅',
+          },
+          {
+            title: 'Ongoing Support',
+            description: 'Continuing advisory support after formation — including annual filings, confirmation statements, changes to company details, and ongoing corporate governance.',
+            icon: '🔄',
+          },
+        ].map((step) => (
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-4">
+              <span class="text-2xl">{step.icon}</span>
+            </div>
+            <h3 class="text-lg font-serif font-bold text-brand-dark mb-3">
+              {step.title}
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              {step.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Platform CTA -->
+      <div class="max-w-3xl mx-auto bg-brand-light rounded-lg p-8 text-center">
+        <h2 class="text-2xl font-serif font-bold text-brand-dark mb-4">
+          Use Our Client Platform
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          For a guided, step-by-step experience through the UK company formation process, access our client platform. It includes compliance gap analysis, document templates, a regulatory monitor, and more — all designed to support your UK expansion.
+        </p>
+        <a
+          href="https://platform.kilc.co.uk"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
+        >
+          Go to Client Platform &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        Ready to form your UK company?
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        Contact us to discuss your company formation requirements and get started.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</PageLayout>

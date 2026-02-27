@@ -1,0 +1,126 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+
+const locale = 'zh';
+
+const services = [
+  {
+    title: '房地产收购尽职调查',
+    description: '对房产产权、规划许可和分区法规进行全面审查。核实所有权，确认不存在债务、留置权等产权负担。就遵守当地建筑规范和标准提供建议。',
+  },
+  {
+    title: '合同起草与审阅',
+    description: '为购房合同、租赁合同及合资协议的起草与审阅提供指导。就谈判条款提出建议，以保障投资者的利益。确保合同符合英国法律，内容清晰且具有可执行性。',
+  },
+  {
+    title: '监管合规',
+    description: '就英国房地产及税务法规提供咨询。协助满足反洗钱（AML）要求及房产登记合规事项。指导涉及外国投资规定及与签证相关的房产持有问题。',
+  },
+  {
+    title: '税务规划与优化',
+    description: '就印花税（SDLT）、遗产税和资本利得税提供咨询支持。提出优化税务结构的策略，包括使用 SPV 或信托安排。与会计师及税务顾问协调，确保税务规划高效可行。',
+  },
+  {
+    title: '风险管理',
+    description: '就减少与纠纷、欺诈或意外费用相关的风险提供建议。指出潜在的环境或结构性问题。指导应对监管或市场变化的风险缓解策略。',
+  },
+  {
+    title: '物业管理法律支持',
+    description: '协助起草物业管理协议。就租客相关问题提供建议，包括驱逐程序。指导解决与物业管理方或承包商之间的纠纷。',
+  },
+  {
+    title: '争议解决',
+    description: '为合同、产权或开发纠纷提供指导与协调支持。就替代性争议解决（ADR）方式提供建议，包括调解与仲裁。在涉及诉讼时协调合资格的专业人士提供协助。',
+  },
+  {
+    title: '跨境法律协助',
+    description: '协助处理英国与中国法律体系之间的差异。提供双语文件，确保非英语客户也能清晰理解。与英国当地合作伙伴协调，促进交易顺利进行。',
+  },
+  {
+    title: '投资结构设计',
+    description: '就最佳投资结构提供建议，包括个人、公司或合资结构。就通过信托、控股公司或离岸实体进行资产保护提供指导。',
+  },
+  {
+    title: '退出策略与资产处置',
+    description: '就符合法律及税务要求的房产出售提供指导。协助审阅和谈判销售协议，以最大化投资回报。',
+  },
+];
+---
+
+<PageLayout
+  title="房地产投资保护 - KILC"
+  description="KILC 为英国房地产市场的投资者提供战略咨询与协调支持，涵盖尽职调查、合同审阅、监管合规及税务规划。"
+>
+  <Hero
+    title="房地产投资保护"
+    subtitle="为英国房地产投资者提供战略咨询与协调支持。"
+    locale={locale}
+  />
+
+  <!-- Overview -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        KILC 为英国房地产市场的投资者提供战略咨询与协调支持。我们的服务包括尽职调查指导、合同审阅、监管合规建议及税务规划。同时，我们还就风险管理、投资结构设计、退出策略、纠纷解决以及物业管理协调提供专业意见，协助客户保障投资安全并优化回报。
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark mb-3">我们的使命</h3>
+          <p class="text-gray-600 leading-relaxed">
+            KILC 致力于通过提供一体化、以客户为中心的咨询与协调服务，推动住房市场的发展，协助客户自信且清晰地应对复杂的法律与监管要求。
+          </p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark mb-3">我们的愿景</h3>
+          <p class="text-gray-600 leading-relaxed">
+            KILC 致力于通过专业咨询与协调支持，在房地产交易中推动公平、透明，并切实保障客户的利益。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">主要支持领域</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+        {services.map((service) => (
+          <div>
+            <h3 class="text-lg font-serif font-bold text-brand-dark mb-3">
+              {service.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              {service.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        需要房地产投资方面的咨询？
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        联系我们，讨论您的投资需求以及我们如何提供支持。
+      </p>
+      <a
+        href="/zh/contact-us"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        联系我们
+      </a>
+    </div>
+  </section>
+</PageLayout>

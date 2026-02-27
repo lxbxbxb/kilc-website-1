@@ -1,0 +1,96 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { t } from '../../i18n/utils';
+
+const locale = 'zh';
+---
+
+<PageLayout
+  title={t(locale, 'site.title')}
+  description={t(locale, 'site.description')}
+>
+  <Hero
+    title="基恩国际法律咨询"
+    subtitle="您值得信赖的英国商业拓展合作伙伴"
+    cta={{ text: t(locale, 'hero.cta'), href: '/zh/contact-us' }}
+    locale={locale}
+  />
+
+  <!-- Services Overview -->
+  <section class="py-20 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-brand-dark mb-12">
+        我们的服务
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <a href="/zh/global-market-strategy" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            全球市场导航
+          </h3>
+          <p class="text-gray-600">
+            为进入和拓展英国市场提供专业战略指导。
+          </p>
+        </a>
+        <a href="/zh/immigration-advisory" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            移民咨询
+          </h3>
+          <p class="text-gray-600">
+            为个人和企业提供专业的签证与移民咨询服务。
+          </p>
+        </a>
+        <a href="/zh/criminal-defence" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            刑事辩护
+          </h3>
+          <p class="text-gray-600">
+            经验丰富的刑事辩护咨询与协调服务。
+          </p>
+        </a>
+        <a href="/zh/student-services" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            留学服务
+          </h3>
+          <p class="text-gray-600">
+            为在英国的国际学生提供全方位支持。
+          </p>
+        </a>
+        <a href="/zh/real-estate-investment-protection" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            房产与投资保护
+          </h3>
+          <p class="text-gray-600">
+            为您在英国的房地产投资提供专业保障。
+          </p>
+        </a>
+        <a href="/zh/company-formation" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            公司注册
+          </h3>
+          <p class="text-gray-600">
+            为您在英国注册公司提供一站式支持。
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        准备好将业务拓展到英国了吗？
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        立即联系我们的专业法律团队。
+      </p>
+      <a
+        href="/zh/contact-us"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        联系我们
+      </a>
+    </div>
+  </section>
+</PageLayout>

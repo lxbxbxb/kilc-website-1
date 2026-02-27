@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+import { getLocaleFromUrl, t } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const {
+  title = t(locale, 'site.title'),
+  description = t(locale, 'site.description'),
+  ogImage = '/images/og-default.jpg',
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const alternateLocale = locale === 'en' ? 'zh' : 'en';
+const alternatePath = locale === 'en'
+  ? `/zh${Astro.url.pathname === '/' ? '' : Astro.url.pathname}`
+  : Astro.url.pathname.replace(/^\/zh/, '') || '/';
+const alternateUrl = new URL(alternatePath, Astro.site);
+---
+
+<!doctype html>
+<html lang={locale === 'zh' ? 'zh-CN' : 'en-GB'} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href={canonicalUrl.href} />
+    <link rel="alternate" hreflang={locale === 'en' ? 'en-GB' : 'zh-Hans'} href={canonicalUrl.href} />
+    <link rel="alternate" hreflang={alternateLocale === 'en' ? 'en-GB' : 'zh-Hans'} href={alternateUrl.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+    <meta property="og:locale" content={locale === 'zh' ? 'zh_CN' : 'en_GB'} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="/fonts/roboto-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/playfair-display-700.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

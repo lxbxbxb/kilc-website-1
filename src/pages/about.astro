@@ -1,0 +1,113 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const locale = 'en';
+---
+
+<PageLayout
+  title="About Us - KILC"
+  description="Keane International Legal Consultancy LLP is an international consultancy based in London, supporting individuals and organisations navigating complex legal, regulatory, and institutional environments."
+>
+  <Hero
+    title="About KILC"
+    subtitle="Global Legal Solutions for International Success"
+    backgroundImage="/images/hero/aerial-view-london-skyline.jpg"
+    locale={locale}
+  />
+
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        Keane International Legal Consultancy LLP (KILC) is an international consultancy based in London, supporting individuals and organisations navigating complex legal, regulatory, and institutional environments in the UK and across borders. The firm focuses on helping clients understand systems, processes, and frameworks that shape international mobility, investment, and business activity.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        KILC operates at the intersection of law, policy, and global movement. Through structured insight and practical perspective, the firm works to demystify complex environments, helping clients make informed decisions when engaging with unfamiliar jurisdictions and cross-border contexts.
+      </p>
+    </div>
+  </section>
+
+  <!-- Areas of Focus -->
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">Areas of Focus</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark mb-3">Global Pathways: Immigration and Education</h3>
+          <p class="text-gray-600 leading-relaxed">
+            KILC supports international individuals and organisations engaging with UK immigration and education systems by providing clear information on processes, institutional requirements, and procedural expectations.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark mb-3">Business Risk and Regulatory Framework</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Cross-border business activity often involves overlapping regulatory, operational, and commercial considerations. KILC assists enterprises by offering contextual insight into international frameworks, intellectual property environments, and global trade structures.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark mb-3">Criminal Justice Systems and Processes</h3>
+          <p class="text-gray-600 leading-relaxed">
+            KILC provides structured information and contextual understanding of criminal justice systems in different jurisdictions, helping clients gain clarity when navigating complex or unfamiliar criminal justice environments.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark mb-3">UK Property and Investment Landscape</h3>
+          <p class="text-gray-600 leading-relaxed">
+            For clients engaging with UK property markets, KILC offers insight into regulatory environments, transaction processes, and documentation practices to help investors understand how the UK property system operates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Approach -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-6">Client Approach</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-8">
+        KILC takes a client-centred and internationally minded approach, placing strong emphasis on clarity, cultural awareness, and tailored support. The firm works with clients from a wide range of international backgrounds, helping them engage more confidently with UK systems and cross-border opportunities.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-6">Organisational Development</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        KILC is continuing to develop its organisational capacity in response to growing international demand. Ongoing expansion is focused on strengthening internal research, coordination, and operational support functions, allowing the firm to deliver structured, scalable support across its core areas of work.
+      </p>
+    </div>
+  </section>
+
+  <!-- Global Offices -->
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">Global Reach</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+          <h3 class="text-lg font-serif font-semibold text-brand-dark mb-2">London, UK</h3>
+          <p class="text-sm text-gray-600">128 City Road, London, EC1V 2NX, UK</p>
+          <p class="text-sm text-gray-500 mt-1">GMT: 9 AM - 5 PM</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+          <h3 class="text-lg font-serif font-semibold text-brand-dark mb-2">Dubai, UAE</h3>
+          <p class="text-sm text-gray-600">FZCO of P.O. Box 4333, Dubai, UAE</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+          <h3 class="text-lg font-serif font-semibold text-brand-dark mb-2">Kuala Lumpur, MY</h3>
+          <p class="text-sm text-gray-600">Malaysia Office</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-16 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-4">Get in Touch</h2>
+      <p class="text-lg text-white/90 mb-6">
+        Email: <a href="mailto:info@kilc.co.uk" class="underline hover:text-white">info@kilc.co.uk</a> &middot; WeChat: KILCL-UK
+      </p>
+      <a href="/contact" class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+        Contact Us
+      </a>
+    </div>
+  </section>
+</PageLayout>

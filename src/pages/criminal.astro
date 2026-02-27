@@ -1,0 +1,97 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const locale = 'en';
+
+const sections = [
+  {
+    title: 'Understanding the Situation',
+    description: 'The first step in any criminal justice matter is understanding the full context. We take time to listen, review the facts, and help you understand the nature of the situation you are facing — including the potential processes, timelines, and outcomes that may be involved.',
+  },
+  {
+    title: 'Procedural Pathways',
+    description: 'The UK criminal justice system involves multiple stages and procedural pathways. We help you understand what to expect at each stage — from initial investigation through to court proceedings — so you are fully prepared and informed about the process ahead.',
+  },
+  {
+    title: 'Process Dynamics',
+    description: 'Every case has its own dynamics and complexities. We analyse the specific circumstances of your matter, identify the key factors that will influence its progression, and ensure you understand how different decisions and actions may affect the overall outcome.',
+  },
+  {
+    title: 'Research and System Context',
+    description: 'Effective support requires a thorough understanding of the relevant legal context. We conduct detailed research into the applicable laws, precedents, and procedural rules that apply to your case — providing you with well-informed guidance grounded in current legal practice.',
+  },
+  {
+    title: 'Understanding Rights Frameworks',
+    description: 'Your rights within the criminal justice system are fundamental. We ensure you fully understand your legal rights at every stage of the process — including your right to legal representation, your right to silence, and the protections available to you under UK law.',
+  },
+  {
+    title: 'Process Support',
+    description: 'Navigating criminal justice proceedings can be stressful and disorienting. We provide practical and emotional support throughout the process, helping you prepare for interviews, hearings, and court appearances with confidence and clarity.',
+  },
+  {
+    title: 'Post-Process and System Pathways',
+    description: 'The conclusion of criminal proceedings does not always mean the end of the matter. We advise on post-process considerations including appeals, record management, rehabilitation pathways, and any ongoing obligations that may arise following the resolution of your case.',
+  },
+];
+---
+
+<PageLayout
+  title="Criminal Justice Systems - KILC"
+  description="Specialist guidance through UK criminal justice processes, from understanding procedural pathways to rights frameworks and post-process support."
+>
+  <Hero
+    title="Criminal Justice Systems"
+    subtitle="Specialist guidance through the complexities of the UK criminal justice system."
+    locale={locale}
+  />
+
+  <!-- Overview -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto mb-16 text-center">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Engaging with the criminal justice system can be one of the most challenging experiences a person faces. KILC provides specialist support to help you understand the process, protect your rights, and navigate each stage with informed guidance.
+        </p>
+      </div>
+
+      <div class="space-y-12 max-w-4xl mx-auto">
+        {sections.map((section, index) => (
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white font-semibold text-sm">
+                {index + 1}
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-serif font-bold text-brand-dark mb-3">
+                {section.title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                {section.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        Need support with a criminal justice matter?
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        Contact us in confidence to discuss your situation and how we can help.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</PageLayout>

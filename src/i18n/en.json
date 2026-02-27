@@ -1,0 +1,54 @@
+{
+  "site": {
+    "title": "KILC - Keane International Legal Consultancy",
+    "description": "UK-based legal consultancy helping Chinese businesses expand to the UK"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "people": "People",
+    "services": "Services",
+    "globalMarket": "Global Market Navigation",
+    "immigration": "Immigration",
+    "criminal": "Criminal",
+    "studentServices": "Student Services",
+    "estateInvestment": "Estate & Investment",
+    "fees": "Fees",
+    "programme": "Programme",
+    "careers": "Careers",
+    "contact": "Contact",
+    "companyFormation": "Company Formation",
+    "platform": "Client Platform"
+  },
+  "hero": {
+    "cta": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Your message has been sent successfully.",
+    "error": "There was an error sending your message. Please try again."
+  },
+  "footer": {
+    "address": "128 City Road, London EC1V 2NX",
+    "email": "info@kilc.co.uk",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "aml": "AML Policy",
+    "ctf": "Counter-Terrorism Financing"
+  },
+  "chat": {
+    "title": "Chat with us",
+    "placeholder": "Type your message...",
+    "send": "Send"
+  },
+  "language": {
+    "en": "EN",
+    "zh": "中文"
+  }
+}

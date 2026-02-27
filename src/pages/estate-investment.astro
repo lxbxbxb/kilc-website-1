@@ -1,0 +1,121 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const locale = 'en';
+
+const keyAreas = [
+  {
+    title: 'Real Estate Frameworks',
+    description: 'Understanding the legal frameworks that govern property ownership and investment in the UK — including freehold and leasehold structures, planning regulations, and the rights and obligations of property owners.',
+  },
+  {
+    title: 'Property Acquisition',
+    description: 'Guidance through the property acquisition process, from initial due diligence and searches to exchange of contracts and completion. We help you navigate the complexities of purchasing residential and commercial property in England and Wales.',
+  },
+  {
+    title: 'Transaction Processes',
+    description: 'Property transactions involve multiple parties, strict timelines, and detailed legal documentation. We coordinate the process to ensure all legal requirements are met and your interests are protected at every stage.',
+  },
+  {
+    title: 'Regulatory Environment',
+    description: 'UK property investment is subject to a range of regulatory requirements — from anti-money laundering checks and beneficial ownership registration to building safety regulations and environmental compliance.',
+  },
+  {
+    title: 'Financial Considerations',
+    description: 'Advising on the financial aspects of property investment, including stamp duty land tax (SDLT), capital gains tax implications, mortgage considerations for overseas buyers, and structuring investments for tax efficiency within legal frameworks.',
+  },
+  {
+    title: 'Risk Awareness',
+    description: 'Identifying and mitigating the risks associated with UK property investment — including market risk, regulatory changes, tenant disputes, and the particular challenges faced by overseas investors operating at a distance.',
+  },
+  {
+    title: 'Ongoing Management',
+    description: 'Supporting you with the ongoing legal aspects of property ownership, including landlord and tenant obligations, service charge disputes, lease management, and compliance with evolving regulatory requirements.',
+  },
+  {
+    title: 'Cross-Border Perspective',
+    description: 'For international investors, cross-border considerations are critical. We advise on the interaction between UK and overseas legal systems, double taxation treaties, foreign ownership restrictions, and repatriation of funds.',
+  },
+  {
+    title: 'Exit Considerations',
+    description: 'Planning your exit strategy is as important as the initial investment. We advise on disposal processes, tax implications of selling UK property as a non-resident, and the legal steps required to wind down your property interests efficiently.',
+  },
+];
+---
+
+<PageLayout
+  title="Estate & Investment Protection - KILC"
+  description="Protecting your UK property investments with expert guidance on real estate frameworks, acquisition, regulatory compliance, and cross-border considerations."
+>
+  <Hero
+    title="Estate & Investment Protection"
+    subtitle="Expert guidance to protect and manage your UK property investments."
+    locale={locale}
+  />
+
+  <!-- Mission & Vision -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          The UK remains one of the world's most attractive property markets for international investors. However, navigating the legal, regulatory, and financial complexities of UK property investment requires specialist knowledge and careful planning. KILC provides comprehensive advisory services to protect your investment at every stage.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+          <h2 class="text-2xl font-serif font-bold text-brand-dark mb-4">
+            Our Mission
+          </h2>
+          <p class="text-gray-600 leading-relaxed">
+            To provide international investors with clear, expert legal guidance that protects their property interests in the UK. We aim to demystify the UK property market, reduce risk, and empower our clients to make confident investment decisions backed by thorough legal knowledge.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+          <h2 class="text-2xl font-serif font-bold text-brand-dark mb-4">
+            Our Vision
+          </h2>
+          <p class="text-gray-600 leading-relaxed">
+            To be the trusted advisory partner for international investors in UK real estate — recognised for our depth of expertise, our cross-border perspective, and our commitment to protecting our clients' interests throughout the lifecycle of their investments.
+          </p>
+        </div>
+      </div>
+
+      <!-- Key Areas -->
+      <h2 class="text-3xl font-serif font-bold text-center text-brand-dark mb-12">
+        Key Areas
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {keyAreas.map((area) => (
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-serif font-bold text-brand-dark mb-3">
+              {area.title}
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              {area.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6">
+        Considering a UK property investment?
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        Speak with our team to discuss your investment plans and how we can protect your interests.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</PageLayout>

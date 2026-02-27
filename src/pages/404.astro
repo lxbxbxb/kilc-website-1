@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found - KILC">
+  <div class="min-h-screen flex items-center justify-center bg-brand-light">
+    <div class="text-center px-4">
+      <h1 class="text-6xl font-serif font-bold text-brand-dark mb-4">404</h1>
+      <p class="text-xl text-gray-600 mb-8">
+        The page you're looking for doesn't exist.
+      </p>
+      <div class="flex items-center justify-center gap-4">
+        <a href="/" class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity">
+          Go Home
+        </a>
+        <a href="/contact" class="inline-block border border-brand-primary text-brand-primary font-semibold px-6 py-3 rounded-lg hover:bg-brand-primary/5 transition-colors">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

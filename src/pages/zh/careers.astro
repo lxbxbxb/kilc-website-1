@@ -1,0 +1,107 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+
+const locale = 'zh';
+---
+
+<PageLayout
+  title="招聘 - KILC"
+  description="加入 KILC 推动全球变革的专业团队。我们始终欢迎具备才华、积极进取的优秀人才加入。"
+>
+  <Hero
+    title="招聘"
+    subtitle="加入推动全球变革的专业团队"
+    locale={locale}
+  />
+
+  <!-- Introduction -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        我们融合跨境视野、法律专长与创新思维，协助客户应对国际教育、商业与合规领域的复杂挑战。我们始终欢迎具备才华、积极进取并认可专业性、诚信与全球化价值观的优秀人才加入。
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        在 KILC，您将获得横跨法律、教育与商业领域的国际化工作经验，于灵活、多元文化且支持性的环境中工作，为客户与社区带来真正影响，并享有丰富的成长机会、导师指导与职业发展空间。
+      </p>
+    </div>
+  </section>
+
+  <!-- How to Apply -->
+  <section class="py-8 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-brand-light rounded-lg p-6">
+        <h2 class="text-xl font-serif font-bold text-brand-dark mb-3">申请方式</h2>
+        <p class="text-gray-700">
+          请将您的个人简历与求职信发送至：<a href="mailto:info@kilc.co.uk" class="text-brand-primary hover:text-brand-accent underline">info@kilc.co.uk</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current Openings -->
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">当前招聘职位</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Campus Ambassador -->
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+          <h3 class="text-xl font-serif font-bold text-brand-dark mb-3">Guardian Shield 校园大使（英国大学）</h3>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-brand-primary/10 text-brand-primary px-2 py-1 rounded">英国主要大学</span>
+            <span class="text-xs bg-brand-primary/10 text-brand-primary px-2 py-1 rounded">兼职 / 灵活安排</span>
+            <span class="text-xs bg-brand-primary/10 text-brand-primary px-2 py-1 rounded">持续招聘中</span>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm mb-4">
+            欢迎所有专业的学生申请——我们更看重沟通能力、同理心与领导力。非常适合希望在提升专业经验的同时产生积极影响的二年级及以上学生。
+          </p>
+        </div>
+
+        <!-- NQ Solicitor -->
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+          <h3 class="text-xl font-serif font-bold text-brand-dark mb-3">新执业律师（法律顾问发展路径）</h3>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-brand-primary/10 text-brand-primary px-2 py-1 rounded">伦敦 / 混合办公</span>
+            <span class="text-xs bg-brand-primary/10 text-brand-primary px-2 py-1 rounded">全职</span>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm mb-4">
+            我们正在招聘具有 0-2 年执业经验的新执业律师，加入我们的国际法律咨询团队。您将就跨境教育、移民及合规事项提供战略性法律咨询，与高级顾问合作为中国与英国客户提供支持，参与 Guardian Shield 项目及商业合规项目。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Opportunities -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">即将开放的机会</h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-brand-light rounded-lg p-8">
+          <h3 class="text-xl font-serif font-bold text-brand-dark mb-3">暑期实习项目（2026）</h3>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-brand-primary/10 text-brand-primary px-2 py-1 rounded">伦敦 & 远程选项</span>
+            <span class="text-xs bg-brand-primary/10 text-brand-primary px-2 py-1 rounded">1-2 周或 4-8 周</span>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm mb-4">
+            我们的暑期实习项目将为有志于从事国际法律咨询行业的学生和年轻专业人士提供宝贵的实践体验。实习生将有机会参与案例研究、报告撰写及客户沟通，协助 Guardian Shield 项目与商业合规事务，并参加有关英国法律、跨境咨询及全球商业战略的专题工作坊。
+          </p>
+          <p class="text-sm text-brand-primary font-medium">申请将于 2026 年 1 月 5 日开放，敬请关注详细信息。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-serif font-bold mb-4">加入我们</h2>
+      <p class="text-lg text-white/90 mb-6">
+        请将您的简历发送至 <a href="mailto:info@kilc.co.uk" class="underline hover:text-white">info@kilc.co.uk</a>
+      </p>
+      <a href="/zh/contact-us" class="inline-block bg-white text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+        联系我们
+      </a>
+    </div>
+  </section>
+</PageLayout>
