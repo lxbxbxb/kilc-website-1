@@ -3,9 +3,12 @@ name: Deploy Website
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-  build-and-deploy:
+  build:
+    name: Build & Type Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,8 +21,32 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Type check
+        run: npx tsc --noEmit
+
       - name: Build Astro site
         run: npm run build
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 1
+
+  deploy:
+    name: Deploy to VPS
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
 
       - name: Deploy static files to VPS
         uses: appleboy/scp-action@v0.1.7
@@ -31,7 +58,7 @@ jobs:
           target: ~/kilc-website/
           overwrite: true
 
-      - name: Deploy nginx config to VPS
+      - name: Deploy nginx vhost config to VPS
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HETZNER_SSH_HOST }}
