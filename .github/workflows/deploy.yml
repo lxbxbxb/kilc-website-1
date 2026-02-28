@@ -21,7 +21,7 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
-      - name: Deploy to VPS
+      - name: Deploy static files to VPS
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HETZNER_SSH_HOST }}
@@ -30,6 +30,17 @@ jobs:
           source: dist/
           target: ~/kilc-website/
           overwrite: true
+
+      - name: Deploy nginx config to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HETZNER_SSH_HOST }}
+          username: ${{ secrets.HETZNER_SSH_USER }}
+          key: ${{ secrets.HETZNER_SSH_KEY }}
+          source: nginx/kilc-website.conf
+          target: ~/kilc-app/nginx/conf.d/
+          overwrite: true
+          strip_components: 1
 
       - name: Reload Nginx
         uses: appleboy/ssh-action@v1
