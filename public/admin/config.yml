@@ -3,9 +3,6 @@ backend:
   repo: kilc-uk/kilc-website
   branch: main
 
-# Editorial workflow — edits create PRs for review before publishing
-publish_mode: editorial_workflow
-
 # Media files stored in the repo
 media_folder: public/images
 public_folder: /images
@@ -13,9 +10,6 @@ public_folder: /images
 # Site URL for previews
 site_url: https://kilc.co.uk
 display_url: https://kilc.co.uk
-
-# Locale
-locale: en
 
 collections:
   # ----- Service Pages (EN) -----
