@@ -6,6 +6,7 @@ interface Props {
   subtitle?: string;
   backgroundImage?: string;
   cta?: { text: string; href: string };
+  showCta?: boolean;
   locale: Locale;
 }
 
@@ -14,6 +15,7 @@ const {
   subtitle,
   backgroundImage = '/images/hero/an-aerial-view-of-a-city-with-tall-buildings.jpg',
   cta,
+  showCta = true,
   locale,
 } = Astro.props;
 ---
@@ -24,13 +26,13 @@ const {
     class="absolute inset-0 bg-cover bg-center bg-no-repeat"
     style={`background-image: url('${backgroundImage}');`}
   >
-    <!-- Gradient overlay -->
-    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/80 to-brand-secondary/60"></div>
+    <!-- Dark neutral overlay matching original -->
+    <div class="absolute inset-0 bg-black/55"></div>
   </div>
 
   <!-- Content -->
   <div class="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center text-white">
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold italic leading-tight mb-6">
       {title}
     </h1>
     {subtitle && (
@@ -38,7 +40,7 @@ const {
         {subtitle}
       </p>
     )}
-    {cta && (
+    {showCta && cta && (
       <a
         href={cta.href}
         class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity shadow-lg"

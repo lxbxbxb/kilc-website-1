@@ -39,7 +39,7 @@ const alternatePath = getAlternateUrl(currentPath, locale);
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <a href={locale === 'zh' ? '/zh' : '/'} class="flex items-center gap-2">
-        <img src="/images/general/kilc-logo.jpg" alt="KILC" class="h-10 w-auto" />
+        <img src="/images/general/kilc-logo.png" alt="KILC" class="h-16 w-auto" />
       </a>
 
       <!-- Desktop Nav -->
@@ -52,7 +52,7 @@ const alternatePath = getAlternateUrl(currentPath, locale);
                 class:list={[
                   'px-3 py-2 text-sm font-medium rounded-md transition-colors inline-flex items-center gap-1',
                   currentPath === item.href
-                    ? 'text-brand-primary'
+                    ? 'underline underline-offset-4 text-gray-900'
                     : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50',
                 ]}
               >
@@ -85,7 +85,7 @@ const alternatePath = getAlternateUrl(currentPath, locale);
               class:list={[
                 'px-3 py-2 text-sm font-medium rounded-md transition-colors',
                 currentPath === item.href || (item.href !== '/' && item.href !== '/zh' && currentPath.startsWith(item.href))
-                  ? 'text-brand-primary'
+                  ? 'underline underline-offset-4 text-gray-900'
                   : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50',
               ]}
             >

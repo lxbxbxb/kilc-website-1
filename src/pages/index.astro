@@ -4,6 +4,42 @@ import Hero from '../components/Hero.astro';
 import { t } from '../i18n/utils';
 
 const locale = 'en';
+
+const serviceCards = [
+  {
+    title: 'Business Risk & Compliance',
+    description: 'Strategic guidance for entering and navigating the UK market with confidence.',
+    image: '/images/services/people-having-meeting-on-rectangular-brown-table.jpg',
+    href: '/global-market-navigation',
+  },
+  {
+    title: 'Criminal Justice Navigation',
+    description: 'Experienced criminal defence representation for individuals and businesses.',
+    image: '/images/services/two-hands-are-visible-one-holding-a-pen-and-another-holding-.jpg',
+    href: '/criminal',
+  },
+  {
+    title: 'Global Pathway Advisory',
+    description: 'Expert visa and immigration advisory tailored to your goals.',
+    image: '/images/services/woman-in-suit-shows-document-to-man.jpg',
+    href: '/immigration',
+  },
+  {
+    title: 'Real Estate Investment',
+    description: 'Protection and advisory for your property investments across the UK.',
+    image: '/images/hero/white-concrete-building-near-road-during-daytime.jpg',
+    href: '/estate-investment',
+  },
+];
+
+const galleryImages = [
+  '/images/hero/four-men-in-business-attire-are-engaged-in-a-discussion-arou.jpg',
+  '/images/services/a-view-of-a-city-with-tall-buildings.jpg',
+  '/images/team/two-men-in-suits-having-coffee-at-a-table.jpg',
+  '/images/services/modern-cityscape-with-skyscrapers-and-a-boat-on-water.jpg',
+  '/images/hero/an-aerial-view-of-a-city-with-tall-buildings.jpg',
+  '/images/services/people-having-meeting-on-rectangular-brown-table.jpg',
+];
 ---
 
 <PageLayout
@@ -14,64 +50,126 @@ const locale = 'en';
     title="Keane International Legal Consultancy"
     subtitle="Your trusted partner for UK business expansion"
     cta={{ text: t(locale, 'hero.cta'), href: '/contact' }}
+    showCta={false}
     locale={locale}
   />
 
   <!-- Services Overview -->
   <section class="py-20 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-center text-brand-dark mb-12">
-        Our Services
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <a href="/global-market-navigation" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
-            Global Market Navigation
-          </h3>
-          <p class="text-gray-600">
-            Strategic guidance for entering and navigating the UK market.
-          </p>
-        </a>
-        <a href="/immigration" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
-            Immigration
-          </h3>
-          <p class="text-gray-600">
-            Expert visa and immigration advisory for individuals and businesses.
-          </p>
-        </a>
-        <a href="/criminal" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
-            Criminal Defence
-          </h3>
-          <p class="text-gray-600">
-            Experienced criminal defence representation.
-          </p>
-        </a>
-        <a href="/student-services" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
-            Student Services
-          </h3>
-          <p class="text-gray-600">
-            Comprehensive support for international students in the UK.
-          </p>
-        </a>
-        <a href="/estate-investment" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
-            Estate & Investment
-          </h3>
-          <p class="text-gray-600">
-            Protection for your real estate investments in the UK.
-          </p>
-        </a>
-        <a href="/company-formation" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
-            Company Formation
-          </h3>
-          <p class="text-gray-600">
-            End-to-end support for registering your company in the UK.
-          </p>
-        </a>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-serif font-bold text-brand-dark mb-4">
+          Expertly Tailored Legal Solutions
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          We provide specialist legal consultancy services designed for international clients navigating the complexities of UK law and business.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {serviceCards.map((card) => (
+          <a href={card.href} class="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="overflow-hidden">
+              <img
+                src={card.image}
+                alt={card.title}
+                class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+                {card.title}
+              </h3>
+              <p class="text-gray-600">
+                {card.description}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Mosaic -->
+  <section class="py-0">
+    <div class="grid grid-cols-3 grid-rows-2">
+      {galleryImages.map((src, i) => (
+        <div class="overflow-hidden h-64">
+          <img
+            src={src}
+            alt=""
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Contact & Location -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <!-- Map -->
+        <div class="rounded-lg overflow-hidden shadow-sm border border-gray-200 h-96">
+          <iframe
+            title="KILC Office Location"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-0.0944%2C51.5246%2C-0.0844%2C51.5286&layer=mapnik&marker=51.5266%2C-0.0894"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <!-- Address & Hours Panel -->
+        <div class="space-y-6">
+          <div>
+            <h2 class="text-2xl font-serif font-bold text-brand-dark mb-2">Visit Us</h2>
+            <p class="text-gray-500 text-sm">We welcome clients by appointment</p>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="mt-1 text-brand-primary">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-brand-dark text-sm uppercase tracking-wider mb-1">Address</p>
+              <p class="text-gray-600">128 City Road<br />London, EC1V 2NX<br />United Kingdom</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="mt-1 text-brand-primary">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-brand-dark text-sm uppercase tracking-wider mb-1">Office Hours</p>
+              <p class="text-gray-600">Monday – Friday: 9:00 am – 6:00 pm</p>
+              <p class="text-gray-600">Saturday: 10:00 am – 2:00 pm</p>
+              <p class="text-gray-500 text-sm mt-1">Closed Sundays & Bank Holidays</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="mt-1 text-brand-primary">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-brand-dark text-sm uppercase tracking-wider mb-1">Email</p>
+              <a href="mailto:info@kilc.co.uk" class="text-brand-primary hover:text-brand-accent transition-colors">
+                info@kilc.co.uk
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
