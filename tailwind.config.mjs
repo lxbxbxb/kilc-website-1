@@ -7,12 +7,12 @@ export default {
     extend: {
       colors: {
         brand: {
-          primary: '#667eea',
-          secondary: '#764ba2',
-          dark: '#2f1c6a',
-          accent: '#357df9',
-          light: '#f2f3f6',
-          text: '#1d1e20',
+          primary:   '#9A7B3C',   // warm gold — links, hover, active accents
+          secondary: '#7A5E28',   // deep gold — gradient end, dark accents
+          dark:      '#1C1A17',   // near-black with warm undertone — footer bg, strong headings
+          accent:    '#C4953A',   // bright gold — CTA buttons
+          light:     '#F8F6F2',   // warm off-white — section backgrounds
+          text:      '#1C1A17',   // body text
         },
       },
       fontFamily: {

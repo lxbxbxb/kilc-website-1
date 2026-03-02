@@ -10,35 +10,39 @@ const serviceCards = [
     title: 'Business Risk & Compliance',
     description: 'Strategic guidance for entering and navigating the UK market with confidence.',
     image: '/images/services/people-having-meeting-on-rectangular-brown-table.jpg',
+    imagePosition: 'center 89%',
     href: '/global-market-navigation',
   },
   {
     title: 'Criminal Justice Navigation',
     description: 'Experienced criminal defence representation for individuals and businesses.',
     image: '/images/services/two-hands-are-visible-one-holding-a-pen-and-another-holding-.jpg',
+    imagePosition: 'center 64%',
     href: '/criminal',
   },
   {
     title: 'Global Pathway Advisory',
     description: 'Expert visa and immigration advisory tailored to your goals.',
     image: '/images/services/woman-in-suit-shows-document-to-man.jpg',
+    imagePosition: 'center 16%',
     href: '/immigration',
   },
   {
     title: 'Real Estate Investment',
     description: 'Protection and advisory for your property investments across the UK.',
     image: '/images/hero/white-concrete-building-near-road-during-daytime.jpg',
+    imagePosition: 'center 100%',
     href: '/estate-investment',
   },
 ];
 
 const galleryImages = [
-  '/images/hero/four-men-in-business-attire-are-engaged-in-a-discussion-arou.jpg',
-  '/images/services/a-view-of-a-city-with-tall-buildings.jpg',
-  '/images/team/two-men-in-suits-having-coffee-at-a-table.jpg',
-  '/images/services/modern-cityscape-with-skyscrapers-and-a-boat-on-water.jpg',
-  '/images/hero/an-aerial-view-of-a-city-with-tall-buildings.jpg',
-  '/images/services/people-having-meeting-on-rectangular-brown-table.jpg',
+  { src: '/images/hero/four-men-in-business-attire-are-engaged-in-a-discussion-arou.jpg', position: 'center 70%' },
+  { src: '/images/services/a-view-of-a-city-with-tall-buildings.jpg',                    position: 'center 60%' },
+  { src: '/images/team/two-men-in-suits-having-coffee-at-a-table.jpg',                   position: 'center 75%' },
+  { src: '/images/services/modern-cityscape-with-skyscrapers-and-a-boat-on-water.jpg',   position: 'center 70%' },
+  { src: '/images/hero/an-aerial-view-of-a-city-with-tall-buildings.jpg',                position: 'center center' },
+  { src: '/images/services/people-having-meeting-on-rectangular-brown-table.jpg',        position: 'center 90%' },
 ];
 ---
 
@@ -47,15 +51,15 @@ const galleryImages = [
   description={t(locale, 'site.description')}
 >
   <Hero
-    title="Keane International Legal Consultancy"
-    subtitle="Your trusted partner for UK business expansion"
+    title="Bridging Laws, Cultures, and Opportunities"
+    subtitle="KILC empowers clients to move, invest and thrive — offering insight-led support on legal and regulatory frameworks built for change, innovation and global growth."
     cta={{ text: t(locale, 'hero.cta'), href: '/contact' }}
     showCta={false}
     locale={locale}
   />
 
   <!-- Services Overview -->
-  <section class="py-20 bg-brand-light">
+  <section class="py-20 bg-brand-light reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-serif font-bold text-brand-dark mb-4">
@@ -73,6 +77,7 @@ const galleryImages = [
                 src={card.image}
                 alt={card.title}
                 class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+                style={`object-position: ${card.imagePosition}`}
                 loading="lazy"
               />
             </div>
@@ -90,15 +95,22 @@ const galleryImages = [
     </div>
   </section>
 
-  <!-- Photo Gallery Mosaic -->
-  <section class="py-0">
+  <!-- Gallery: Heading + Mosaic -->
+  <section class="py-16 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-4 text-center mb-10">
+      <h2 class="text-3xl font-serif font-bold text-brand-dark mb-3">Global Legal Expertise</h2>
+      <a href="/global-market-navigation" class="text-brand-primary hover:text-brand-accent transition-colors text-sm">
+        Empowering enterprises with tailored international legal solutions →
+      </a>
+    </div>
     <div class="grid grid-cols-3 grid-rows-2">
-      {galleryImages.map((src, i) => (
+      {galleryImages.map((img) => (
         <div class="overflow-hidden h-64">
           <img
-            src={src}
+            src={img.src}
             alt=""
             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            style={`object-position: ${img.position}`}
             loading="lazy"
           />
         </div>
@@ -107,7 +119,7 @@ const galleryImages = [
   </section>
 
   <!-- Contact & Location -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-white reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <!-- Map -->
@@ -175,7 +187,7 @@ const galleryImages = [
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white">
+  <section class="py-20 bg-gradient-to-r from-brand-primary to-brand-secondary text-white reveal">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-serif font-bold mb-6">
         Ready to expand your business to the UK?
