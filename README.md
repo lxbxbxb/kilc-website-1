@@ -34,12 +34,13 @@ npm run preview
 Defined as Tailwind tokens in `tailwind.config.mjs`:
 
 ```
-brand.primary:   #9A7B3C (warm gold) — links, hover, accents
-brand.secondary: #7A5E28 (deep gold) — gradients, dark accents
-brand.dark:      #1C1A17 (navy) — footer, strong headings
-brand.accent:    #C4953A (bright gold) — CTA buttons
-brand.light:     #F8F6F2 (off-white) — section backgrounds
+brand.primary:   #C5A059 (gold/bronze) — buttons, icons, accents
+brand.secondary: #A8854A (deeper bronze) — gradient end
+brand.dark:      #1C1A17 (near-black) — headings, body text
+brand.accent:    #C5A059 (gold/bronze) — CTA buttons
+brand.light:     #F8F6F2 (warm off-white) — section backgrounds
 brand.text:      #1C1A17 (body text)
+brand.footer:    #E5E7EB (light slate gray) — footer background
 ```
 
 ## Project Structure

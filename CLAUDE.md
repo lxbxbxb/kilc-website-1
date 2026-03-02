@@ -17,15 +17,16 @@
 Located in `tailwind.config.mjs` under `theme.extend.colors.brand`:
 
 ```
-primary:   #9A7B3C (warm gold)
-secondary: #7A5E28 (deep gold)
-dark:      #1C1A17 (navy)
-accent:    #C4953A (bright gold)
-light:     #F8F6F2 (off-white)
+primary:   #C5A059 (gold/bronze)
+secondary: #A8854A (deeper bronze)
+dark:      #1C1A17 (near-black)
+accent:    #C5A059 (gold/bronze)
+light:     #F8F6F2 (warm off-white)
 text:      #1C1A17 (body)
+footer:    #E5E7EB (light slate gray)
 ```
 
-**Do not modify** — these are production design tokens used across all pages.
+Changes require testing all 38 pages locally before committing.
 
 ### i18n System
 
@@ -39,7 +40,7 @@ text:      #1C1A17 (body)
 
 - **BaseLayout.astro**: Master layout with Umami analytics script, hreflang tags, Open Graph meta
 - **Global Styles**: `src/styles/global.css` (Tailwind directives + custom utilities)
-- **Font Preloading**: Roboto 400, Playfair Display 700 (woff2)
+- **Font**: `system-ui` primary, `Noto Sans SC` for Chinese glyphs (self-hosted woff2 in `/fonts/`)
 
 ## Development Workflow
 
@@ -206,4 +207,4 @@ Do not modify Cloudflare DNS. Contact email provider (Hostinger) if MX records n
 
 ---
 
-**Last Updated**: March 2, 2026
+**Last Updated**: March 2, 2026 (brand colors updated to #C5A059 palette; fonts changed to system-ui + Noto Sans SC; unique hero images assigned to all 26 sub-pages)
