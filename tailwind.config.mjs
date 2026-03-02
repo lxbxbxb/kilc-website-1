@@ -7,12 +7,13 @@ export default {
     extend: {
       colors: {
         brand: {
-          primary:   '#9A7B3C',   // warm gold — links, hover, active accents
-          secondary: '#7A5E28',   // deep gold — gradient end, dark accents
-          dark:      '#1C1A17',   // near-black with warm undertone — footer bg, strong headings
-          accent:    '#C4953A',   // bright gold — CTA buttons
+          primary:   '#C5A059',   // gold/bronze — buttons, icons, accents
+          secondary: '#A8854A',   // deeper bronze — gradient end
+          dark:      '#1C1A17',   // near-black — headings, body text
+          accent:    '#C5A059',   // gold/bronze — CTA buttons
           light:     '#F8F6F2',   // warm off-white — section backgrounds
           text:      '#1C1A17',   // body text
+          footer:    '#E5E7EB',   // light slate gray — footer background
         },
       },
       fontFamily: {
