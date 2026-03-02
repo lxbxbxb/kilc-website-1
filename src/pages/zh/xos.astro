@@ -1,0 +1,117 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+
+const locale = 'zh';
+
+const features = [
+  {
+    title: '合规差距分析',
+    description: '即时评估您的业务与英国及国际监管要求之间的差距。XOS 系统将您的业务运营与适用法规框架进行对比，清晰标注需要关注的领域。',
+    icon: 'M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z',
+  },
+  {
+    title: '文件模板库',
+    description: '获取经法律审阅的文件模板，涵盖公司注册文件、股东协议、合规政策及监管申报材料，均针对英国跨境业务定制。',
+    icon: 'M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z',
+  },
+  {
+    title: '监管动态追踪',
+    description: '实时追踪与您所在行业及司法管辖区相关的法规变化。XOS 持续监测英国、欧盟及主要国际法规框架的更新，并在需要采取行动时及时提醒。',
+    icon: 'M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0',
+  },
+  {
+    title: '跨境工作流管理',
+    description: '在统一平台上管理多司法管辖区的合规工作流程。XOS 协调英国、中国及其他国际监管机构的任务安排、截止日期与文件提交。',
+    icon: 'M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418',
+  },
+  {
+    title: '报告与审计追踪',
+    description: '生成全面的合规报告，用于内部治理、董事会汇报或监管提交。XOS 内的每项操作均附有时间戳并完整记录，提供清晰、可追溯的审计日志。',
+    icon: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z',
+  },
+  {
+    title: '安全客户门户',
+    description: '为您与 KILC 顾问团队提供专属加密协作空间。安全共享文件、交流沟通、追踪事务进展，一切均在统一的安全环境中完成。',
+    icon: 'M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z',
+  },
+];
+---
+
+<PageLayout
+  title="XOS — 跨境合规操作系统 | KILC"
+  description="XOS 是 KILC 的跨境合规操作系统，提供合规差距分析、文件模板、监管动态追踪及跨境工作流管理，助力企业高效应对国际合规要求。"
+>
+  <Hero
+    title="XOS"
+    subtitle="跨境合规操作系统 — 在统一的安全平台上管理您在英国及国际范围内的合规义务。"
+    backgroundImage="/images/services/finance.jpg"
+    locale={locale}
+  />
+
+  <!-- Introduction -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          XOS 是 KILC 自主研发的跨境合规操作系统，专为跨越多个司法管辖区运营的企业而设计，提供安全、智能的一体化平台。无论您正在建立英国业务、管理持续合规义务，还是应对复杂的多司法管辖区要求，XOS 均可在统一环境中提供所需的工具与监督支持。
+        </p>
+      </div>
+
+      <!-- Feature Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {features.map((feature) => (
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d={feature.icon} />
+              </svg>
+            </div>
+            <h3 class="text-xl font-sans font-bold text-brand-dark mb-4">
+              {feature.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              {feature.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Access Platform CTA -->
+      <div class="max-w-3xl mx-auto bg-brand-light rounded-lg p-10 text-center">
+        <h2 class="text-2xl font-sans font-bold text-brand-dark mb-4">
+          访问 XOS 客户平台
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          现有客户可登录 XOS 平台管理合规工作流程、获取文件模板，并与 KILC 团队协作。如需了解入驻事宜，请联系我们。
+        </p>
+        <a
+          href="https://platform.kilc.co.uk"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
+        >
+          前往客户平台 &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 cta-section">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-sans font-bold mb-6">
+        准备好优化您的跨境合规管理？
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        联系我们，进一步了解 XOS 如何为您的国际业务运营提供支持。
+      </p>
+      <a
+        href="/zh/contact-us"
+        class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
+      >
+        联系我们
+      </a>
+    </div>
+  </section>
+</PageLayout>
