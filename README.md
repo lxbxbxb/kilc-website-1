@@ -1,43 +1,95 @@
-# Astro Starter Kit: Minimal
+# KILC Website
 
-```sh
-npm create astro@latest -- --template minimal
+Astro 5 static site with Tailwind CSS and TypeScript. 38 pages in English and Chinese (i18n). **Live at kilc.co.uk**
+
+## Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Development server (http://localhost:4321)
+npm run dev
+
+# Type checking (must run after code changes)
+npx astro sync
+npx tsc --noEmit
+
+# Production build
+npm run build
+
+# Preview build locally
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Key Commands
 
-## 🚀 Project Structure
+- `npm run dev` — Start local dev server
+- `npm run build` — Build static site to `dist/`
+- `npx astro sync` — Generate `.astro/` types (run before `tsc`)
+- `npx tsc --noEmit` — Type check (no emit)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Brand Colors
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+Defined as Tailwind tokens in `tailwind.config.mjs`:
+
+```
+brand.primary:   #9A7B3C (warm gold) — links, hover, accents
+brand.secondary: #7A5E28 (deep gold) — gradients, dark accents
+brand.dark:      #1C1A17 (navy) — footer, strong headings
+brand.accent:    #C4953A (bright gold) — CTA buttons
+brand.light:     #F8F6F2 (off-white) — section backgrounds
+brand.text:      #1C1A17 (body text)
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Project Structure
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```
+src/
+├── pages/          (38 .astro files + i18n routes)
+├── components/     (reusable Astro components)
+├── layouts/        (BaseLayout.astro + analytics)
+├── i18n/           (en.json, zh.json, utils.ts)
+└── styles/         (global.css, Tailwind)
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## i18n Setup
 
-## 🧞 Commands
+- Default route: `/en/*` (English)
+- Chinese routes: `/zh/*` with alternate slugs (see `src/i18n/utils.ts`)
+- Function `t(locale, 'key.path')` for translations
+- Alternate hreflang links in BaseLayout for SEO
 
-All commands are run from the root of the project, from a terminal:
+## Analytics
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Umami tracking script in `src/layouts/BaseLayout.astro`:
+- Site: https://analytics.kilc.co.uk
+- Website ID: `c3272e3b-c8cc-4770-9fa0-55f10d8a162c`
 
-## 👀 Want to learn more?
+## Deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+**Automatic via GitHub Actions on push to `main`**
+
+1. Run `npx astro sync && npx tsc && npm run build`
+2. SCP `dist/` to VPS at `~/kilc-website/dist/`
+3. SCP nginx config to `~/kilc-platform/nginx/conf.d/`
+4. Reload nginx in Docker (`kilc-nginx`)
+
+Requires secrets in GitHub: `HETZNER_SSH_HOST`, `HETZNER_SSH_USER`, `HETZNER_SSH_KEY`
+
+**VPS Details**
+- Host: 157.90.116.169
+- SSH user: `deploy` (key: `~/.ssh/kilc_hetzner`)
+- Docker container: `kilc-nginx`
+- Cloudflare: Full SSL mode, origin cert at `~/kilc-platform/nginx/certs/kilc-origin.pem`
+
+## Email & DNS
+
+- Hosted on Hostinger (MX records unchanged)
+- DKIM / SPF / DMARC in Cloudflare DNS — **do not modify**
+
+## Learning Resources
+
+- [Astro Docs](https://docs.astro.build)
+- [Tailwind CSS](https://tailwindcss.com)
+- TypeScript config in `tsconfig.json`
