@@ -2,6 +2,7 @@ backend:
   name: github
   repo: kilc-uk/kilc-website
   branch: main
+  base_url: https://sveltia-cms-auth.shy-star-b244.workers.dev
 
 # Media files stored in the repo
 media_folder: public/images
