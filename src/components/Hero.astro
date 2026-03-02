@@ -6,6 +6,7 @@ interface Props {
   subtitle?: string;
   backgroundImage?: string;
   backgroundVideo?: string;
+  backgroundPosition?: string;
   cta?: { text: string; href: string };
   showCta?: boolean;
   locale: Locale;
@@ -16,6 +17,7 @@ const {
   subtitle,
   backgroundImage = '/images/hero/an-aerial-view-of-a-city-with-tall-buildings.jpg',
   backgroundVideo,
+  backgroundPosition = 'center',
   cta,
   showCta = true,
   locale,
@@ -40,8 +42,8 @@ const {
     </div>
   ) : (
     <div
-      class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-      style={`background-image: url('${backgroundImage}');`}
+      class="absolute inset-0 bg-cover bg-no-repeat"
+      style={`background-image: url('${backgroundImage}'); background-position: ${backgroundPosition};`}
     >
       <div class="absolute inset-0 bg-black/20"></div>
     </div>
