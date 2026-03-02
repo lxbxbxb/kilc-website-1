@@ -27,20 +27,16 @@
   }
 }
 
-/* CTA section — London skyline with dark navy overlay */
+/* CTA section — White */
 .cta-section {
-  background-image:
-    linear-gradient(rgba(26, 43, 72, 0.78), rgba(26, 43, 72, 0.78)),
-    url('/images/services/modern-cityscape-with-skyscrapers-and-a-boat-on-water.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #1C1A17;
 }
 
 .cta-section h2,
 .cta-section p,
 .cta-section p a {
-  color: #ffffff;
+  color: #1C1A17;
 }
 
 /* Scroll reveal */
