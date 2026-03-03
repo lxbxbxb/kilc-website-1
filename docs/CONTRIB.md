@@ -86,9 +86,10 @@ Blog posts live in `src/content/blog/en/` (English) and `src/content/blog/zh/` (
 ```yaml
 ---
 title: "Post title"
+slug: "custom-url-name"      # optional — defaults to filename
 date: "2026-01-01"
-author: "Author name"    # optional
-coverImage: "/images/..."   # optional
+author: "Author name"        # optional
+coverImage: "/images/..."    # optional
 tags: ["Tag One", "Tag Two"] # optional
 excerpt: "One-paragraph summary shown on the card grid."
 featured: false              # true = pinned to top of /blogs

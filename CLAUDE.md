@@ -144,6 +144,7 @@ Blog posts live in `src/content/blog/en/` as `.md` files. Required frontmatter:
 ```yaml
 ---
 title: "Post title"
+slug: "custom-url-name"      # optional — defaults to filename
 date: "2026-01-01"
 author: "Author name"        # optional
 coverImage: "/images/..."    # optional
@@ -227,4 +228,4 @@ Do not modify Cloudflare DNS. Contact email provider (Hostinger) if MX records n
 
 ---
 
-**Last Updated**: March 3, 2026 (ZH blog added: /zh/blogs + /zh/blogs/[slug], blog-zh CMS collection; author optional; page count 42→44)
+**Last Updated**: March 3, 2026 (ZH blog, optional author, optional custom slug field for blog URL overrides)
