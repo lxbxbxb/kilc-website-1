@@ -136,3 +136,19 @@ collections:
       - { label: Description, name: description, widget: text }
       - { label: Icon, name: icon, widget: string, required: false }
       - { label: Display Order, name: order, widget: number, required: false }
+
+  # ----- Blog Posts (EN) -----
+  - name: blog-en
+    label: "Blog Posts (English)"
+    folder: src/content/blog/en
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Author, name: author, widget: string }
+      - { label: Cover Image, name: coverImage, widget: image, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }

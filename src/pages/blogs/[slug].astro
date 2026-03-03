@@ -1,0 +1,81 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  return allPosts
+    .filter(e => e.id.startsWith('en/'))
+    .map(entry => ({
+      params: { slug: entry.id.replace('en/', '').replace('.md', '') },
+      props: { entry },
+    }));
+}
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const locale = 'en';
+const tags = entry.data.tags ?? [];
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<PageLayout
+  title={`${entry.data.title} — KILC Blog`}
+  description={entry.data.excerpt}
+>
+  <Hero
+    title={entry.data.title}
+    subtitle={entry.data.excerpt}
+    backgroundImage={entry.data.coverImage ?? '/images/hero/bare-trees-in-front-of-white-concrete-building.jpg'}
+    backgroundPosition="center"
+    locale={locale}
+  />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Back link -->
+    <a href="/blogs" class="inline-flex items-center gap-1 text-sm text-brand-primary hover:underline mb-8">
+      ← Back to Blog
+    </a>
+
+    <!-- Post meta -->
+    <div class="flex flex-wrap items-center gap-3 mb-8 pb-6 border-b border-gray-200">
+      <span class="text-sm text-gray-500">{formatDate(entry.data.date)}</span>
+      <span class="text-gray-300">·</span>
+      <span class="text-sm text-gray-600">{entry.data.author}</span>
+      {tags.length > 0 && (
+        <>
+          <span class="text-gray-300">·</span>
+          <div class="flex flex-wrap gap-2">
+            {tags.map(tag => (
+              <span class="px-2 py-0.5 rounded text-xs bg-brand-primary/10 text-brand-primary font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+
+    <!-- Markdown body -->
+    <article class="prose prose-lg max-w-none prose-headings:font-sans prose-headings:text-brand-dark prose-a:text-brand-accent">
+      <Content />
+    </article>
+
+    <!-- Footer nav -->
+    <div class="mt-12 pt-8 border-t border-gray-200">
+      <a href="/blogs" class="inline-flex items-center gap-1 text-sm text-brand-primary hover:underline">
+        ← Back to Blog
+      </a>
+    </div>
+  </div>
+</PageLayout>

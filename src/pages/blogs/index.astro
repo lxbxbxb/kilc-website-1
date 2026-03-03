@@ -1,0 +1,155 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection } from 'astro:content';
+
+const locale = 'en';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts
+  .filter(e => e.id.startsWith('en/'))
+  .sort((a, b) => {
+    if (a.data.featured && !b.data.featured) return -1;
+    if (!a.data.featured && b.data.featured) return 1;
+    return b.data.date.getTime() - a.data.date.getTime();
+  });
+
+const allTags = [...new Set(posts.flatMap(p => p.data.tags ?? []))].sort();
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function slugFromId(id: string): string {
+  return id.replace('en/', '').replace('.md', '');
+}
+---
+
+<PageLayout
+  title="Blog — KILC"
+  description="Legal insights, company news, and updates from the KILC team."
+>
+  <Hero
+    title="Blog"
+    subtitle="Insights from the KILC team"
+    backgroundImage="/images/hero/bare-trees-in-front-of-white-concrete-building.jpg"
+    backgroundPosition="center"
+    locale={locale}
+  />
+
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Tag Filter Bar -->
+      {allTags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-10" id="tag-filter">
+          <button
+            data-tag="all"
+            class="tag-btn px-4 py-1.5 rounded-full text-sm font-medium border border-brand-primary bg-brand-primary text-white transition-colors"
+          >
+            All
+          </button>
+          {allTags.map(tag => (
+            <button
+              data-tag={tag}
+              class="tag-btn px-4 py-1.5 rounded-full text-sm font-medium border border-brand-primary text-brand-primary bg-transparent hover:bg-brand-primary hover:text-white transition-colors"
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+      )}
+
+      <!-- Posts Grid -->
+      {posts.length === 0 ? (
+        <p class="text-gray-500 text-center py-20">No posts yet. Check back soon.</p>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="posts-grid">
+          {posts.map(post => {
+            const slug = slugFromId(post.id);
+            const tags = post.data.tags ?? [];
+            return (
+              <article
+                class="blog-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col"
+                data-tags={tags.join(',')}
+              >
+                {post.data.coverImage && (
+                  <a href={`/blogs/${slug}`} class="block overflow-hidden">
+                    <img
+                      src={post.data.coverImage}
+                      alt={post.data.title}
+                      class="w-full aspect-video object-cover hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </a>
+                )}
+                <div class="p-6 flex flex-col flex-1">
+                  <!-- Featured badge + tags -->
+                  <div class="flex flex-wrap items-center gap-2 mb-3">
+                    {post.data.featured && (
+                      <span class="px-2 py-0.5 rounded text-xs font-semibold bg-brand-primary text-white uppercase tracking-wide">
+                        Featured
+                      </span>
+                    )}
+                    {tags.map(tag => (
+                      <span class="px-2 py-0.5 rounded text-xs bg-brand-primary/10 text-brand-primary font-medium">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <h2 class="font-bold text-brand-dark text-lg leading-snug mb-2">
+                    <a href={`/blogs/${slug}`} class="hover:text-brand-primary transition-colors">
+                      {post.data.title}
+                    </a>
+                  </h2>
+
+                  <p class="text-gray-600 text-sm line-clamp-3 flex-1 mb-4">
+                    {post.data.excerpt}
+                  </p>
+
+                  <div class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-gray-100">
+                    <span>{formatDate(post.data.date)}</span>
+                    <span class="text-gray-500">{post.data.author}</span>
+                    <a href={`/blogs/${slug}`} class="text-brand-primary font-medium hover:underline">
+                      Read more →
+                    </a>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  </section>
+</PageLayout>
+
+<script is:inline>
+  const filterBtns = document.querySelectorAll('.tag-btn');
+  const cards = document.querySelectorAll('.blog-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selected = btn.getAttribute('data-tag');
+
+      // Update button styles
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-brand-primary', 'text-white');
+        b.classList.add('bg-transparent', 'text-brand-primary');
+      });
+      btn.classList.add('bg-brand-primary', 'text-white');
+      btn.classList.remove('bg-transparent', 'text-brand-primary');
+
+      // Filter cards
+      cards.forEach(card => {
+        if (selected === 'all') {
+          card.classList.remove('hidden');
+          return;
+        }
+        const tags = (card.getAttribute('data-tags') || '').split(',');
+        card.classList.toggle('hidden', !tags.includes(selected));
+      });
+    });
+  });
+</script>
