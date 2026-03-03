@@ -101,7 +101,7 @@ function slugFromId(id: string): string {
 
                   <div class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-gray-100">
                     <span>{formatDate(post.data.date)}</span>
-                    <span class="text-gray-500">{post.data.author}</span>
+                    {post.data.author && <span class="text-gray-500">{post.data.author}</span>}
                     <a href={`/zh/blogs/${slug}`} class="text-brand-primary font-medium hover:underline">
                       阅读全文 →
                     </a>

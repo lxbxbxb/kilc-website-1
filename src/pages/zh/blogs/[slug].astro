@@ -45,8 +45,12 @@ function formatDate(date: Date): string {
     <!-- Post meta -->
     <div class="flex flex-wrap items-center gap-3 mb-8 pb-6 border-b border-gray-200">
       <span class="text-sm text-gray-500">{formatDate(entry.data.date)}</span>
-      <span class="text-gray-300">·</span>
-      <span class="text-sm text-gray-600">{entry.data.author}</span>
+      {entry.data.author && (
+        <>
+          <span class="text-gray-300">·</span>
+          <span class="text-sm text-gray-600">{entry.data.author}</span>
+        </>
+      )}
       {tags.length > 0 && (
         <>
           <span class="text-gray-300">·</span>
