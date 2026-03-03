@@ -1,14 +1,14 @@
 ---
-import PageLayout from '../../layouts/PageLayout.astro';
+import PageLayout from '../../../layouts/PageLayout.astro';
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const allPosts = await getCollection('blog');
   return allPosts
-    .filter(e => e.id.startsWith('en/'))
+    .filter(e => e.id.startsWith('zh/'))
     .map(entry => ({
-      params: { slug: entry.id.replace('en/', '').replace('.md', '') },
+      params: { slug: entry.id.replace('zh/', '').replace('.md', '') },
       props: { entry },
     }));
 }
@@ -23,18 +23,18 @@ const { Content } = await render(entry);
 const tags = entry.data.tags ?? [];
 
 function formatDate(date: Date): string {
-  return date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 ---
 
 <PageLayout
-  title={`${entry.data.title} — KILC Blog`}
+  title={`${entry.data.title} — KILC 博客`}
   description={entry.data.excerpt}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Back link -->
-    <a href="/blogs" class="inline-flex items-center gap-1 text-sm text-brand-primary hover:underline mb-8 block">
-      ← Back to Blog
+    <a href="/zh/blogs" class="inline-flex items-center gap-1 text-sm text-brand-primary hover:underline mb-8 block">
+      ← 返回博客
     </a>
 
     <!-- Title -->
@@ -61,15 +61,15 @@ function formatDate(date: Date): string {
       )}
     </div>
 
-    <!-- Markdown body (images in markdown render inline between paragraphs) -->
+    <!-- Markdown body -->
     <article class="prose prose-lg max-w-none prose-headings:font-sans prose-headings:text-brand-dark prose-a:text-brand-accent prose-img:rounded-xl prose-img:shadow-sm">
       <Content />
     </article>
 
     <!-- Footer nav -->
     <div class="mt-12 pt-8 border-t border-gray-200">
-      <a href="/blogs" class="inline-flex items-center gap-1 text-sm text-brand-primary hover:underline">
-        ← Back to Blog
+      <a href="/zh/blogs" class="inline-flex items-center gap-1 text-sm text-brand-primary hover:underline">
+        ← 返回博客
       </a>
     </div>
   </div>

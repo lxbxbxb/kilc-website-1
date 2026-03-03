@@ -1,12 +1,12 @@
 ---
-import PageLayout from '../../layouts/PageLayout.astro';
+import PageLayout from '../../../layouts/PageLayout.astro';
 import { getCollection } from 'astro:content';
 
-const locale = 'en';
+const locale = 'zh';
 
 const allPosts = await getCollection('blog');
 const posts = allPosts
-  .filter(e => e.id.startsWith('en/'))
+  .filter(e => e.id.startsWith('zh/'))
   .sort((a, b) => {
     if (a.data.featured && !b.data.featured) return -1;
     if (!a.data.featured && b.data.featured) return 1;
@@ -16,17 +16,17 @@ const posts = allPosts
 const allTags = [...new Set(posts.flatMap(p => p.data.tags ?? []))].sort();
 
 function formatDate(date: Date): string {
-  return date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
 function slugFromId(id: string): string {
-  return id.replace('en/', '').replace('.md', '');
+  return id.replace('zh/', '').replace('.md', '');
 }
 ---
 
 <PageLayout
-  title="Blog — KILC"
-  description="Legal insights, company news, and updates from the KILC team."
+  title="博客 — KILC"
+  description="来自 KILC 团队的法律见解、公司动态与行业资讯。"
 >
   <section class="py-16 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,7 +38,7 @@ function slugFromId(id: string): string {
             data-tag="all"
             class="tag-btn px-4 py-1.5 rounded-full text-sm font-medium border border-brand-primary bg-brand-primary text-white transition-colors"
           >
-            All
+            全部
           </button>
           {allTags.map(tag => (
             <button
@@ -53,7 +53,7 @@ function slugFromId(id: string): string {
 
       <!-- Posts Grid -->
       {posts.length === 0 ? (
-        <p class="text-gray-500 text-center py-20">No posts yet. Check back soon.</p>
+        <p class="text-gray-500 text-center py-20">暂无文章，敬请期待。</p>
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="posts-grid">
           {posts.map(post => {
@@ -65,7 +65,7 @@ function slugFromId(id: string): string {
                 data-tags={tags.join(',')}
               >
                 {post.data.coverImage && (
-                  <a href={`/blogs/${slug}`} class="block overflow-hidden">
+                  <a href={`/zh/blogs/${slug}`} class="block overflow-hidden">
                     <img
                       src={post.data.coverImage}
                       alt={post.data.title}
@@ -79,7 +79,7 @@ function slugFromId(id: string): string {
                   <div class="flex flex-wrap items-center gap-2 mb-3">
                     {post.data.featured && (
                       <span class="px-2 py-0.5 rounded text-xs font-semibold bg-brand-primary text-white uppercase tracking-wide">
-                        Featured
+                        精选
                       </span>
                     )}
                     {tags.map(tag => (
@@ -90,7 +90,7 @@ function slugFromId(id: string): string {
                   </div>
 
                   <h2 class="font-bold text-brand-dark text-lg leading-snug mb-2">
-                    <a href={`/blogs/${slug}`} class="hover:text-brand-primary transition-colors">
+                    <a href={`/zh/blogs/${slug}`} class="hover:text-brand-primary transition-colors">
                       {post.data.title}
                     </a>
                   </h2>
@@ -102,8 +102,8 @@ function slugFromId(id: string): string {
                   <div class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-gray-100">
                     <span>{formatDate(post.data.date)}</span>
                     <span class="text-gray-500">{post.data.author}</span>
-                    <a href={`/blogs/${slug}`} class="text-brand-primary font-medium hover:underline">
-                      Read more →
+                    <a href={`/zh/blogs/${slug}`} class="text-brand-primary font-medium hover:underline">
+                      阅读全文 →
                     </a>
                   </div>
                 </div>
@@ -124,7 +124,6 @@ function slugFromId(id: string): string {
     btn.addEventListener('click', () => {
       const selected = btn.getAttribute('data-tag');
 
-      // Update button styles
       filterBtns.forEach(b => {
         b.classList.remove('bg-brand-primary', 'text-white');
         b.classList.add('bg-transparent', 'text-brand-primary');
@@ -132,7 +131,6 @@ function slugFromId(id: string): string {
       btn.classList.add('bg-brand-primary', 'text-white');
       btn.classList.remove('bg-transparent', 'text-brand-primary');
 
-      // Filter cards
       cards.forEach(card => {
         if (selected === 'all') {
           card.classList.remove('hidden');
