@@ -1,6 +1,6 @@
 # KILC Website
 
-Astro 5 static site with Tailwind CSS and TypeScript. 42 pages in English and Chinese (i18n). **Live at kilc.co.uk**
+Astro 5 static site with Tailwind CSS and TypeScript. 44 pages in English and Chinese (i18n). **Live at kilc.co.uk**
 
 ## Quick Start
 
@@ -47,7 +47,7 @@ brand.footer:    #E5E7EB (light slate gray) — footer background
 
 ```
 src/
-├── pages/          (42 .astro files + i18n routes, including /blogs)
+├── pages/          (44 .astro files + i18n routes, including /blogs + /zh/blogs)
 ├── content/        (blog/, services/, team/, policies/, coverage/)
 ├── components/     (reusable Astro components)
 ├── layouts/        (BaseLayout.astro + analytics)

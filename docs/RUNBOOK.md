@@ -94,7 +94,7 @@ Check the Actions log. Common causes:
 - Type error → run `npx tsc --noEmit` locally to reproduce
 - Missing i18n key → add to both `en.json` and `zh.json`
 - Broken import → run `npx astro sync` then rebuild
-- Invalid blog frontmatter → ensure every `.md` in `src/content/blog/en/` has required fields (`title`, `date`, `author`, `excerpt`)
+- Invalid blog frontmatter → ensure every `.md` in `src/content/blog/en/` and `src/content/blog/zh/` has required fields (`title`, `date`, `excerpt`)
 
 ### SSL certificate error
 

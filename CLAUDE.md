@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**KILC Website** is a live Astro 5 static site (kilc.co.uk) with 42 pages, TypeScript, Tailwind CSS, and English + Chinese i18n.
+**KILC Website** is a live Astro 5 static site (kilc.co.uk) with 44 pages, TypeScript, Tailwind CSS, and English + Chinese i18n.
 
 - **Framework**: Astro 5 (static generation)
 - **Styling**: Tailwind CSS 3.4.19 with custom brand tokens
@@ -26,7 +26,7 @@ text:      #1C1A17 (body)
 footer:    #E5E7EB (light slate gray)
 ```
 
-Changes require testing all 42 pages locally before committing.
+Changes require testing all 44 pages locally before committing.
 
 ### i18n System
 
@@ -145,7 +145,7 @@ Blog posts live in `src/content/blog/en/` as `.md` files. Required frontmatter:
 ---
 title: "Post title"
 date: "2026-01-01"
-author: "Author name"
+author: "Author name"        # optional
 coverImage: "/images/..."    # optional
 tags: ["Tag One", "Tag Two"] # optional
 excerpt: "Card summary (1–2 sentences)."
@@ -153,7 +153,9 @@ featured: false              # true = pinned to top of /blogs
 ---
 ```
 
-Add via CMS at `/admin/` → **Blog Posts (English)**, or commit the file directly. The `/blogs` overview and `/blogs/[slug]` detail pages are auto-generated at build time.
+- EN: `src/content/blog/en/` → `/blogs` (CMS: **Blog Posts (English)**)
+- ZH: `src/content/blog/zh/` → `/zh/blogs` (CMS: **Blog Posts (Chinese)**)
+- Posts per locale are independent — no need to mirror across languages
 
 ### Add a New Page
 
@@ -180,7 +182,7 @@ Umami script is in `src/layouts/BaseLayout.astro` (line 58). **Do not modify Web
 
 ### Adjust Brand Colors
 
-Edit `tailwind.config.mjs` under `theme.extend.colors.brand`. Rebuild and test all 42 pages locally before committing.
+Edit `tailwind.config.mjs` under `theme.extend.colors.brand`. Rebuild and test all 44 pages locally before committing.
 
 ## Troubleshooting
 
@@ -225,4 +227,4 @@ Do not modify Cloudflare DNS. Contact email provider (Hostinger) if MX records n
 
 ---
 
-**Last Updated**: March 3, 2026 (blog section added: /blogs overview, /blogs/[slug] detail, Decap CMS collection, footer link; page count 38→42)
+**Last Updated**: March 3, 2026 (ZH blog added: /zh/blogs + /zh/blogs/[slug], blog-zh CMS collection; author optional; page count 42→44)
