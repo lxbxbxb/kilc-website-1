@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "KILC - 基恩国际法律咨询",
+    "title": "KILC - 客安国际法律咨询",
     "description": "总部位于英国的法律咨询公司，帮助中国企业拓展英国市场"
   },
   "nav": {
@@ -34,24 +34,3 @@
   },
   "footer": {
     "address": "128 City Road, London EC1V 2NX",
-    "email": "info@kilc.co.uk",
-    "rights": "版权所有。",
-    "privacy": "隐私政策",
-    "cookies": "Cookie政策",
-    "aml": "反洗钱政策",
-    "ctf": "反恐融资政策",
-    "cookieSettings": "Cookie 设置"
-  },
-  "cookieBanner": {
-    "title": "Cookie 偏好设置",
-    "message": "我们使用 Cookie 来分析网站流量并改善您的体验。分析数据保存在我们自己的服务器上，绝不会与第三方共享。",
-    "learnMore": "Cookie 政策",
-    "accept": "接受分析 Cookie",
-    "decline": "仅使用必要 Cookie"
-  },
-  "chat": {
-    "title": "在线咨询",
-    "placeholder": "输入您的消息...",
-    "send": "发送"
-  }
-}
