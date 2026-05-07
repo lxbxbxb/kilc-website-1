@@ -44,26 +44,13 @@ const locale = 'zh';
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a
-          href="https://xos.kilc.co.uk"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
-        >
+        <a href="https://xos.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="btn-xos btn-xos-lg">
           立即体验 &rarr;
         </a>
-        <a
-          href="https://xos.kilc.co.uk"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-white/20 transition-colors"
-        >
+        <a href="https://xos.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="btn-xos-outline btn-xos-outline-lg" style="color:#F7F2EA;border-color:rgba(247,242,234,0.4);">
           免费注册
         </a>
-        <a
-          href="/zh/contact-us"
-          class="inline-block text-white/90 hover:text-white font-medium px-6 py-3 underline-offset-4 hover:underline transition-colors"
-        >
+        <a href="/zh/contact-us" class="btn-xos-ghost" style="color:rgba(247,242,234,0.85);">
           预约演示 &rarr;
         </a>
       </div>
@@ -78,8 +65,8 @@ const locale = 'zh';
   <section class="py-20 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <p class="text-sm font-semibold text-brand-primary uppercase tracking-wider mb-3">XOS 背后的专业积淀</p>
-        <h2 class="text-3xl font-serif font-bold text-brand-dark mb-4">
+        <span class="section-label">XOS 背后的专业积淀</span>
+        <h2 class="text-3xl font-serif font-bold text-brand-dark mb-4 mt-2">
           基于客安国际法律咨询
         </h2>
         <p class="text-gray-600 max-w-2xl mx-auto text-lg">
@@ -87,48 +74,48 @@ const locale = 'zh';
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <a href="/zh/global-market-strategy" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/global-market-strategy" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             全球市场导航
           </h3>
           <p class="text-gray-600">
             为进入和拓展英国市场提供专业战略指导。
           </p>
         </a>
-        <a href="/zh/immigration-advisory" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/immigration-advisory" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             移民咨询
           </h3>
           <p class="text-gray-600">
             为个人和企业提供专业的签证与移民咨询服务。
           </p>
         </a>
-        <a href="/zh/criminal-defence" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/criminal-defence" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             刑事辩护
           </h3>
           <p class="text-gray-600">
             经验丰富的刑事辩护咨询与协调服务。
           </p>
         </a>
-        <a href="/zh/student-services" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/student-services" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             留学服务
           </h3>
           <p class="text-gray-600">
             为在英国的国际学生提供全方位支持。
           </p>
         </a>
-        <a href="/zh/real-estate-investment-protection" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/real-estate-investment-protection" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             房产与投资保护
           </h3>
           <p class="text-gray-600">
             为您在英国的房地产投资提供专业保障。
           </p>
         </a>
-        <a href="/zh/company-formation" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/company-formation" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             公司注册
           </h3>
           <p class="text-gray-600">
@@ -142,25 +129,18 @@ const locale = 'zh';
   <!-- CTA Section -->
   <section class="py-20 cta-section">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-serif font-bold mb-6">
+      <span class="section-label">立即开始</span>
+      <h2 class="text-3xl font-serif font-bold mb-6 mt-2">
         准备好优化您的跨境合规管理？
       </h2>
-      <p class="text-lg mb-8 text-white/90">
+      <p class="text-lg mb-8">
         立即体验 XOS，或预约演示，了解它如何契合您的业务运营。
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a
-          href="https://xos.kilc.co.uk"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
-        >
+        <a href="https://xos.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="btn-xos btn-xos-lg">
           立即体验 &rarr;
         </a>
-        <a
-          href="/zh/contact-us"
-          class="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-brand-dark transition-colors"
-        >
+        <a href="/zh/contact-us" class="btn-xos-outline btn-xos-outline-lg">
           预约演示
         </a>
       </div>

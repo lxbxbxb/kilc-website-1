@@ -84,26 +84,13 @@ const galleryImages = [
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a
-          href="https://xos.kilc.co.uk"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
-        >
+        <a href="https://xos.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="btn-xos btn-xos-lg">
           Open XOS &rarr;
         </a>
-        <a
-          href="https://xos.kilc.co.uk"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-white/20 transition-colors"
-        >
+        <a href="https://xos.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="btn-xos-outline btn-xos-outline-lg" style="color:#F7F2EA;border-color:rgba(247,242,234,0.4);">
           Sign Up Free
         </a>
-        <a
-          href="/contact"
-          class="inline-block text-white/90 hover:text-white font-medium px-6 py-3 underline-offset-4 hover:underline transition-colors"
-        >
+        <a href="/contact" class="btn-xos-ghost" style="color:rgba(247,242,234,0.85);">
           Book a Demo &rarr;
         </a>
       </div>
@@ -118,17 +105,17 @@ const galleryImages = [
   <section class="py-20 bg-brand-light reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <p class="text-sm font-semibold text-brand-primary uppercase tracking-wider mb-3">The expertise behind XOS</p>
-        <h2 class="text-3xl font-serif font-bold text-brand-dark mb-4">
+        <span class="section-label">The expertise behind XOS</span>
+        <h2 class="text-3xl font-serif font-bold text-brand-dark mb-4 mt-2">
           Built on KILC's legal consultancy
         </h2>
         <p class="text-gray-600 max-w-2xl mx-auto text-lg">
           XOS is powered by years of frontline legal practice. Beyond the platform, KILC's specialist team supports clients across these areas.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {serviceCards.map((card) => (
-          <a href={card.href} class="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <a href={card.href} class="xos-card group block overflow-hidden p-0">
             <div class="overflow-hidden">
               <img
                 src={card.image}
@@ -138,8 +125,8 @@ const galleryImages = [
                 loading="lazy"
               />
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+            <div class="p-7">
+              <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
                 {card.title}
               </h3>
               <p class="text-gray-600">
@@ -246,25 +233,18 @@ const galleryImages = [
   <!-- CTA Section -->
   <section class="py-20 cta-section reveal">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-serif font-bold mb-6">
+      <span class="section-label">Get started</span>
+      <h2 class="text-3xl font-serif font-bold mb-6 mt-2">
         Ready to streamline your cross-border compliance?
       </h2>
-      <p class="text-lg mb-8 text-white/90">
+      <p class="text-lg mb-8">
         Open XOS today, or book a demo to see how it fits your operations.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a
-          href="https://xos.kilc.co.uk"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
-        >
+        <a href="https://xos.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="btn-xos btn-xos-lg">
           Open XOS &rarr;
         </a>
-        <a
-          href="/contact"
-          class="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-brand-dark transition-colors"
-        >
+        <a href="/contact" class="btn-xos-outline btn-xos-outline-lg">
           Book a Demo
         </a>
       </div>
