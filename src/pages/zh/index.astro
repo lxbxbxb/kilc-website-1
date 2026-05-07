@@ -1,6 +1,5 @@
 ﻿---
 import PageLayout from '../../layouts/PageLayout.astro';
-import Hero from '../../components/Hero.astro';
 import { t } from '../../i18n/utils';
 
 const locale = 'zh';
@@ -10,19 +9,83 @@ const locale = 'zh';
   title={t(locale, 'site.title')}
   description={t(locale, 'site.description')}
 >
-  <Hero
-    title="客安国际法律咨询"
-    subtitle="您值得信赖的英国商业拓展合作伙伴"
-    cta={{ text: t(locale, 'hero.cta'), href: '/zh/contact-us' }}
-    locale={locale}
-  />
+  <!-- XOS Hero -->
+  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="/images/hero/an-aerial-view-of-a-city-with-tall-buildings.jpg"
+      >
+        <source src="/video/homepage-hd_1280_720_25fps.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-black/55"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 py-24 text-center text-white">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+        <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+        <span class="text-sm font-medium tracking-wide">已上线 · 来自客安</span>
+      </div>
+
+      <h1 class="text-6xl sm:text-7xl lg:text-8xl font-sans font-bold tracking-wider mb-4">
+        <span class="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">XOS</span>
+      </h1>
+
+      <p class="text-2xl sm:text-3xl lg:text-4xl font-sans font-light leading-tight mb-6">
+        跨境合规，重新定义。
+      </p>
+
+      <p class="text-lg sm:text-xl text-white/85 max-w-2xl mx-auto mb-10">
+        在统一的安全智能平台上，管理您在英国及国际范围内的合规义务。
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="https://xos.kilc.co.uk"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
+        >
+          立即体验 &rarr;
+        </a>
+        <a
+          href="https://xos.kilc.co.uk"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-white/20 transition-colors"
+        >
+          免费注册
+        </a>
+        <a
+          href="/zh/contact-us"
+          class="inline-block text-white/90 hover:text-white font-medium px-6 py-3 underline-offset-4 hover:underline transition-colors"
+        >
+          预约演示 &rarr;
+        </a>
+      </div>
+
+      <p class="text-white/60 text-sm mt-6">
+        免费试用 · 无需信用卡
+      </p>
+    </div>
+  </section>
 
   <!-- Services Overview -->
   <section class="py-20 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-sans font-bold text-center text-brand-dark mb-12">
-        我们的服务
-      </h2>
+      <div class="text-center mb-12">
+        <p class="text-sm font-semibold text-brand-primary uppercase tracking-wider mb-3">XOS 背后的专业积淀</p>
+        <h2 class="text-3xl font-sans font-bold text-brand-dark mb-4">
+          基于客安国际法律咨询
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          XOS 凝聚了客安多年的一线法律实践经验。除平台之外，我们的专业团队还为客户提供以下领域的支持。
+        </p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <a href="/zh/global-market-strategy" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
           <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
@@ -80,17 +143,27 @@ const locale = 'zh';
   <section class="py-20 cta-section">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-sans font-bold mb-6">
-        准备好将业务拓展到英国了吗？
+        准备好优化您的跨境合规管理？
       </h2>
       <p class="text-lg mb-8 text-white/90">
-        立即联系我们的专业法律团队。
+        立即体验 XOS，或预约演示，了解它如何契合您的业务运营。
       </p>
-      <a
-        href="/zh/contact-us"
-        class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
-      >
-        联系我们
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="https://xos.kilc.co.uk"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
+        >
+          立即体验 &rarr;
+        </a>
+        <a
+          href="/zh/contact-us"
+          class="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-brand-dark transition-colors"
+        >
+          预约演示
+        </a>
+      </div>
     </div>
   </section>
 </PageLayout>
