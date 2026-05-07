@@ -26,7 +26,10 @@
   }
 
   body {
-    @apply font-sans text-brand-text bg-white antialiased;
+    @apply font-sans text-brand-text bg-white antialiased transition-colors duration-300;
+  }
+  html.dark body {
+    @apply bg-brand-navy text-brand-light;
   }
 
   /* Headings default to Cormorant Garamond serif (XOS style) */
@@ -35,16 +38,34 @@
   }
 }
 
-/* CTA section — White */
+/* Dark-mode overrides for sections that use Tailwind's bg-brand-light or bg-white */
+html.dark .bg-brand-light { @apply bg-brand-navy2; }
+html.dark .bg-white       { background-color: #152030; }
+html.dark .text-gray-600,
+html.dark .text-gray-700  { color: #B8C5D6; }
+html.dark .text-brand-dark { @apply text-brand-light; }
+html.dark .border-gray-100,
+html.dark .border-gray-200 { border-color: rgba(200,150,30,0.18); }
+
+/* CTA section — White (light) / Navy (dark) */
 .cta-section {
   background-color: #ffffff;
-  color: #1C1A17;
+  color: #1B2D45;
+  transition: background-color 0.3s, color 0.3s;
 }
-
+html.dark .cta-section {
+  background-color: #152030;
+  color: #F7F2EA;
+}
 .cta-section h2,
 .cta-section p,
 .cta-section p a {
-  color: #1C1A17;
+  color: #1B2D45;
+}
+html.dark .cta-section h2,
+html.dark .cta-section p,
+html.dark .cta-section p a {
+  color: #F7F2EA;
 }
 
 /* Scroll reveal */

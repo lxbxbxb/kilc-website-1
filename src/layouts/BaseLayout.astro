@@ -35,8 +35,19 @@ const alternateUrl = new URL(alternatePath, Astro.site);
 ---
 
 <!doctype html>
-<html lang={locale === 'zh' ? 'zh-CN' : 'en-GB'} class="scroll-smooth">
+<html lang={locale === 'zh' ? 'zh-CN' : 'en-GB'} class="dark scroll-smooth">
   <head>
+    <!-- Theme boot — runs before first paint to avoid flash of wrong theme.
+         Default is dark (XOS-aligned). User can opt into light via the
+         ThemeToggle; preference is stored in localStorage as kilc_theme. -->
+    <script is:inline>
+      try {
+        if (localStorage.getItem('kilc_theme') === 'light') {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    </script>
+
     <!-- Performance hints -->
     <link rel="preconnect" href="https://analytics.kilc.co.uk" />
 
