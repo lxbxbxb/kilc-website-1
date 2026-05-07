@@ -16,17 +16,17 @@ const prefix = locale === 'zh' ? '/zh' : '';
   aria-modal="true"
   aria-label={t(locale, 'cookieBanner.title')}
   aria-describedby="cookie-banner-body"
-  class="fixed inset-x-0 bottom-0 z-[9999] border-t border-[#C5A059]/30 bg-[#1C1A17] px-4 py-4 sm:px-6 hidden"
+  class="fixed inset-x-0 bottom-0 z-[9999] border-t border-[#C8961E]/30 bg-[#1B2D45] px-4 py-4 sm:px-6 hidden"
 >
   <div class="mx-auto max-w-7xl">
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
       <div class="flex-1">
-        <p class="text-sm font-semibold text-[#C5A059]">
+        <p class="text-sm font-semibold text-[#C8961E]">
           {t(locale, 'cookieBanner.title')}
         </p>
         <p id="cookie-banner-body" class="mt-1 text-xs text-white/70">
           {t(locale, 'cookieBanner.message')}{' '}
-          <a href={`${prefix}/cookie-policy`} class="underline transition-colors hover:text-[#C5A059]">
+          <a href={`${prefix}/cookie-policy`} class="underline transition-colors hover:text-[#C8961E]">
             {t(locale, 'cookieBanner.learnMore')}
           </a>
         </p>
@@ -34,13 +34,13 @@ const prefix = locale === 'zh' ? '/zh' : '';
       <div class="flex shrink-0 gap-3">
         <button
           id="cookie-decline"
-          class="rounded-md border border-[#C5A059]/50 px-4 py-2 text-xs text-[#C5A059]/80 transition-colors hover:border-[#C5A059] hover:text-[#C5A059]"
+          class="rounded-md border border-[#C8961E]/50 px-4 py-2 text-xs text-[#C8961E]/80 transition-colors hover:border-[#C8961E] hover:text-[#C8961E]"
         >
           {t(locale, 'cookieBanner.decline')}
         </button>
         <button
           id="cookie-accept"
-          class="rounded-md bg-[#C5A059] px-4 py-2 text-xs font-medium text-[#1C1A17] transition-opacity hover:opacity-90"
+          class="rounded-md bg-[#C8961E] px-4 py-2 text-xs font-medium text-[#1B2D45] transition-opacity hover:opacity-90"
         >
           {t(locale, 'cookieBanner.accept')}
         </button>

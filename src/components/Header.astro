@@ -1,5 +1,6 @@
 ---
 import LanguageToggle from './LanguageToggle.astro';
+import ThemeToggle from './ThemeToggle.astro';
 import { t, getAlternateUrl } from '../i18n/utils';
 import type { Locale } from '../i18n/utils';
 
@@ -36,7 +37,7 @@ const navItems = [
 const alternatePath = getAlternateUrl(currentPath, locale);
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-brand-navy/95 backdrop-blur-sm border-b border-gray-100 dark:border-brand-navy2">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-36">
       <!-- Logo -->
@@ -97,11 +98,13 @@ const alternatePath = getAlternateUrl(currentPath, locale);
             </a>
           )
         ))}
+        <ThemeToggle />
         <LanguageToggle locale={locale} alternatePath={alternatePath} />
       </nav>
 
       <!-- Mobile menu button -->
       <div class="flex items-center gap-2 lg:hidden">
+        <ThemeToggle />
         <LanguageToggle locale={locale} alternatePath={alternatePath} />
         <button
           id="mobile-menu-btn"

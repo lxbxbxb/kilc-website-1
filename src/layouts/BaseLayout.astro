@@ -37,6 +37,16 @@ const alternateUrl = new URL(alternatePath, Astro.site);
 <!doctype html>
 <html lang={locale === 'zh' ? 'zh-CN' : 'en-GB'} class="scroll-smooth">
   <head>
+    <!-- Theme boot — runs before first paint to avoid flash of wrong theme.
+         Reads kilc_theme from localStorage and applies .dark to <html>. -->
+    <script is:inline>
+      try {
+        if (localStorage.getItem('kilc_theme') === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>
+
     <!-- Performance hints -->
     <link rel="preconnect" href="https://analytics.kilc.co.uk" />
 
