@@ -1,6 +1,5 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import Hero from '../components/Hero.astro';
 import { t } from '../i18n/utils';
 
 const locale = 'en';
@@ -50,25 +49,81 @@ const galleryImages = [
   title={t(locale, 'site.title')}
   description={t(locale, 'site.description')}
 >
-  <Hero
-    title="Bridging Laws, Cultures, and Opportunities"
-    subtitle="KILC empowers clients to move, invest and thrive — offering insight-led support on legal and regulatory frameworks built for change, innovation and global growth."
-    backgroundVideo="/video/homepage-hd_1280_720_25fps.mp4"
-    backgroundImage="/images/hero/an-aerial-view-of-a-city-with-tall-buildings.jpg"
-    cta={{ text: t(locale, 'hero.cta'), href: '/contact' }}
-    showCta={false}
-    locale={locale}
-  />
+  <!-- XOS Hero -->
+  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="/images/hero/an-aerial-view-of-a-city-with-tall-buildings.jpg"
+      >
+        <source src="/video/homepage-hd_1280_720_25fps.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-black/55"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 py-24 text-center text-white">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+        <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+        <span class="text-sm font-medium tracking-wide">Now Live · A KILC Product</span>
+      </div>
+
+      <h1 class="text-6xl sm:text-7xl lg:text-8xl font-sans font-bold tracking-wider mb-4">
+        <span class="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">XOS</span>
+      </h1>
+
+      <p class="text-2xl sm:text-3xl lg:text-4xl font-sans font-light italic leading-tight mb-6">
+        Cross-Border Compliance, Reimagined.
+      </p>
+
+      <p class="text-lg sm:text-xl text-white/85 max-w-2xl mx-auto mb-10">
+        The operating system for businesses managing UK and international regulatory obligations — in one secure, intelligent platform.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="https://xos.kilc.co.uk"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
+        >
+          Open XOS &rarr;
+        </a>
+        <a
+          href="https://xos.kilc.co.uk"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-white/20 transition-colors"
+        >
+          Sign Up Free
+        </a>
+        <a
+          href="/contact"
+          class="inline-block text-white/90 hover:text-white font-medium px-6 py-3 underline-offset-4 hover:underline transition-colors"
+        >
+          Book a Demo &rarr;
+        </a>
+      </div>
+
+      <p class="text-white/60 text-sm mt-6">
+        Free to start · No credit card required
+      </p>
+    </div>
+  </section>
 
   <!-- Services Overview -->
   <section class="py-20 bg-brand-light reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
+        <p class="text-sm font-semibold text-brand-primary uppercase tracking-wider mb-3">The expertise behind XOS</p>
         <h2 class="text-3xl font-sans font-bold text-brand-dark mb-4">
-          Expertly Tailored Legal Solutions
+          Built on KILC's legal consultancy
         </h2>
         <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-          We provide specialist legal consultancy services designed for international clients navigating the complexities of UK law and business.
+          XOS is powered by years of frontline legal practice. Beyond the platform, KILC's specialist team supports clients across these areas.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -192,17 +247,27 @@ const galleryImages = [
   <section class="py-20 cta-section reveal">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-sans font-bold mb-6">
-        Ready to expand your business to the UK?
+        Ready to streamline your cross-border compliance?
       </h2>
       <p class="text-lg mb-8 text-white/90">
-        Get in touch with our team of legal experts today.
+        Open XOS today, or book a demo to see how it fits your operations.
       </p>
-      <a
-        href="/contact"
-        class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
-      >
-        Contact Us
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="https://xos.kilc.co.uk"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
+        >
+          Open XOS &rarr;
+        </a>
+        <a
+          href="/contact"
+          class="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-brand-dark transition-colors"
+        >
+          Book a Demo
+        </a>
+      </div>
     </div>
   </section>
 </PageLayout>
