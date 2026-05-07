@@ -17,7 +17,7 @@ const { title, description, lastUpdated } = Astro.props;
 <BaseLayout title={title} description={description}>
   <Header locale={locale} />
   <main class="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-sans font-bold text-brand-dark mb-4">{title}</h1>
+    <h1 class="text-3xl font-serif font-bold text-brand-dark mb-4">{title}</h1>
     {lastUpdated && (
       <p class="text-sm text-gray-500 mb-8">
         {locale === 'zh' ? '最后更新：' : 'Last updated: '}{lastUpdated}

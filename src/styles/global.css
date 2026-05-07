@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Self-hosted fonts — bundled by Vite/Astro from node_modules at build time.
+   Works in mainland China (no Google Fonts dependency). */
+@import '@fontsource-variable/dm-sans';
+@import '@fontsource-variable/cormorant-garamond';
+@import '@fontsource/noto-serif-sc/400.css';
+@import '@fontsource/noto-serif-sc/600.css';
+@import '@fontsource/noto-serif-sc/700.css';
 
-/* Self-hosted Noto Sans SC (Chinese) */
+/* Self-hosted Noto Sans SC (Chinese body) — kept for backward compat */
 @font-face {
   font-family: 'Noto Sans SC';
   font-style: normal;
@@ -22,8 +29,9 @@
     @apply font-sans text-brand-text bg-white antialiased;
   }
 
+  /* Headings default to Cormorant Garamond serif (XOS style) */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans;
+    @apply font-serif;
   }
 }
 

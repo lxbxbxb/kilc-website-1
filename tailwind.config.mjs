@@ -7,18 +7,26 @@ export default {
     extend: {
       colors: {
         brand: {
-          primary:   '#C5A059',   // gold/bronze — buttons, icons, accents
-          secondary: '#A8854A',   // deeper bronze — gradient end
-          dark:      '#1C1A17',   // near-black — headings, body text
-          accent:    '#C5A059',   // gold/bronze — CTA buttons
-          light:     '#F8F6F2',   // warm off-white — section backgrounds
-          text:      '#1C1A17',   // body text
-          footer:    '#E5E7EB',   // light slate gray — footer background
-          magenta:   '#D10056',   // magenta — CTA buttons
+          primary:   '#C8961E',   // XOS gold — buttons, icons, accents
+          secondary: '#A87410',   // deeper gold — gradient end
+          dark:      '#1B2D45',   // XOS navy text — headings, body text
+          accent:    '#C8961E',   // XOS gold — CTA buttons
+          light:     '#F7F2EA',   // XOS cream — warm section backgrounds
+          text:      '#1B2D45',   // XOS navy body text
+          footer:    '#EDE5D5',   // XOS cream2 — footer background
+          magenta:   '#D10056',   // magenta — legacy CTA refs
+          // XOS direct tokens for occasional dark accents
+          navy:      '#0F1C2E',   // deepest navy (XOS dark mode bg)
+          navy2:     '#152030',   // navy variant
+          gold:      '#C8961E',   // alias for primary
+          goldLight: '#E0AE3A',   // XOS gold2 — highlight
         },
       },
       fontFamily: {
-        sans: ['system-ui', 'Noto Sans SC', 'sans-serif'],
+        // Body / UI text — DM Sans (XOS body), with system fallback and Chinese
+        sans: ['"DM Sans Variable"', '"DM Sans"', 'system-ui', '"Noto Sans SC"', 'sans-serif'],
+        // Headings — Cormorant Garamond (XOS serif), with Chinese serif and Georgia fallback
+        serif: ['"Cormorant Garamond Variable"', '"Cormorant Garamond"', '"Noto Serif SC"', 'Georgia', 'serif'],
       },
     },
   },
