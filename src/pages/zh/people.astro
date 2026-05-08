@@ -44,7 +44,7 @@ const advisors = allTeam
       <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">荣誉顾问</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {advisors.map(a => (
-          <div class="bg-white rounded-lg p-5 shadow-sm border border-gray-100">
+          <div class="xos-card">
             <h3 class="text-lg font-sans font-semibold text-brand-dark">{a.data.name}</h3>
             <p class="text-brand-primary text-sm font-medium mb-2">{a.data.role}</p>
             <p class="text-gray-500 text-sm">{a.data.org}</p>
@@ -61,7 +61,7 @@ const advisors = allTeam
       <p class="text-lg text-white/90 mb-6">
         我们始终欢迎有才华的人士加入我们不断壮大的国际团队。
       </p>
-      <a href="/zh/careers" class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors">
+      <a href="/zh/careers" class="btn-xos btn-xos-lg">
         查看职位
       </a>
     </div>

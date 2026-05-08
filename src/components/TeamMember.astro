@@ -8,14 +8,14 @@ interface Props {
 const { name, role, bio } = Astro.props;
 ---
 
-<div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+<div class="xos-card">
   <!-- Text-only card (no photos on current site) -->
-  <div class="w-14 h-14 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center mb-4">
-    <span class="text-white text-xl font-serif font-bold">
+  <div class="w-14 h-14 flex items-center justify-center mb-4 border border-brand-primary/30 bg-brand-primary/5">
+    <span class="text-brand-primary text-xl font-serif font-bold">
       {name.charAt(0)}
     </span>
   </div>
-  <h3 class="text-lg font-sans font-semibold text-brand-dark mb-1">{name}</h3>
-  <p class="text-brand-primary text-sm font-medium mb-3">{role}</p>
-  <p class="text-gray-600 text-sm leading-relaxed">{bio}</p>
+  <h3 class="text-lg font-serif font-semibold text-brand-dark dark:text-brand-light mb-1">{name}</h3>
+  <p class="text-brand-primary text-xs font-semibold mb-3 uppercase tracking-wider">{role}</p>
+  <p class="text-gray-600 dark:text-[#B8C5D6] text-sm leading-relaxed">{bio}</p>
 </div>

@@ -35,94 +35,106 @@ const navItems = [
 ];
 
 const alternatePath = getAlternateUrl(currentPath, locale);
+const subtitle = locale === 'zh' ? '国际法律咨询' : 'International Legal Consultancy';
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 dark:bg-brand-navy/95 backdrop-blur-sm border-b border-gray-100 dark:border-brand-navy2">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-36">
-      <!-- Logo -->
-      <a href={locale === 'zh' ? '/zh' : '/'} class="flex items-center gap-2">
-        <img src="/images/general/kilc-logo-colour-transparent.png" alt="KILC" class="h-32 w-auto" />
-      </a>
+<!-- Top ticker — XOS-style, slim live strip -->
+<div class="xos-ticker">
+  <div class="xos-ticker-inner">
+    <span class="xos-ticker-dot"></span>
+    <span>{locale === 'zh' ? 'XOS 已上线' : 'XOS NOW LIVE'}</span>
+    <span class="xos-ticker-sep">·</span>
+    <span>{locale === 'zh' ? '跨境合规操作系统' : 'CROSS-BORDER COMPLIANCE OPERATING SYSTEM'}</span>
+    <span class="xos-ticker-sep">·</span>
+    <span>{locale === 'zh' ? '客安出品' : 'BY KILC'}</span>
+  </div>
+</div>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-1">
-        {navItems.map((item) => (
-          item.children ? (
-            <div class="relative group">
-              <a
-                href={item.href}
-                class:list={[
-                  'px-3 py-2 text-sm font-medium rounded-md transition-colors inline-flex items-center gap-1',
-                  currentPath === item.href
-                    ? 'underline underline-offset-4 text-gray-900'
-                    : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50',
-                ]}
-              >
-                {item.label}
-                <svg class="w-3 h-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </a>
-              <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[220px]">
-                  {item.children.map((child) => (
-                    <a
-                      href={child.href}
-                      class:list={[
-                        'block px-4 py-2 text-sm transition-colors',
-                        currentPath === child.href
-                          ? 'text-brand-primary bg-brand-light'
-                          : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50',
-                      ]}
-                    >
-                      {child.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ) : (
+<header class="xos-nav">
+  <div class="xos-nav-inner">
+    <!-- Brand mark — text-based, XOS style -->
+    <a href={locale === 'zh' ? '/zh' : '/'} class="xos-brand">
+      <span class="xos-brand-mark">KILC</span>
+      <span class="xos-brand-div"></span>
+      <span class="xos-brand-sub">{subtitle}</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="xos-nav-links hidden lg:flex">
+      {navItems.map((item) => (
+        item.children ? (
+          <div class="xos-nav-group">
             <a
               href={item.href}
-              target={item.href.startsWith('http') ? '_blank' : undefined}
-              rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               class:list={[
-                'px-3 py-2 text-sm font-medium rounded-md transition-colors',
-                currentPath === item.href || (item.href !== '/' && item.href !== '/zh' && !item.href.startsWith('http') && currentPath.startsWith(item.href))
-                  ? 'underline underline-offset-4 text-gray-900'
-                  : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50',
+                'xos-nav-link',
+                currentPath === item.href && 'is-active',
               ]}
             >
               {item.label}
+              <svg class="w-2.5 h-2.5 ml-1 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
             </a>
-          )
-        ))}
-        <ThemeToggle />
-        <LanguageToggle locale={locale} alternatePath={alternatePath} />
-      </nav>
+            <div class="xos-dropdown">
+              {item.children.map((child) => (
+                <a
+                  href={child.href}
+                  class:list={[
+                    'xos-dropdown-item',
+                    currentPath === child.href && 'is-active',
+                  ]}
+                >
+                  {child.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a
+            href={item.href}
+            target={item.href.startsWith('http') ? '_blank' : undefined}
+            rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class:list={[
+              'xos-nav-link',
+              currentPath === item.href || (item.href !== '/' && item.href !== '/zh' && !item.href.startsWith('http') && currentPath.startsWith(item.href)) ? 'is-active' : '',
+            ]}
+          >
+            {item.label}
+          </a>
+        )
+      ))}
+    </nav>
 
-      <!-- Mobile menu button -->
-      <div class="flex items-center gap-2 lg:hidden">
-        <ThemeToggle />
-        <LanguageToggle locale={locale} alternatePath={alternatePath} />
-        <button
-          id="mobile-menu-btn"
-          type="button"
-          class="p-2 rounded-md text-gray-700 hover:text-brand-primary hover:bg-gray-50"
-          aria-label="Open menu"
-        >
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+    <!-- Right cluster — toggles + Open XOS -->
+    <div class="xos-nav-right hidden lg:flex">
+      <ThemeToggle />
+      <LanguageToggle locale={locale} alternatePath={alternatePath} />
+      <a href="https://xos.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="btn-xos">
+        {locale === 'zh' ? '打开 XOS' : 'Open XOS'}
+      </a>
+    </div>
+
+    <!-- Mobile cluster -->
+    <div class="flex items-center gap-2 lg:hidden">
+      <ThemeToggle />
+      <LanguageToggle locale={locale} alternatePath={alternatePath} />
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="xos-icon-btn"
+        aria-label="Open menu"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
   </div>
 
-  <!-- Mobile Nav -->
-  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white">
-    <nav class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+  <!-- Mobile nav -->
+  <div id="mobile-menu" class="xos-mobile-nav hidden lg:hidden">
+    <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
       {navItems.map((item) => (
         <>
           <a
@@ -130,10 +142,8 @@ const alternatePath = getAlternateUrl(currentPath, locale);
             target={item.href.startsWith('http') ? '_blank' : undefined}
             rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             class:list={[
-              'block px-3 py-2 text-base font-medium rounded-md transition-colors',
-              currentPath === item.href
-                ? 'text-brand-primary bg-brand-light'
-                : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50',
+              'xos-mobile-link',
+              currentPath === item.href && 'is-active',
             ]}
           >
             {item.label}
@@ -142,10 +152,8 @@ const alternatePath = getAlternateUrl(currentPath, locale);
             <a
               href={child.href}
               class:list={[
-                'block pl-6 pr-3 py-2 text-sm rounded-md transition-colors',
-                currentPath === child.href
-                  ? 'text-brand-primary bg-brand-light'
-                  : 'text-gray-600 hover:text-brand-primary hover:bg-gray-50',
+                'xos-mobile-sublink',
+                currentPath === child.href && 'is-active',
               ]}
             >
               {child.label}
@@ -153,7 +161,7 @@ const alternatePath = getAlternateUrl(currentPath, locale);
           ))}
         </>
       ))}
-    </nav>
+    </div>
   </div>
 </header>
 
