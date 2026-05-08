@@ -67,38 +67,25 @@ const { locale } = Astro.props;
   const successEl = document.getElementById('form-success');
   const errorEl = document.getElementById('form-error');
 
-  form?.addEventListener('submit', async (e) => {
+  form?.addEventListener('submit', (e) => {
     e.preventDefault();
     successEl?.classList.add('hidden');
     errorEl?.classList.add('hidden');
 
-    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-    btn.disabled = true;
-
     const formData = new FormData(form);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message'),
-    };
+    const name = String(formData.get('name') || '').trim();
+    const email = String(formData.get('email') || '').trim();
+    const message = String(formData.get('message') || '').trim();
 
-    try {
-      const res = await fetch('https://platform.kilc.co.uk/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+    // Open user's email client pre-filled — same pattern XOS uses, no
+    // server endpoint needed. Reliable and works without a backend.
+    const subject = encodeURIComponent(`[KILC Enquiry] ${name || 'New enquiry'}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+    window.open(`mailto:info@kilc.co.uk?subject=${subject}&body=${body}`);
 
-      if (res.ok) {
-        successEl?.classList.remove('hidden');
-        form.reset();
-      } else {
-        errorEl?.classList.remove('hidden');
-      }
-    } catch {
-      errorEl?.classList.remove('hidden');
-    } finally {
-      btn.disabled = false;
-    }
+    successEl?.classList.remove('hidden');
+    form.reset();
   });
 </script>
