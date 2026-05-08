@@ -37,7 +37,7 @@ const steps = allSteps
       <h2 class="text-3xl font-serif font-bold text-brand-dark mb-12 text-center">服务内容</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {steps.map((step, index) => (
-          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+          <div class="xos-card">
             <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white font-semibold text-sm mb-4">
               {index + 1}
             </div>
@@ -64,7 +64,7 @@ const steps = allSteps
       </p>
       <a
         href="/zh/contact-us"
-        class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
+        class="btn-xos btn-xos-lg"
       >
         联系我们
       </a>

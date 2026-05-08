@@ -50,7 +50,7 @@ const feeTypes = [
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {feeTypes.map((fee) => (
-          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="xos-card">
             <div class="w-14 h-14 rounded-full bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-6">
               <svg class="w-7 h-7 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d={fee.icon} />
@@ -79,7 +79,7 @@ const feeTypes = [
       </p>
       <a
         href="/zh/contact-us"
-        class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
+        class="btn-xos btn-xos-lg"
       >
         联系我们
       </a>

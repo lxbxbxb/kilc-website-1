@@ -47,8 +47,8 @@ const year = new Date().getFullYear();
           <li><a href={`${prefix}/fees`} class="text-gray-600 hover:text-brand-dark text-sm transition-colors">{t(locale, 'nav.fees')}</a></li>
           <li><a href={locale === 'zh' ? '/zh/contact-us' : '/contact'} class="text-gray-600 hover:text-brand-dark text-sm transition-colors">{t(locale, 'nav.contact')}</a></li>
           <li>
-            <a href="https://platform.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-brand-dark text-sm transition-colors">
-              {t(locale, 'nav.xos')} Platform &rarr;
+            <a href="https://xos.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-brand-primary text-sm transition-colors">
+              {locale === 'zh' ? '打开 XOS' : 'Open XOS'} &rarr;
             </a>
           </li>
           <li><a href={`${prefix}/blogs`} class="text-gray-600 hover:text-brand-dark text-sm transition-colors">{t(locale, 'nav.blog')}</a></li>
