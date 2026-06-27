@@ -1,59 +1,59 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
-import Hero from '../components/Hero.astro';
-const locale = 'en';
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+const locale = 'zh';
 
 const clusters = [
   {
     id: 'law',
-    title: 'Law & Politics',
+    title: '法律与政治',
     icon: 'M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.97Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.97Z',
-    description: 'Structured exposure to international legal practice, UK regulatory frameworks, public policy analysis, and cross-border dispute resolution. Ideal for law, politics, and international relations students.',
+    description: '深入接触国际法律实践、英国监管框架、公共政策分析及跨境争议解决。适合法律、政治及国际关系专业学生。',
     tracks: [
-      { name: '2-Week Taster', badge: 'Introductory', detail: 'An introduction to international legal practice at KILC. One case study and a final mentor review session.' },
-      { name: '4-Week Standard', badge: 'Standard', detail: 'Deeper immersion into immigration law, corporate compliance, and international regulatory work. Two case studies and weekly mentor feedback.' },
-      { name: '6-Week Extended', badge: 'Extended', detail: 'A comprehensive placement working alongside KILC legal professionals. Weekly module assessments, a final project, and a completion certificate with professional reference.' },
+      { name: '2周入门课程', badge: '入门级', detail: '了解KILC的法律实践领域，包括一个案例研究和最终导师点评。' },
+      { name: '4周标准课程', badge: '标准', detail: '深入学习移民法、企业合规及国际监管工作，包括两个案例研究和每周导师反馈。' },
+      { name: '6周扩展课程', badge: '扩展', detail: '全面参与KILC法律专业人员的实际研究和起草工作，包括每周模块评估、最终项目及结业证书和专业推荐信。' },
     ],
   },
   {
     id: 'business',
-    title: 'Business, Economics & Finance',
+    title: '商业、经济与金融',
     icon: 'M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z',
-    description: 'Practical grounding in UK and international business strategy, financial analysis, market entry, and marketing. Suited to students in business, economics, finance, accounting, and marketing.',
+    description: '英国及国际商业战略、财务分析、市场进入及市场营销的实践基础。适合商业、经济、金融、会计及市场营销专业学生。',
     tracks: [
-      { name: '2-Week Taster', badge: 'Introductory', detail: 'An introduction to KILC's business and finance advisory practice. One case study and a final mentor review session.' },
-      { name: '4-Week Standard', badge: 'Standard', detail: 'Applied work across market strategy, financial due diligence, and commercial advisory. Two case studies and weekly mentor feedback.' },
-      { name: '6-Week Extended', badge: 'Extended', detail: 'A comprehensive placement contributing to live business projects, research, and client-facing work. Weekly module assessments, a final project, and a completion certificate.' },
+      { name: '2周入门课程', badge: '入门级', detail: '了解KILC的商业与金融咨询实践，包括一个案例研究和最终导师点评。' },
+      { name: '4周标准课程', badge: '标准', detail: '市场战略、财务尽职调查及商业顾问工作，包括两个案例研究和每周导师反馈。' },
+      { name: '6周扩展课程', badge: '扩展', detail: '全面参与实际商业项目、研究和面向客户的工作，包括每周模块评估、最终项目及结业证书。' },
     ],
   },
 ];
 
 const eligibility = [
-  'University students from any subject area worldwide',
-  'A-level students considering a career in law, business, or international affairs',
-  'Students seeking UK work experience for visa or career purposes',
-  'International students wanting to understand the UK legal and business landscape',
-  'Graduates looking to build their professional portfolio',
-  'Students from all nationalities and academic backgrounds',
+  '全球各专业在读大学生',
+  '考虑从事法律、商业或国际事务职业的A-level学生',
+  '需要英国工作经验以满足签证或职业需求的学生',
+  '希望了解英国法律及商业环境的国际学生',
+  '希望建立专业履历的应届毕业生',
+  '来自所有国籍和学术背景的学生',
 ];
 
 const benefits = [
-  { title: 'KILC Certificate', desc: 'A certificate of completion issued by KILC upon successful completion of all programme requirements.' },
-  { title: 'Professional Reference', desc: 'A written reference from your supervising mentor, available on request after the Extended track.' },
-  { title: 'Research & Drafting Skills', desc: 'Hands-on practice in legal and commercial research, case analysis, and professional writing.' },
-  { title: 'Cross-Border Knowledge', desc: 'Deep understanding of UK and international law, regulation, and business practice.' },
-  { title: 'Weekly Mentor Feedback', desc: 'Structured feedback from KILC professionals on your tasks and progress throughout the programme.' },
-  { title: 'Free Placement Matching', desc: 'Complimentary placement matching for Extended-track completers seeking onward host-employer placements. KILC never charges candidates for placement.' },
+  { title: 'KILC结业证书', desc: '成功完成所有课程要求后，由KILC颁发的结业证书。' },
+  { title: '专业推荐信', desc: '由您的导师撰写的书面推荐信，完成扩展课程后可申请。' },
+  { title: '研究与起草技能', desc: '在法律及商业研究、案例分析和专业写作方面的实践训练。' },
+  { title: '跨境知识', desc: '深入了解英国及国际法律、法规和商业实践。' },
+  { title: '每周导师反馈', desc: 'KILC专业人员在整个课程期间对您的任务和进度提供结构化反馈。' },
+  { title: '免费就业安置匹配', desc: '为完成扩展课程的学员提供免费的雇主匹配服务，为候选人提供就业安置。KILC不向候选人收取任何安置费用。' },
 ];
 ---
 
 <PageLayout
-  title="Internship Programme - KILC"
-  description="KILC Internship Programme: a fully online, mentor-led internship for university and A-level students worldwide, across Law & Politics and Business, Economics & Finance."
+  title="实习项目 - KILC"
+  description="KILC实习项目：面向全球大学生及A-level学生的全程在线、导师带领实习，涵盖法律与政治及商业、经济与金融两个方向。"
 >
   <Hero
-    title="Internship Programme"
-    subtitle="A fully online, mentor-led internship open to university and A-level students worldwide."
+    title="实习项目"
+    subtitle="面向全球大学生及A-level学生的全程在线、导师带领实习项目。"
     backgroundImage="/images/services/university.jpg"
     backgroundPosition="center"
     locale={locale}
@@ -64,15 +64,10 @@ const benefits = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center mb-16">
         <p class="text-lg text-gray-600 leading-relaxed">
-          The KILC Internship Programme combines structured training materials, real-world case studies,
-          and direct mentor feedback. Delivered entirely online across two subject clusters and three duration
-          tracks — from a 2-week taster to a 6-week extended placement — it gives students worldwide the
-          professional skills and UK legal and commercial knowledge needed to stand out.
+          KILC实习项目将结构化培训材料、真实案例研究和导师直接反馈相结合。项目完全在线开展，涵盖两个学科方向和三种时长选项——从2周入门课程到6周扩展课程——帮助全球学生建立专业技能和英国法律及商业知识。
         </p>
         <p class="text-sm text-gray-400 mt-4 leading-relaxed">
-          This programme is currently in its launch phase. Full online registration will open shortly.
-          In the meantime, please apply via the contact form or email below.
-          Programme details are subject to finalisation pending legal and regulatory review.
+          本项目目前处于启动阶段，在线注册即将开放。在此期间，请通过以下联系方式申请。项目详情有待法律及法规审查后最终确认。
         </p>
       </div>
 
@@ -108,7 +103,7 @@ const benefits = [
 
       <!-- Who Can Apply -->
       <div class="bg-gray-50 rounded-2xl p-10 mb-16">
-        <h2 class="text-3xl font-sans font-bold text-brand-dark text-center mb-8">Who Can Apply</h2>
+        <h2 class="text-3xl font-sans font-bold text-brand-dark text-center mb-8">申请资格</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
           {eligibility.map((item) => (
             <div class="flex items-start gap-3">
@@ -123,7 +118,7 @@ const benefits = [
 
       <!-- What You Will Gain -->
       <div class="max-w-4xl mx-auto mb-16">
-        <h2 class="text-3xl font-sans font-bold text-brand-dark text-center mb-10">What You Will Gain</h2>
+        <h2 class="text-3xl font-sans font-bold text-brand-dark text-center mb-10">您将获得什么</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {benefits.map((item) => (
             <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
@@ -139,20 +134,18 @@ const benefits = [
   <!-- How to Apply -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-2xl mx-auto text-center px-4">
-      <h2 class="text-3xl font-sans font-bold text-brand-dark mb-6">How to Apply</h2>
+      <h2 class="text-3xl font-sans font-bold text-brand-dark mb-6">如何申请</h2>
       <p class="text-gray-600 leading-relaxed mb-8">
-        Applications are open year-round. Send your CV and a short cover letter (no more than 300 words)
-        stating your preferred subject cluster and track duration to the address below.
-        Our team will respond within five working days.
+        申请全年开放。请发送您的简历和简短求职信（不超过300字），注明您偏好的学科方向和课程时长，我们的团队将在五个工作日内回复。
       </p>
       <a
-        href="/contact"
+        href="/zh/contact-us"
         class="inline-block bg-brand-primary text-white font-semibold px-8 py-4 rounded-lg hover:bg-brand-secondary transition-colors"
       >
-        Contact Us to Apply
+        立即联系申请
       </a>
       <p class="text-sm text-gray-400 mt-4">
-        Or email us directly:
+        或直接发送邮件：
         <a href="mailto:internship@kilc.co.uk" class="underline hover:text-brand-primary">internship@kilc.co.uk</a>
       </p>
     </div>
