@@ -1,6 +1,5 @@
----
+﻿---
 import PageLayout from '../../layouts/PageLayout.astro';
-import Hero from '../../components/Hero.astro';
 import { t } from '../../i18n/utils';
 
 const locale = 'zh';
@@ -10,62 +9,167 @@ const locale = 'zh';
   title={t(locale, 'site.title')}
   description={t(locale, 'site.description')}
 >
-  <Hero
-    title="基恩国际法律咨询"
-    subtitle="您值得信赖的英国商业拓展合作伙伴"
-    cta={{ text: t(locale, 'hero.cta'), href: '/zh/contact-us' }}
-    locale={locale}
-  />
+  <!-- XOS Hero -->
+  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="/images/hero/an-aerial-view-of-a-city-with-tall-buildings.jpg"
+      >
+        <source src="/video/homepage-hd_1280_720_25fps.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-black/55"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 py-24 text-center text-white">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+        <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+        <span class="text-sm font-medium tracking-wide">已上线 · 来自客安</span>
+      </div>
+
+      <h1 class="text-6xl sm:text-7xl lg:text-8xl font-serif font-bold tracking-wider mb-4">
+        <span class="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">XOS</span>
+      </h1>
+
+      <p class="text-2xl sm:text-3xl lg:text-4xl font-sans font-light leading-tight mb-6">
+        跨境合规，重新定义。
+      </p>
+
+      <p class="text-lg sm:text-xl text-white/85 max-w-2xl mx-auto mb-10">
+        在统一的安全智能平台上，管理您在英国及国际范围内的合规义务。
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="https://xos.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="btn-xos btn-xos-lg">
+          立即体验 &rarr;
+        </a>
+        <a href="https://xos.kilc.co.uk#signup" target="_blank" rel="noopener noreferrer" class="btn-xos-outline btn-xos-outline-lg" style="color:#F7F2EA;border-color:rgba(247,242,234,0.4);">
+          免费注册
+        </a>
+        <a href="/zh/contact-us" class="btn-xos-ghost" style="color:rgba(247,242,234,0.85);">
+          预约演示 &rarr;
+        </a>
+      </div>
+
+      <p class="text-white/60 text-sm mt-6">
+        免费试用 · 无需信用卡
+      </p>
+    </div>
+  </section>
+
+  <!-- Guardian Shield · 双产品并列推介 -->
+  <section class="relative py-24 bg-brand-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image: url('/images/services/a-group-of-people-sitting-on-top-of-a-lush-green-field.jpg');"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/85 via-brand-dark/90 to-brand-dark"></div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+        <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+        <span class="text-xs font-medium tracking-widest uppercase">客安旗下 · 已上线</span>
+      </div>
+
+      <h2 class="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold tracking-wider mb-3">
+        <span class="bg-gradient-to-r from-brand-primary to-brand-goldLight bg-clip-text text-transparent">GUARDIAN SHIELD</span>
+      </h2>
+
+      <p class="text-xl sm:text-2xl font-serif font-light leading-tight mb-5">
+        为留英学生重新定义法律保障。
+      </p>
+
+      <p class="text-base sm:text-lg text-white/85 max-w-2xl mx-auto mb-8">
+        一站式中英双语顾问年费服务，覆盖签证、住房、学业合规、财务安全与人身福祉——三档年度套餐，£1,099 起。
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="https://gs.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="btn-xos btn-xos-lg">
+          打开 Guardian Shield &rarr;
+        </a>
+        <a href="https://gs.kilc.co.uk#tiers" target="_blank" rel="noopener noreferrer" class="btn-xos-outline btn-xos-outline-lg" style="color:#F7F2EA;border-color:rgba(247,242,234,0.4);">
+          套餐对比
+        </a>
+        <a href="/zh/programme" class="btn-xos-ghost" style="color:rgba(247,242,234,0.85);">
+          了解更多 &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mt-12 pt-8 border-t border-white/10 text-left">
+        <div>
+          <p class="text-xs uppercase tracking-widest text-brand-primary font-semibold mb-1">第一档 · 基础</p>
+          <p class="text-2xl font-serif font-semibold">£1,099<span class="text-sm text-white/60 font-sans font-normal"> /年</span></p>
+          <p class="text-xs text-white/70 mt-1">知识与指引顾问</p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-brand-primary font-semibold mb-1">第二档 · 顾问</p>
+          <p class="text-2xl font-serif font-semibold">£2,699<span class="text-sm text-white/60 font-sans font-normal"> /年</span></p>
+          <p class="text-xs text-white/70 mt-1">行动方案与升级路径</p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-brand-primary font-semibold mb-1">第三档 · 全程</p>
+          <p class="text-2xl font-serif font-semibold">£4,999<span class="text-sm text-white/60 font-sans font-normal"> /年</span></p>
+          <p class="text-xs text-white/70 mt-1">文书、表格与 24 小时升级</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Services Overview -->
   <section class="py-20 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-sans font-bold text-center text-brand-dark mb-12">
-        我们的服务
-      </h2>
+      <div class="text-center mb-12">
+        <span class="section-label">XOS 背后的专业积淀</span>
+        <h2 class="text-3xl font-serif font-bold text-brand-dark mb-4 mt-2">
+          基于客安国际法律咨询
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          XOS 凝聚了客安多年的一线法律实践经验。除平台之外，我们的专业团队还为客户提供以下领域的支持。
+        </p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <a href="/zh/global-market-strategy" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/global-market-strategy" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             全球市场导航
           </h3>
           <p class="text-gray-600">
             为进入和拓展英国市场提供专业战略指导。
           </p>
         </a>
-        <a href="/zh/immigration-advisory" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/immigration-advisory" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             移民咨询
           </h3>
           <p class="text-gray-600">
             为个人和企业提供专业的签证与移民咨询服务。
           </p>
         </a>
-        <a href="/zh/criminal-defence" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/criminal-defence" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             刑事辩护
           </h3>
           <p class="text-gray-600">
             经验丰富的刑事辩护咨询与协调服务。
           </p>
         </a>
-        <a href="/zh/student-services" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/student-services" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             留学服务
           </h3>
           <p class="text-gray-600">
             为在英国的国际学生提供全方位支持。
           </p>
         </a>
-        <a href="/zh/real-estate-investment-protection" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/real-estate-investment-protection" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             房产与投资保护
           </h3>
           <p class="text-gray-600">
             为您在英国的房地产投资提供专业保障。
           </p>
         </a>
-        <a href="/zh/company-formation" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+        <a href="/zh/company-formation" class="xos-card group block">
+          <h3 class="text-xl font-serif font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
             公司注册
           </h3>
           <p class="text-gray-600">
@@ -79,18 +183,21 @@ const locale = 'zh';
   <!-- CTA Section -->
   <section class="py-20 cta-section">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-sans font-bold mb-6">
-        准备好将业务拓展到英国了吗？
+      <span class="section-label">立即开始</span>
+      <h2 class="text-3xl font-serif font-bold mb-6 mt-2">
+        准备好优化您的跨境合规管理？
       </h2>
-      <p class="text-lg mb-8 text-white/90">
-        立即联系我们的专业法律团队。
+      <p class="text-lg mb-8">
+        立即体验 XOS，或预约演示，了解它如何契合您的业务运营。
       </p>
-      <a
-        href="/zh/contact-us"
-        class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
-      >
-        联系我们
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="https://xos.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="btn-xos btn-xos-lg">
+          立即体验 &rarr;
+        </a>
+        <a href="/zh/contact-us" class="btn-xos-outline btn-xos-outline-lg">
+          预约演示
+        </a>
+      </div>
     </div>
   </section>
 </PageLayout>

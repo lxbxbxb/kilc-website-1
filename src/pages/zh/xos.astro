@@ -11,8 +11,8 @@ const features = [
     icon: 'M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z',
   },
   {
-    title: '文件模板库',
-    description: '获取经法律审阅的文件模板，涵盖公司注册文件、股东协议、合规政策及监管申报材料，均针对英国跨境业务定制。',
+    title: '双语文档自动化',
+    description: '500+ 中英双语合规文档模板，涵盖公司注册、跨境投资、雇佣、税务、移民及房产 —— 智能字段填充并全程审计追踪。',
     icon: 'M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z',
   },
   {
@@ -61,13 +61,13 @@ const features = [
       <!-- Feature Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {features.map((feature) => (
-          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="xos-card">
             <div class="w-14 h-14 rounded-full bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-6">
               <svg class="w-7 h-7 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d={feature.icon} />
               </svg>
             </div>
-            <h3 class="text-xl font-sans font-bold text-brand-dark mb-4">
+            <h3 class="text-xl font-serif font-bold text-brand-dark mb-4">
               {feature.title}
             </h3>
             <p class="text-gray-600 leading-relaxed text-sm">
@@ -79,19 +79,19 @@ const features = [
 
       <!-- Access Platform CTA -->
       <div class="max-w-3xl mx-auto bg-brand-light rounded-lg p-10 text-center">
-        <h2 class="text-2xl font-sans font-bold text-brand-dark mb-4">
+        <h2 class="text-2xl font-serif font-bold text-brand-dark mb-4">
           访问 XOS 客户平台
         </h2>
         <p class="text-gray-600 leading-relaxed mb-8">
           现有客户可登录 XOS 平台管理合规工作流程、获取文件模板，并与 KILC 团队协作。如需了解入驻事宜，请联系我们。
         </p>
         <a
-          href="https://platform.kilc.co.uk"
+          href="https://xos.kilc.co.uk"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
+          class="btn-xos btn-xos-lg"
         >
-          前往客户平台 &rarr;
+          打开 XOS &rarr;
         </a>
       </div>
     </div>
@@ -100,7 +100,7 @@ const features = [
   <!-- CTA Section -->
   <section class="py-20 cta-section">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-sans font-bold mb-6">
+      <h2 class="text-3xl font-serif font-bold mb-6">
         准备好优化您的跨境合规管理？
       </h2>
       <p class="text-lg mb-8 text-white/90">
@@ -108,7 +108,7 @@ const features = [
       </p>
       <a
         href="/zh/contact-us"
-        class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
+        class="btn-xos btn-xos-lg"
       >
         联系我们
       </a>

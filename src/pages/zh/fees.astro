@@ -42,7 +42,7 @@ const feeTypes = [
   <!-- Fee Types -->
   <section class="py-20 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-sans font-bold text-center text-brand-dark mb-4">
+      <h2 class="text-3xl font-serif font-bold text-center text-brand-dark mb-4">
         咨询服务费用
       </h2>
       <p class="text-gray-600 text-center max-w-3xl mx-auto mb-12">
@@ -50,13 +50,13 @@ const feeTypes = [
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {feeTypes.map((fee) => (
-          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="xos-card">
             <div class="w-14 h-14 rounded-full bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-6">
               <svg class="w-7 h-7 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d={fee.icon} />
               </svg>
             </div>
-            <h3 class="text-xl font-sans font-bold text-brand-dark mb-4">
+            <h3 class="text-xl font-serif font-bold text-brand-dark mb-4">
               {fee.title}
             </h3>
             <p class="text-gray-600 leading-relaxed">
@@ -71,7 +71,7 @@ const feeTypes = [
   <!-- CTA Section -->
   <section class="py-20 cta-section">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-sans font-bold mb-6">
+      <h2 class="text-3xl font-serif font-bold mb-6">
         联系我们了解详情
       </h2>
       <p class="text-lg mb-8 text-white/90">
@@ -79,7 +79,7 @@ const feeTypes = [
       </p>
       <a
         href="/zh/contact-us"
-        class="inline-block bg-brand-primary text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-brand-accent transition-colors"
+        class="btn-xos btn-xos-lg"
       >
         联系我们
       </a>

@@ -51,7 +51,7 @@ const {
 
   <!-- Content -->
   <div class="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center text-white">
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold italic leading-tight mb-6">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold italic leading-tight mb-6">
       {title}
     </h1>
     {subtitle && (
@@ -60,10 +60,7 @@ const {
       </p>
     )}
     {showCta && cta && (
-      <a
-        href={cta.href}
-        class="inline-block bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity shadow-lg"
-      >
+      <a href={cta.href} class="btn-xos btn-xos-lg">
         {cta.text}
       </a>
     )}

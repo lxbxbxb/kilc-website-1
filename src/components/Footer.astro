@@ -19,14 +19,14 @@ const policyLinks = [
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-brand-footer text-brand-dark">
+<footer class="bg-brand-footer dark:bg-brand-navy2 text-brand-dark dark:text-brand-light">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Company Info -->
       <div>
         <img src="/images/general/kilc-logo-colour-transparent.png" alt="KILC" class="h-36 w-auto mb-4" />
         <p class="text-gray-600 text-sm leading-relaxed">
-          Keane International Legal Consultancy
+          Keane International Legal Consultancy LLP
         </p>
         <p class="text-gray-500 text-sm mt-2">
           {t(locale, 'footer.address')}
@@ -47,8 +47,13 @@ const year = new Date().getFullYear();
           <li><a href={`${prefix}/fees`} class="text-gray-600 hover:text-brand-dark text-sm transition-colors">{t(locale, 'nav.fees')}</a></li>
           <li><a href={locale === 'zh' ? '/zh/contact-us' : '/contact'} class="text-gray-600 hover:text-brand-dark text-sm transition-colors">{t(locale, 'nav.contact')}</a></li>
           <li>
-            <a href="https://platform.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-brand-dark text-sm transition-colors">
-              {t(locale, 'nav.xos')} Platform &rarr;
+            <a href="https://xos.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-brand-primary text-sm transition-colors">
+              {locale === 'zh' ? '打开 XOS' : 'Open XOS'} &rarr;
+            </a>
+          </li>
+          <li>
+            <a href="https://gs.kilc.co.uk" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-brand-primary text-sm transition-colors">
+              {locale === 'zh' ? '打开 Guardian Shield' : 'Open Guardian Shield'} &rarr;
             </a>
           </li>
           <li><a href={`${prefix}/blogs`} class="text-gray-600 hover:text-brand-dark text-sm transition-colors">{t(locale, 'nav.blog')}</a></li>

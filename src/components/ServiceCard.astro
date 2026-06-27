@@ -9,21 +9,21 @@ interface Props {
 const { title, description, href, icon } = Astro.props;
 ---
 
-<a href={href} class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 border border-gray-100 hover:border-brand-primary/20">
+<a href={href} class="xos-card group block">
   {icon && (
-    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center mb-4 group-hover:from-brand-primary/20 group-hover:to-brand-secondary/20 transition-colors">
+    <div class="w-12 h-12 flex items-center justify-center mb-4 border border-brand-primary/30 group-hover:border-brand-primary/60 transition-colors">
       <svg class="w-6 h-6 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d={icon} />
       </svg>
     </div>
   )}
-  <h3 class="text-xl font-sans font-semibold text-brand-dark group-hover:text-brand-primary transition-colors mb-3">
+  <h3 class="text-xl font-serif font-semibold text-brand-dark dark:text-brand-light group-hover:text-brand-primary transition-colors mb-3">
     {title}
   </h3>
-  <p class="text-gray-600 text-sm leading-relaxed">
+  <p class="text-gray-600 dark:text-[#B8C5D6] text-sm leading-relaxed">
     {description}
   </p>
-  <span class="inline-flex items-center gap-1 text-brand-primary text-sm font-medium mt-4 group-hover:gap-2 transition-all">
+  <span class="inline-flex items-center gap-1 text-brand-primary text-xs font-semibold mt-4 group-hover:gap-2 transition-all uppercase tracking-wider">
     Learn more
     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
